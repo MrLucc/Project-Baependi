@@ -8,9 +8,6 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 
 
-
-
-
 @Entity
 @Table(name = "tb_categoria")
 public class Categoria {
@@ -19,8 +16,6 @@ public class Categoria {
 	private @NotBlank String tipoProduto;
 	private boolean revendido;
 	private @NotBlank String tipoMaterial;
-	
-	
 	
 	public Long getIdCategoria() {
 		return idCategoria;

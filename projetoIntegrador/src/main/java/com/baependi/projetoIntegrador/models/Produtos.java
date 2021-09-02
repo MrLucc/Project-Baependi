@@ -22,7 +22,6 @@ public class Produtos {
 	private @NotBlank String descricaoDoProduto;
 	private @NotBlank String autoreDoProduto;
 	private @NotBlank @Size(min = 1, max = 75) String tipoDeProduto;
-
 	
 
 	public Long getIdProduto() {
