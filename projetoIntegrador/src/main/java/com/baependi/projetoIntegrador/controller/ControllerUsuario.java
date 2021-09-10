@@ -41,8 +41,8 @@ public class ControllerUsuario  {
 			}
 	
 	@GetMapping("/buscarNome/{buscarNome}")
-	private ResponseEntity<List<Usuario>> getByName(@PathVariable(value = "buscarNome") String nomeUsuario){
-		List<Usuario> objetoUsuario = repositorio.buscarNome(nomeUsuario);
+	private ResponseEntity<Optional<Usuario>> getByName(@PathVariable(value = "buscarNome") String nomeUsuario){
+		Optional<Usuario> objetoUsuario = repositorio.buscarNome(nomeUsuario);
 	    if (objetoUsuario.isEmpty()) {
 	    	return ResponseEntity.status(204).build();
 	    }else {
