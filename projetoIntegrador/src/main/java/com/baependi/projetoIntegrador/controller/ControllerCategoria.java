@@ -30,7 +30,7 @@ public class ControllerCategoria {
 		return ResponseEntity.ok(repositorio.findAll());
 	}
 
-	@GetMapping("/Buscarcategoriaid/ {idCategoria}")
+	@GetMapping("/Buscarcategoriaid/{idCategoria}")
 	private ResponseEntity<Categoria> findById(@PathVariable(value = "idCategoria") Long idCategoria) {
 		Optional<Categoria> objetoCategoria = repositorio.findById(idCategoria);
 
@@ -42,9 +42,9 @@ public class ControllerCategoria {
 
 	}
 
-	@GetMapping("/acharPorTipoProduto/ {tipoProdutos}")
+	@GetMapping("/acharPorTipoProduto/{tipoProdutos}")
 	private ResponseEntity<List<Categoria>> findAllByTipoProdutoContainingIgnoreCase(@PathVariable(value = "tipoProdutos") String tipoProduto) {
-		List<Categoria> objetoCategoria = repositorio.findAllByTipoProdutoContainingIgnoreCase(tipoProduto);
+		List<Categoria> objetoCategoria = repositorio.buscarTipoProduto(tipoProduto);
 		if(objetoCategoria.isEmpty()) {
 			return ResponseEntity.status(204).build();
 		}else {
