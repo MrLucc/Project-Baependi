@@ -10,7 +10,7 @@ import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
 
-@RequestMapping
+@RequestMapping("/baependi/produtos")
 @RestController
 public class ControllerProdutos {
     private @Autowired
@@ -21,7 +21,7 @@ public class ControllerProdutos {
         return ResponseEntity.ok(repositorio.findAll());
     }
 
-    @GetMapping("/BuscarProdutoId/ {idProduto}")
+    @GetMapping("/BuscarProdutoId/{idProduto}")
     private ResponseEntity<Produtos> findById(@PathVariable(value = "idProduto") Long idProduto) {
         Optional<Produtos> objetoProduto = repositorio.findById(idProduto);
 
@@ -33,9 +33,9 @@ public class ControllerProdutos {
 
     }
 
-    @GetMapping("/acharPorNomeProduto/ {nomeProduto}")
+    @GetMapping("/acharPorNomeProduto/{nomeProduto}")
     private ResponseEntity<List<Produtos>> acharPorNome(@PathVariable(value = "nomeProduto") String nomeDoProduto) {
-        List<Produtos> objetoProduto = repositorio.findAllByNomeDoProdutoContainingIgnoreCase(nomeDoProduto);
+        List<Produtos> objetoProduto = repositorio.buscarPorNomeProduto(nomeDoProduto);
         if (objetoProduto.isEmpty()) {
             return ResponseEntity.status(204).build();
         } else {
