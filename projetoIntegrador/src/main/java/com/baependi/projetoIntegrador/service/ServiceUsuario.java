@@ -37,6 +37,11 @@ public class ServiceUsuario {
 				String estruturaLiteral = usuarioParaCadastrar.getEmail() + ":" + usuarioParaCadastrar.getSenha();
 				byte[] autorizaEstrutura = Base64.encodeBase64(estruturaLiteral.getBytes(Charset.forName("US-ASCII")));
 				String token = "Basic " + new String(autorizaEstrutura);
+				
+				usuarioParaCadastrar.setToken(token);
+				usuarioParaCadastrar.setIdUsuario(usuarioExistente.getIdUsuario());
+				usuarioParaCadastrar.setNomeUsuario(usuarioExistente.getNomeUsuario());
+				usuarioParaCadastrar.setSenha(usuarioExistente.getSenha());
 				return Optional.ofNullable(token);
 
 			} else {
