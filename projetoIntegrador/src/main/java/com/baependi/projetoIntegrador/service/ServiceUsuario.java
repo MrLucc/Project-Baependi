@@ -17,39 +17,35 @@ public class ServiceUsuario {
 	@Autowired
 	private RepositorioUsuario repository;
 
-	public Usuario cadastraUsuario(Usuario usuario) {
-		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-
-		String senhaEncoder = encoder.encode(usuario.getSenha());
-		usuario.setSenha(senhaEncoder);
-
-		return repository.save(usuario);
-
+	public Optional<Object> cadastraUsuario(Usuario usuario) {
+		return repository.findByEmail(usuario.getEmail()).map(novoUsuario -> {
+			return Optional.empty();
+		}).orElseGet(() -> {
+			BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+			String result = encoder.encode(usuario.getSenha());
+			usuario.setSenha(result);
+			return Optional.ofNullable(repository.save(usuario));
+		});
 	}
 
-	public Optional<UsuarioEspelho> Logar(Optional<UsuarioEspelho> user) {
+	public Optional<?> pegarUsuarioCadastrado(UsuarioEspelho usuarioParaCadastrar) {
+		return repository.findByEmail(usuarioParaCadastrar.getEmail()).map(usuarioExistente -> {
+			BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 
-		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-		Optional<Usuario> usuario = repository.buscarNome(user.get().getNomeUsuario());
+			if (encoder.matches(usuarioParaCadastrar.getSenha(), usuarioExistente.getSenha())) {
 
-		if (usuario.isPresent()) {
-			if (encoder.matches(user.get().getSenha(), usuario.get().getSenha())) {
+				String estruturaLiteral = usuarioParaCadastrar.getEmail() + ":" + usuarioParaCadastrar.getSenha();
+				byte[] autorizaEstrutura = Base64.encodeBase64(estruturaLiteral.getBytes(Charset.forName("US-ASCII")));
+				String token = "Basic " + new String(autorizaEstrutura);
+				return Optional.ofNullable(token);
 
-				String auth = user.get().getNomeUsuario() + ":" + user.get().getSenha();
-				byte[] encodedAuth = Base64.encodeBase64(auth.getBytes(Charset.forName("US-ASCII")));
-				String authHeader = "Basic" + new String(encodedAuth);
+			} else {
 
-				user.get().setToken(authHeader);
-				user.get().setNomeUsuario(usuario.get().getNomeUsuario());
-				user.get().setSenha(usuario.get().getSenha());
-				user.get().setEmail(usuario.get().getEmail());
-
-				return user;
-
+				return Optional.empty();
 			}
+		}).orElseGet(() -> {
 
-		}
-		return null;
-
+			return Optional.empty();
+		});
 	}
 }

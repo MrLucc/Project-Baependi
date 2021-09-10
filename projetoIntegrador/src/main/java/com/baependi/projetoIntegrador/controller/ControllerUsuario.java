@@ -17,50 +17,73 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.baependi.projetoIntegrador.models.Usuario;
+import com.baependi.projetoIntegrador.models.utilidades.UsuarioEspelho;
 import com.baependi.projetoIntegrador.repository.RepositorioUsuario;
+import com.baependi.projetoIntegrador.service.ServiceUsuario;
 
-@RestController  
+@RestController
 @RequestMapping("/baependi/usuario")
-public class ControllerUsuario  {
+public class ControllerUsuario {
 
 	private @Autowired RepositorioUsuario repositorio;
-	
+	private @Autowired ServiceUsuario servico;
+
 	@GetMapping("/buscarTodos")
-	private ResponseEntity<List<Usuario>> getAll(){
+	private ResponseEntity<List<Usuario>> getAll() {
 		return ResponseEntity.ok(repositorio.findAll());
 	}
-	
+
 	@GetMapping("/buscarId/{buscarId}")
-	private ResponseEntity<Usuario> getById(@PathVariable(value = "buscarId") Long idUsuario){
-		Optional <Usuario> objetoUsuario = repositorio.findById(idUsuario);
-				if (objetoUsuario.isPresent()) {
-					return ResponseEntity.status(200).body(objetoUsuario.get()); 
-				}else {
-					return ResponseEntity.status(204).build();
-				}
-			}
-	
+	private ResponseEntity<Usuario> getById(@PathVariable(value = "buscarId") Long idUsuario) {
+		Optional<Usuario> objetoUsuario = repositorio.findById(idUsuario);
+		if (objetoUsuario.isPresent()) {
+			return ResponseEntity.status(200).body(objetoUsuario.get());
+		} else {
+			return ResponseEntity.status(204).build();
+		}
+	}
+
 	@GetMapping("/buscarNome/{buscarNome}")
-	private ResponseEntity<Optional<Usuario>> getByName(@PathVariable(value = "buscarNome") String nomeUsuario){
+	private ResponseEntity<Optional<Usuario>> getByName(@PathVariable(value = "buscarNome") String nomeUsuario) {
 		Optional<Usuario> objetoUsuario = repositorio.buscarNome(nomeUsuario);
-	    if (objetoUsuario.isEmpty()) {
-	    	return ResponseEntity.status(204).build();
-	    }else {
-	    	return ResponseEntity.status(200).body(objetoUsuario);
-	    }
+		if (objetoUsuario.isEmpty()) {
+			return ResponseEntity.status(204).build();
+		} else {
+			return ResponseEntity.status(200).body(objetoUsuario);
+		}
 	}
-	@PostMapping("/salvar")
-	private ResponseEntity <Usuario> salvarUsuario(@Valid @RequestBody Usuario novoUsuario){
-		return ResponseEntity.status(201).body(repositorio.save(novoUsuario));
+
+	@PostMapping("/cadastrar")
+	private ResponseEntity<Object> salvarUsuario(@Valid @RequestBody Usuario novoUsuario) {
+		Optional<Object> objetoUsuario = servico.cadastraUsuario(novoUsuario);
+
+		if (objetoUsuario.isEmpty()) {
+			return ResponseEntity.status(400).build();
+
+		} else {
+
+			return ResponseEntity.status(201).body(objetoUsuario.get());
+
+		}
 	}
-	@PutMapping("/atualizar")
-	private ResponseEntity <Usuario> atualizarUsuario(@Valid @RequestBody Usuario atualizarUsuario){
-		return ResponseEntity.status(201).body(repositorio.save(atualizarUsuario));
-		
+
+	@PutMapping("/login")
+	private ResponseEntity<Object> atualizarUsuario(@Valid @RequestBody UsuarioEspelho atualizarUsuario) {
+		Optional<?> objetoLogin = servico.pegarUsuarioCadastrado(atualizarUsuario);
+
+		if (objetoLogin.isEmpty()) {
+
+			return ResponseEntity.status(400).build();
+
+		} else {
+
+			return ResponseEntity.status(201).body(objetoLogin.get());
+		}
+
 	}
+
 	@DeleteMapping("/deletar/{id}")
 	private void deletarUsuario(@PathVariable(value = "id") Long idUsuario) {
 		repositorio.deleteById(idUsuario);
 	}
 }
-  
