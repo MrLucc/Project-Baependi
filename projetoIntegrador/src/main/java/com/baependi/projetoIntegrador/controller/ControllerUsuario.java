@@ -43,13 +43,14 @@ public class ControllerUsuario {
 		}
 	}
 
-	@GetMapping("/buscarNome/{buscarNome}")
-	private ResponseEntity<Optional<Usuario>> getByName(@PathVariable(value = "buscarNome") String nomeUsuario) {
-		Optional<Usuario> objetoUsuario = repositorio.buscarNome(nomeUsuario);
+	@GetMapping("/{buscarNome}")
+	private ResponseEntity<List<Usuario>> getByName(@PathVariable(value = "buscarNome") String nomeUsuario) {
+		List<Usuario> objetoUsuario = repositorio.findAllByNomeUsuarioContainingIgnoreCase(nomeUsuario);
+		
 		if (objetoUsuario.isEmpty()) {
 			return ResponseEntity.status(204).build();
 		} else {
-			return ResponseEntity.status(200).body(objetoUsuario);
+			return ResponseEntity.status(201).body(objetoUsuario);
 		}
 	}
 

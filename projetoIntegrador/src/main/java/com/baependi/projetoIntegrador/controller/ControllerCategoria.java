@@ -62,7 +62,7 @@ public class ControllerCategoria {
 		return ResponseEntity.status(201).body(repositorio.save(categoriaAtualizada));
 	}
 
-	@DeleteMapping("/deletar/{idCategoria")
+	@DeleteMapping("/deletar/{idCategoria}")
 	private void deletarCategoria(@PathVariable(value = "idCategoria") Long idCategoria) {
 		repositorio.deleteById(idCategoria);
 	}
