@@ -19,7 +19,7 @@ public class Usuario {
 	private @Id @GeneratedValue(strategy = GenerationType.IDENTITY) Long idUsuario;
 	private @NotBlank String nomeUsuario;
 	private @NotBlank @Email String email;
-	private @NotBlank @Size(min = 6, max = 10) String senha;
+	private @NotBlank @Size(min = 6) String senha;
 	public Long getIdUsuario() {
 		return idUsuario;
 	}

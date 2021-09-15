@@ -53,7 +53,7 @@ public class ControllerProdutos {
         return ResponseEntity.status(201).body(repositorio.save(produtoAtualizado));
     }
 
-    @DeleteMapping("/deletar/{idProduto")
+    @DeleteMapping("/deletar/{idProduto}")
     private void deletarProduto(@PathVariable(value = "idProduto") Long idProduto) {
         repositorio.deleteById(idProduto);
     }
