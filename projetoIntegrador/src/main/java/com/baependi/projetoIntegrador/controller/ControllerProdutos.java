@@ -2,6 +2,8 @@ package com.baependi.projetoIntegrador.controller;
 
 import com.baependi.projetoIntegrador.models.Produtos;
 import com.baependi.projetoIntegrador.repository.RepositorioProdutos;
+import com.baependi.projetoIntegrador.service.ServiceProduto;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,7 +15,9 @@ import java.util.Optional;
 @RequestMapping("/baependi/produtos")
 @RestController
 public class ControllerProdutos {
+	
 	private @Autowired RepositorioProdutos repositorio;
+	private @Autowired ServiceProduto servico;
 
 	@GetMapping("/buscarTodos")
 	private ResponseEntity<List<Produtos>> GetAll() {
@@ -43,13 +47,23 @@ public class ControllerProdutos {
 	}
 
 	@PostMapping("/salvar")
-	private ResponseEntity<Produtos> salvarProduto(@Valid @RequestBody Produtos produtoSalvo) {
-		return ResponseEntity.status(201).body(repositorio.save(produtoSalvo));
+	private ResponseEntity<Object> salvarProduto(@Valid @RequestBody Produtos produtoSalvo) {
+		Optional<?> objetoSalvar = servico.cadastrarProduto(produtoSalvo);
+		if(objetoSalvar.isPresent()) {
+			return ResponseEntity.status(201).body(objetoSalvar);
+		} else {
+			return ResponseEntity.status(204).build();
+			}
 	}
 
 	@PutMapping("/atualizar")
-	private ResponseEntity<Produtos> atualizarProduto(@Valid @RequestBody Produtos produtoAtualizado) {
-		return ResponseEntity.status(201).body(repositorio.save(produtoAtualizado));
+	private ResponseEntity<Object> atualizarProduto(@Valid @RequestBody Produtos produtoAtualizado) {
+	Optional<Produtos> objetoAtualizar = servico.alterarProduto(produtoAtualizado);
+	if(objetoAtualizar.isPresent()) {
+		return ResponseEntity.status(201).body(objetoAtualizar.get());
+	} else {
+		return ResponseEntity.status(204).build();
+	}
 	}
 
 	@DeleteMapping("/deletar/{idProduto}")
