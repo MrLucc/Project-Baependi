@@ -6,13 +6,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.baependi.projetoIntegrador.models.Produtos;
+import com.baependi.projetoIntegrador.models.Usuario;
 import com.baependi.projetoIntegrador.repository.RepositorioProdutos;
+import com.baependi.projetoIntegrador.repository.RepositorioUsuario;
 
 @Service
 public class ServiceProduto {
 
 	@Autowired
 	private RepositorioProdutos repositoryP;
+	
+	@Autowired
+	private RepositorioUsuario repositoryU;
 
 	/**
 	 * Metódo usado para alterar um produto. O mesmo retorna um Optional com os
@@ -36,6 +41,25 @@ public class ServiceProduto {
 		}).orElseGet(() -> {
 			return Optional.empty();// Caso alguma informação do produto não exista.
 		});
+	}
+	public Optional<?> cadastrarProduto(Produtos novoProduto) {
+		Optional<Usuario> objetoProduto = repositoryU.findById(novoProduto.getComprador().getIdUsuario());
+		return repositoryP.findById(novoProduto.getIdProduto()).map(produtoExistente -> {
+			if(objetoProduto.isPresent()) {
+				novoProduto.setNomeDoProduto(produtoExistente.getNomeDoProduto());
+				novoProduto.setPrecoDoProduto(produtoExistente.getPrecoDoProduto());
+				novoProduto.setDescricaoDoProduto(produtoExistente.getDescricaoDoProduto());
+				novoProduto.setAutoreDoProduto(produtoExistente.getAutoreDoProduto());
+				novoProduto.setTipoDeProduto(produtoExistente.getTipoDeProduto());
+				return Optional.ofNullable(repositoryP.save(novoProduto));
+			}else {
+				return Optional.empty();
+			}
+			
+		}).orElseGet(() ->{
+			return Optional.empty();
+			});
+		
 	}
 
 }
