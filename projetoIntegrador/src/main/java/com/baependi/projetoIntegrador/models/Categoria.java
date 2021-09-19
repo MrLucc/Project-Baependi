@@ -20,6 +20,14 @@ public class Categoria {
 	@JsonIgnoreProperties({"categoriaProduto"})
 	private Produtos codigoProduto;
 
+	public Produtos getCodigoProduto() {
+		return codigoProduto;
+	}
+
+	public void setCodigoProduto(Produtos codigoProduto) {
+		this.codigoProduto = codigoProduto;
+	}
+
 	public Long getIdCategoria() {
 		return idCategoria;
 	}

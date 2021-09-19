@@ -18,12 +18,15 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.baependi.projetoIntegrador.models.Categoria;
 import com.baependi.projetoIntegrador.repository.RepositorioCategoria;
+import com.baependi.projetoIntegrador.service.ServiceCategoria;
 
 @RestController
 @RequestMapping("/baependi/categoria")
 public class ControllerCategoria {
 
 	private @Autowired RepositorioCategoria repositorio;
+	private @Autowired ServiceCategoria repositorioS;
+	
 
 	@GetMapping("/buscarTodas")
 	private ResponseEntity<List<Categoria>> GetAll() {
@@ -54,13 +57,23 @@ public class ControllerCategoria {
 	}
 
 	@PostMapping("/salvar")
-	private ResponseEntity<Categoria> salvarCategoria(@Valid @RequestBody Categoria categoriaSalva) {
-		return ResponseEntity.status(201).body(repositorio.save(categoriaSalva));
+	private ResponseEntity<Object> salvarCategoria(@Valid @RequestBody Categoria categoriaSalva) {
+		Optional<?> objetoSalvar = repositorioS.criaCategoria(categoriaSalva);
+		if(objetoSalvar.isPresent()) {
+			return ResponseEntity.status(201).body(objetoSalvar);
+		}else {
+			return ResponseEntity.status(204).build();
+		}
 	}
 
 	@PutMapping("/atualizar")
-	private ResponseEntity<Categoria> atualizarCategoria(@Valid @RequestBody Categoria categoriaAtualizada) {
-		return ResponseEntity.status(201).body(repositorio.save(categoriaAtualizada));
+	private ResponseEntity<Object> atualizarCategoria(@Valid @RequestBody Categoria categoriaAtualizada) {
+		Optional<Categoria> objetoAtualizar = repositorioS.alterarCategoria(categoriaAtualizada);
+		if(objetoAtualizar.isPresent()) {
+			return ResponseEntity.status(201).body(objetoAtualizar.get());
+		}else {
+			return ResponseEntity.status(204).build();
+		}
 	}
 
 	@DeleteMapping("/deletar/{idCategoria}")
