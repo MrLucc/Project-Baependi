@@ -26,7 +26,6 @@ public class ControllerCategoria {
 
 	private @Autowired RepositorioCategoria repositorio;
 	private @Autowired ServiceCategoria repositorioS;
-	
 
 	@GetMapping("/buscarTodas")
 	private ResponseEntity<List<Categoria>> GetAll() {
@@ -57,21 +56,16 @@ public class ControllerCategoria {
 	}
 
 	@PostMapping("/salvar")
-	private ResponseEntity<Object> salvarCategoria(@Valid @RequestBody Categoria categoriaSalva) {
-		Optional<?> objetoSalvar = repositorioS.criaCategoria(categoriaSalva);
-		if(objetoSalvar.isPresent()) {
-			return ResponseEntity.status(201).body(objetoSalvar);
-		}else {
-			return ResponseEntity.status(204).build();
-		}
+	private ResponseEntity<Categoria> salvarCategoria(@Valid @RequestBody Categoria categoriaSalva) {
+		return ResponseEntity.status(201).body(repositorio.save(categoriaSalva));
 	}
 
 	@PutMapping("/atualizar")
 	private ResponseEntity<Object> atualizarCategoria(@Valid @RequestBody Categoria categoriaAtualizada) {
 		Optional<Categoria> objetoAtualizar = repositorioS.alterarCategoria(categoriaAtualizada);
-		if(objetoAtualizar.isPresent()) {
+		if (objetoAtualizar.isPresent()) {
 			return ResponseEntity.status(201).body(objetoAtualizar.get());
-		}else {
+		} else {
 			return ResponseEntity.status(204).build();
 		}
 	}
