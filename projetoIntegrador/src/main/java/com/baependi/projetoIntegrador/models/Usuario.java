@@ -24,10 +24,10 @@ public class Usuario {
 	private @NotBlank String nomeUsuario;
 	private @NotBlank @Email String email;
 	private @NotBlank @Size(min = 6) String senha;
-	
+
 	@OneToMany(mappedBy = "comprador", cascade = CascadeType.REMOVE)
-	@JsonIgnoreProperties({"comprador"})
-	List<Produtos> listaDeCompradores = new ArrayList<>();
+	@JsonIgnoreProperties({ "comprador" })
+	List<Produtos> listaDeProdutos = new ArrayList<>();
 
 	public Long getIdUsuario() {
 		return idUsuario;
@@ -61,12 +61,12 @@ public class Usuario {
 		this.senha = senha;
 	}
 
-	public List<Produtos> getListaDeCompradores() {
-		return listaDeCompradores;
+	public List<Produtos> getListaDeProdutos() {
+		return listaDeProdutos;
 	}
 
-	public void setListaDeCompradores(List<Produtos> listaDeCompradores) {
-		this.listaDeCompradores = listaDeCompradores;
+	public void setListaDeProdutos(List<Produtos> listaDeProdutos) {
+		this.listaDeProdutos = listaDeProdutos;
 	}
-	 
+
 }

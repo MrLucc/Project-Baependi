@@ -5,8 +5,9 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.baependi.projetoIntegrador.models.Categoria;
 import com.baependi.projetoIntegrador.models.Produtos;
-import com.baependi.projetoIntegrador.models.Usuario;
+import com.baependi.projetoIntegrador.repository.RepositorioCategoria;
 import com.baependi.projetoIntegrador.repository.RepositorioProdutos;
 import com.baependi.projetoIntegrador.repository.RepositorioUsuario;
 
@@ -15,7 +16,10 @@ public class ServiceProduto {
 
 	@Autowired
 	private RepositorioProdutos repositoryP;
-	
+
+	@Autowired
+	private RepositorioCategoria repositoryC;
+
 	@Autowired
 	private RepositorioUsuario repositoryU;
 
@@ -42,24 +46,22 @@ public class ServiceProduto {
 			return Optional.empty();// Caso alguma informação do produto não exista.
 		});
 	}
+
 	public Optional<?> cadastrarProduto(Produtos novoProduto) {
-		Optional<Usuario> objetoProduto = repositoryU.findById(novoProduto.getComprador().getIdUsuario());
-		return repositoryP.findById(novoProduto.getIdProduto()).map(produtoExistente -> {
-			if(objetoProduto.isPresent()) {
-				novoProduto.setNomeDoProduto(produtoExistente.getNomeDoProduto());
-				novoProduto.setPrecoDoProduto(produtoExistente.getPrecoDoProduto());
-				novoProduto.setDescricaoDoProduto(produtoExistente.getDescricaoDoProduto());
-				novoProduto.setAutoreDoProduto(produtoExistente.getAutoreDoProduto());
-				novoProduto.setTipoDeProduto(produtoExistente.getTipoDeProduto());
+		Optional<Categoria> objetoProduto = repositoryC.findById(novoProduto.getCodigoCategoria().getIdCategoria());
+		return repositoryU.findById(novoProduto.getComprador().getIdUsuario()).map(produtoExistente -> {
+			if (objetoProduto.isPresent()) {
+				novoProduto.setComprador(produtoExistente);
+				novoProduto.setCodigoCategoria(objetoProduto.get());
 				return Optional.ofNullable(repositoryP.save(novoProduto));
-			}else {
+			} else {
 				return Optional.empty();
 			}
-			
-		}).orElseGet(() ->{
+
+		}).orElseGet(() -> {
 			return Optional.empty();
-			});
-		
+		});
+
 	}
 
 }
