@@ -1,8 +1,5 @@
 package com.baependi.projetoIntegrador.models;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 
@@ -18,11 +15,10 @@ public class Categoria {
 	private boolean revendido;
 	private @NotBlank String tipoMaterial;
 	
-	@OneToMany(mappedBy = "codigoCategoria", cascade = CascadeType.REMOVE)
-	@JsonIgnoreProperties({"codigoCategoria"})
-	List<Produtos> categoriaProdutos = new ArrayList<>();
-	
-	
+	@ManyToOne
+	@JoinColumn(name = "categoriaProduto_id")
+	@JsonIgnoreProperties({"categoriaProduto"})
+	private Produtos codigoProduto;
 
 	public Long getIdCategoria() {
 		return idCategoria;
@@ -55,14 +51,5 @@ public class Categoria {
 	public void setTipoMaterial(String tipoMaterial) {
 		this.tipoMaterial = tipoMaterial;
 	}
-
-	public List<Produtos> getCategoriaProduto() {
-		return categoriaProdutos;
-	}
-
-	public void setCategoriaProduto(List<Produtos> categoriaProduto) {
-		this.categoriaProdutos = categoriaProduto;
-	}
-	
 
 }
