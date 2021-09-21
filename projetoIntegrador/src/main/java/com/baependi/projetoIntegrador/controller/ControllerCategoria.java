@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.baependi.projetoIntegrador.models.Categoria;
+import com.baependi.projetoIntegrador.models.exceptions.excecaoIdCategoriaNaoExistente;
 import com.baependi.projetoIntegrador.repository.RepositorioCategoria;
 import com.baependi.projetoIntegrador.service.ServiceCategoria;
 
@@ -66,7 +67,7 @@ public class ControllerCategoria {
 		if (objetoAtualizar.isPresent()) {
 			return ResponseEntity.status(201).body(objetoAtualizar.get());
 		} else {
-			return ResponseEntity.status(204).build();
+			throw new excecaoIdCategoriaNaoExistente(categoriaAtualizada.getIdCategoria());
 		}
 	}
 

@@ -37,7 +37,7 @@ public class ServiceUsuario {
 				String estruturaLiteral = usuarioParaCadastrar.getEmail() + ":" + usuarioParaCadastrar.getSenha();
 				byte[] autorizaEstrutura = Base64.encodeBase64(estruturaLiteral.getBytes(Charset.forName("US-ASCII")));
 				String token = "Basic " + new String(autorizaEstrutura);
-				
+
 				usuarioParaCadastrar.setToken(token);
 				usuarioParaCadastrar.setIdUsuario(usuarioExistente.getIdUsuario());
 				usuarioParaCadastrar.setNomeUsuario(usuarioExistente.getNomeUsuario());
@@ -53,4 +53,19 @@ public class ServiceUsuario {
 			return Optional.empty();
 		});
 	}
+
+	public Optional<?> atualizarUsuario(UsuarioEspelho usuarioParaAlterar) {
+		return repository.findById(usuarioParaAlterar.getIdUsuario()).map(usuarioExistente -> {
+			BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+
+			String senhaEncriptada = encoder.encode(usuarioParaAlterar.getSenha());
+			usuarioExistente.setNomeUsuario(usuarioParaAlterar.getNomeUsuario());
+			usuarioExistente.setSenha(senhaEncriptada);
+
+			return Optional.ofNullable(repository.save(usuarioExistente));
+		}).orElseGet(() -> {
+			return Optional.empty();
+		});
+	}
+
 }
