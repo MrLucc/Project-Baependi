@@ -33,7 +33,7 @@ public class Produtos {
 	
 	@ManyToOne
 	@JoinColumn(name = "comprador_id")
-	@JsonIgnoreProperties({"listaDeCompradores"})
+	@JsonIgnoreProperties({"comprador"})
 	private Usuario comprador;
 	
 
