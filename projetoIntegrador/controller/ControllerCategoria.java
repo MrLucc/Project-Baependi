@@ -18,14 +18,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.baependi.projetoIntegrador.models.Categoria;
 import com.baependi.projetoIntegrador.repository.RepositorioCategoria;
-import com.baependi.projetoIntegrador.service.ServiceCategoria;
 
 @RestController
 @RequestMapping("/baependi/categoria")
 public class ControllerCategoria {
 
 	private @Autowired RepositorioCategoria repositorio;
-	private @Autowired ServiceCategoria repositorioS;
 
 	@GetMapping("/buscarTodas")
 	private ResponseEntity<List<Categoria>> GetAll() {
@@ -61,13 +59,8 @@ public class ControllerCategoria {
 	}
 
 	@PutMapping("/atualizar")
-	private ResponseEntity<Object> atualizarCategoria(@Valid @RequestBody Categoria categoriaAtualizada) {
-		Optional<Categoria> objetoAtualizar = repositorioS.alterarCategoria(categoriaAtualizada);
-		if (objetoAtualizar.isPresent()) {
-			return ResponseEntity.status(201).body(objetoAtualizar.get());
-		} else {
-			return ResponseEntity.status(204).build();
-		}
+	private ResponseEntity<Categoria> atualizarCategoria(@Valid @RequestBody Categoria categoriaAtualizada) {
+		return ResponseEntity.status(201).body(repositorio.save(categoriaAtualizada));
 	}
 
 	@DeleteMapping("/deletar/{idCategoria}")
