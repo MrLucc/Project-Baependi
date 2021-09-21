@@ -1,6 +1,8 @@
 package com.baependi.projetoIntegrador.controller;
 
 import com.baependi.projetoIntegrador.models.Produtos;
+import com.baependi.projetoIntegrador.models.exceptions.excecaoIdCategoriaNaoExistente;
+import com.baependi.projetoIntegrador.models.exceptions.excecaoIdProdutoNaoExistente;
 import com.baependi.projetoIntegrador.repository.RepositorioProdutos;
 import com.baependi.projetoIntegrador.service.ServiceProduto;
 
@@ -15,7 +17,7 @@ import java.util.Optional;
 @RequestMapping("/baependi/produtos")
 @RestController
 public class ControllerProdutos {
-	
+
 	private @Autowired RepositorioProdutos repositorio;
 	private @Autowired ServiceProduto servico;
 
@@ -49,21 +51,21 @@ public class ControllerProdutos {
 	@PostMapping("/salvar")
 	private ResponseEntity<Object> salvarProduto(@Valid @RequestBody Produtos produtoSalvo) {
 		Optional<?> objetoSalvar = servico.cadastrarProduto(produtoSalvo);
-		if(objetoSalvar.isPresent()) {
+		if (objetoSalvar.isPresent()) {
 			return ResponseEntity.status(201).body(objetoSalvar);
 		} else {
 			return ResponseEntity.status(204).build();
-			}
+		}
 	}
 
 	@PutMapping("/atualizar")
 	private ResponseEntity<Object> atualizarProduto(@Valid @RequestBody Produtos produtoAtualizado) {
-	Optional<Produtos> objetoAtualizar = servico.alterarProduto(produtoAtualizado);
-	if(objetoAtualizar.isPresent()) {
-		return ResponseEntity.status(201).body(objetoAtualizar.get());
-	} else {
-		return ResponseEntity.status(204).build();
-	}
+		Optional<Produtos> objetoAtualizar = servico.alterarProduto(produtoAtualizado);
+		if (objetoAtualizar.isPresent()) {
+			return ResponseEntity.status(201).body(objetoAtualizar.get());
+		} else {
+			throw new excecaoIdProdutoNaoExistente(produtoAtualizado.getIdProduto());
+		}
 	}
 
 	@DeleteMapping("/deletar/{idProduto}")

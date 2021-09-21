@@ -17,6 +17,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.baependi.projetoIntegrador.models.Usuario;
+import com.baependi.projetoIntegrador.models.exceptions.excecaoEmailExistente;
+import com.baependi.projetoIntegrador.models.exceptions.excecaoErroEmailOuSenhaExistente;
+import com.baependi.projetoIntegrador.models.exceptions.excecaoIdUsuarioNaoExistente;
 import com.baependi.projetoIntegrador.models.utilidades.UsuarioEspelho;
 import com.baependi.projetoIntegrador.repository.RepositorioUsuario;
 import com.baependi.projetoIntegrador.service.ServiceUsuario;
@@ -58,29 +61,39 @@ public class ControllerUsuario {
 	private ResponseEntity<Object> salvarUsuario(@Valid @RequestBody Usuario novoUsuario) {
 		Optional<Object> objetoUsuario = servico.cadastraUsuario(novoUsuario);
 
-		if (objetoUsuario.isEmpty()) {
-			return ResponseEntity.status(400).build();
+		if (objetoUsuario.isPresent()) {
+			return ResponseEntity.status(201).body(objetoUsuario);
 
 		} else {
 
-			return ResponseEntity.status(201).body(objetoUsuario.get());
-
+			throw new excecaoEmailExistente(novoUsuario.getEmail());
 		}
 	}
 
 	@PutMapping("/login")
-	private ResponseEntity<Object> atualizarUsuario(@Valid @RequestBody UsuarioEspelho atualizarUsuario) {
-		Optional<?> objetoLogin = servico.pegarUsuarioCadastrado(atualizarUsuario);
+	private ResponseEntity<Object> loginUsuario(@Valid @RequestBody UsuarioEspelho logarUsuario) {
+		Optional<?> objetoLogin = servico.pegarUsuarioCadastrado(logarUsuario);
 
-		if (objetoLogin.isEmpty()) {
+		if (objetoLogin.isPresent()) {
 
-			return ResponseEntity.status(400).build();
+			return ResponseEntity.status(201).body(objetoLogin.get());
 
 		} else {
 
-			return ResponseEntity.status(201).body(objetoLogin.get());
+			throw new excecaoErroEmailOuSenhaExistente();
 		}
 
+	}
+
+	@PutMapping("/atualizar")
+	private ResponseEntity<Object> atualizarUsuario(@Valid @RequestBody UsuarioEspelho atualizarUsuario) {
+		Optional<?> objetoAtualizar = servico.atualizarUsuario(atualizarUsuario);
+
+		if (objetoAtualizar.isPresent()) {
+			return ResponseEntity.status(201).body(objetoAtualizar.get());
+		} else {
+			throw new excecaoIdUsuarioNaoExistente(atualizarUsuario.getIdUsuario());
+		}
 	}
 
 	@DeleteMapping("/deletar/{id}")
