@@ -26,8 +26,8 @@ public class Usuario {
 	private @NotBlank @Size(min = 6) String senha;
 
 	@OneToMany(mappedBy = "comprador", cascade = CascadeType.REMOVE)
-	@JsonIgnoreProperties({ "comprador" })
-	List<Produtos> listaDeProdutos = new ArrayList<>();
+	@JsonIgnoreProperties({"comprador"})
+	private List<Produtos> listaDeProdutos = new ArrayList<>();
 
 	public Long getIdUsuario() {
 		return idUsuario;

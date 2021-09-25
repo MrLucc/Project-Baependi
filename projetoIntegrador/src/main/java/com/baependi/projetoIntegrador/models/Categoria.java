@@ -17,12 +17,10 @@ public class Categoria {
 	private @NotBlank String tipoProduto;
 	private boolean revendido;
 	private @NotBlank String tipoMaterial;
-	
+
 	@OneToMany(mappedBy = "codigoCategoria", cascade = CascadeType.REMOVE)
-	@JsonIgnoreProperties({"codigoCategoria"})
-	List<Produtos> categoriaProdutos = new ArrayList<>();
-	
-	
+	@JsonIgnoreProperties({ "codigoCategoria" })
+	private List<Produtos> categoriaProdutos = new ArrayList<>();
 
 	public Long getIdCategoria() {
 		return idCategoria;
@@ -56,13 +54,12 @@ public class Categoria {
 		this.tipoMaterial = tipoMaterial;
 	}
 
-	public List<Produtos> getCategoriaProduto() {
+	public List<Produtos> getCategoriaProdutos() {
 		return categoriaProdutos;
 	}
 
-	public void setCategoriaProduto(List<Produtos> categoriaProduto) {
-		this.categoriaProdutos = categoriaProduto;
+	public void setCategoriaProdutos(List<Produtos> categoriaProdutos) {
+		this.categoriaProdutos = categoriaProdutos;
 	}
-	
 
 }

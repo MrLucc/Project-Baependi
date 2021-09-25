@@ -1,6 +1,5 @@
 package com.baependi.projetoIntegrador.models;
 
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -21,21 +20,19 @@ public class Produtos {
 
 	private @Id @GeneratedValue(strategy = GenerationType.IDENTITY) Long idProduto;
 	private @NotBlank @Size(min = 3, max = 255) String nomeDoProduto;
-	private @NotNull float precoDoProduto;
-	private @NotBlank String descricaoDoProduto;
-	private @NotBlank String autoreDoProduto;
-	private @NotBlank @Size(min = 1) String tipoDeProduto;
-	
+	private @NotNull float precoProduto;
+	private @NotBlank String descricaoProduto;
+	private @NotBlank String autoreProduto;
+
 	@ManyToOne
 	@JoinColumn(name = "categoriaProdutos_id")
-	@JsonIgnoreProperties({"categoriaProdutos"})
+	@JsonIgnoreProperties({ "categoriaProdutos" })
 	private Categoria codigoCategoria;
-	
+
 	@ManyToOne
 	@JoinColumn(name = "comprador_id")
-	@JsonIgnoreProperties({"comprador"})
+	@JsonIgnoreProperties({ "listaDeProdutos" })
 	private Usuario comprador;
-	
 
 	public Long getIdProduto() {
 		return idProduto;
@@ -54,35 +51,27 @@ public class Produtos {
 	}
 
 	public float getPrecoDoProduto() {
-		return precoDoProduto;
+		return precoProduto;
 	}
 
 	public void setPrecoDoProduto(float precoDoProduto) {
-		this.precoDoProduto = precoDoProduto;
+		this.precoProduto = precoDoProduto;
 	}
 
 	public String getDescricaoDoProduto() {
-		return descricaoDoProduto;
+		return descricaoProduto;
 	}
 
 	public void setDescricaoDoProduto(String descricaoDoProduto) {
-		this.descricaoDoProduto = descricaoDoProduto;
+		this.descricaoProduto = descricaoDoProduto;
 	}
 
 	public String getAutoreDoProduto() {
-		return autoreDoProduto;
+		return autoreProduto;
 	}
 
 	public void setAutoreDoProduto(String autoreDoProduto) {
-		this.autoreDoProduto = autoreDoProduto;
-	}
-
-	public String getTipoDeProduto() {
-		return tipoDeProduto;
-	}
-
-	public void setTipoDeProduto(String tipoDeProduto) {
-		this.tipoDeProduto = tipoDeProduto;
+		this.autoreProduto = autoreDoProduto;
 	}
 
 	public Categoria getCodigoCategoria() {
