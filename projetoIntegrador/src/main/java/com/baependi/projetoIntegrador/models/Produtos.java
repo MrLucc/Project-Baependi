@@ -19,7 +19,7 @@ import com.sun.istack.NotNull;
 public class Produtos {
 
 	private @Id @GeneratedValue(strategy = GenerationType.IDENTITY) Long idProduto;
-	private @NotBlank @Size(min = 3, max = 255) String nomeDoProduto;
+	private @NotBlank @Size(min = 3, max = 255) String nomeProduto;
 	private @NotNull float precoProduto;
 	private @NotBlank String descricaoProduto;
 	private @NotBlank String autoreProduto;
@@ -42,36 +42,36 @@ public class Produtos {
 		this.idProduto = idProduto;
 	}
 
-	public String getNomeDoProduto() {
-		return nomeDoProduto;
+	public String getNomeProduto() {
+		return nomeProduto;
 	}
 
-	public void setNomeDoProduto(String nomeDoProduto) {
-		this.nomeDoProduto = nomeDoProduto;
+	public void setNomeProduto(String nomeProduto) {
+		this.nomeProduto = nomeProduto;
 	}
 
-	public float getPrecoDoProduto() {
+	public float getPrecoProduto() {
 		return precoProduto;
 	}
 
-	public void setPrecoDoProduto(float precoDoProduto) {
-		this.precoProduto = precoDoProduto;
+	public void setPrecoProduto(float precoProduto) {
+		this.precoProduto = precoProduto;
 	}
 
-	public String getDescricaoDoProduto() {
+	public String getDescricaoProduto() {
 		return descricaoProduto;
 	}
 
-	public void setDescricaoDoProduto(String descricaoDoProduto) {
-		this.descricaoProduto = descricaoDoProduto;
+	public void setDescricaoProduto(String descricaoProduto) {
+		this.descricaoProduto = descricaoProduto;
 	}
 
-	public String getAutoreDoProduto() {
+	public String getAutoreProduto() {
 		return autoreProduto;
 	}
 
-	public void setAutoreDoProduto(String autoreDoProduto) {
-		this.autoreProduto = autoreDoProduto;
+	public void setAutoreProduto(String autoreProduto) {
+		this.autoreProduto = autoreProduto;
 	}
 
 	public Categoria getCodigoCategoria() {
@@ -90,4 +90,5 @@ public class Produtos {
 		this.comprador = comprador;
 	}
 
+	
 }

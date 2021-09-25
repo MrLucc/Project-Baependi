@@ -17,11 +17,10 @@ public class ServiceCategoria {
 	@Autowired
 	RepositorioProdutos repositorioP;
 
-
 	public Optional<Categoria> alterarCategoria(Categoria alterarCategoria) {
 		return repositorioC.findById(alterarCategoria.getIdCategoria()).map(categoriaExistente -> {
 			categoriaExistente.setTipoProduto(alterarCategoria.getTipoProduto());
-			categoriaExistente.setRevendido(alterarCategoria.isRevendido());
+			categoriaExistente.setArtesanal(alterarCategoria.isArtesanal());
 			categoriaExistente.setTipoMaterial(alterarCategoria.getTipoMaterial());
 			return Optional.ofNullable(repositorioC.save(alterarCategoria));
 		}).orElseGet(() -> {

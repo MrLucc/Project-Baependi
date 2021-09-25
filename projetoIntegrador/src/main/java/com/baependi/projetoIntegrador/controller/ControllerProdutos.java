@@ -38,8 +38,8 @@ public class ControllerProdutos {
 	}
 
 	@GetMapping("/acharPorNomeProduto/{nomeProduto}")
-	private ResponseEntity<List<Produtos>> acharPorNome(@PathVariable(value = "nomeProduto") String nomeDoProduto) {
-		List<Produtos> objetoProduto = repositorio.buscarPorNomeProduto(nomeDoProduto);
+	private ResponseEntity<List<Produtos>> acharPorNome(@PathVariable(value = "nomeProduto") String nomeProduto) {
+		List<Produtos> objetoProduto = repositorio.findAllByNomeProdutoContainingIgnoreCase(nomeProduto);
 		if (objetoProduto.isEmpty()) {
 			return ResponseEntity.status(204).build();
 		} else {

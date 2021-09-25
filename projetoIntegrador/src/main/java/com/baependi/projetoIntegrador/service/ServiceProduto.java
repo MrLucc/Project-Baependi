@@ -36,13 +36,13 @@ public class ServiceProduto {
 
 	public Optional<Produtos> alterarProduto(Produtos produtoParaAlterar) {
 		return repositoryP.findById(produtoParaAlterar.getIdProduto()).map(produtoExistente -> {
-			produtoExistente.setNomeDoProduto(produtoParaAlterar.getNomeDoProduto());
-			produtoExistente.setPrecoDoProduto(produtoParaAlterar.getPrecoDoProduto());
-			produtoExistente.setDescricaoDoProduto(produtoParaAlterar.getDescricaoDoProduto());
-			produtoExistente.setAutoreDoProduto(produtoParaAlterar.getAutoreDoProduto());
+			produtoExistente.setNomeProduto(produtoParaAlterar.getNomeProduto());
+			produtoExistente.setPrecoProduto(produtoParaAlterar.getPrecoProduto());
+			produtoExistente.setDescricaoProduto(produtoParaAlterar.getDescricaoProduto());
+			produtoExistente.setAutoreProduto(produtoParaAlterar.getAutoreProduto());
 			return Optional.ofNullable(repositoryP.save(produtoExistente));
 		}).orElseGet(() -> {
-			return Optional.empty();// Caso alguma informação do produto não exista.
+			return Optional.empty();
 		});
 	}
 
