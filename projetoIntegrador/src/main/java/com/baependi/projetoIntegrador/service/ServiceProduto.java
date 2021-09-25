@@ -40,7 +40,6 @@ public class ServiceProduto {
 			produtoExistente.setPrecoDoProduto(produtoParaAlterar.getPrecoDoProduto());
 			produtoExistente.setDescricaoDoProduto(produtoParaAlterar.getDescricaoDoProduto());
 			produtoExistente.setAutoreDoProduto(produtoParaAlterar.getAutoreDoProduto());
-			produtoExistente.setTipoDeProduto(produtoParaAlterar.getTipoDeProduto());
 			return Optional.ofNullable(repositoryP.save(produtoExistente));
 		}).orElseGet(() -> {
 			return Optional.empty();// Caso alguma informação do produto não exista.

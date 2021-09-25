@@ -3,7 +3,6 @@ package com.baependi.projetoIntegrador.manipulators;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;

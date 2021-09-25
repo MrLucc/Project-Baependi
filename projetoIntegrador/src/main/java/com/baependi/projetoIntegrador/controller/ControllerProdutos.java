@@ -1,7 +1,6 @@
 package com.baependi.projetoIntegrador.controller;
 
 import com.baependi.projetoIntegrador.models.Produtos;
-import com.baependi.projetoIntegrador.models.exceptions.excecaoIdCategoriaNaoExistente;
 import com.baependi.projetoIntegrador.models.exceptions.excecaoIdProdutoNaoExistente;
 import com.baependi.projetoIntegrador.repository.RepositorioProdutos;
 import com.baependi.projetoIntegrador.service.ServiceProduto;
