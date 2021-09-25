@@ -1,11 +1,12 @@
 package com.baependi.projetoIntegrador.models.exceptions;
 
 public class excecaoErroEmailOuSenhaExistente extends RuntimeException {
+	
 	/*
 	 * 
-	 * a
+	 * 
 	 */
-	private static final long SerialVersionUid = 1L;
+	private static final long serialVersionUID = 1L;
 
 	public excecaoErroEmailOuSenhaExistente() {
 		super("E-mail ou senha inválidos!");
