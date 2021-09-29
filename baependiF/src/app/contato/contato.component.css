@@ -1,0 +1,25 @@
+.center{
+    text-align: center;
+}
+.container {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+}
+.mb-20{
+    margin-bottom: 20px;
+}
+
+.top{
+    margin-top: 5;
+}
+.espaco{
+    padding-left: 200px;
+}
+.verde{
+    color:#228B22
+}
+.baby{
+    color: rgb(100,149,237);
+}
