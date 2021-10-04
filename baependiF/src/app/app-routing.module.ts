@@ -13,7 +13,9 @@ const routes: Routes = [
   {path:'contato', component: ContatoComponent},
   {path:'sobre-nos', component: SobreNosComponent},
   {path: 'menu', component: MenuComponent},
-  {path:'rodape', component: RodapeComponent}
+
+  {path: 'rodape', component: RodapeComponent}
+
 ];
 
 @NgModule({
