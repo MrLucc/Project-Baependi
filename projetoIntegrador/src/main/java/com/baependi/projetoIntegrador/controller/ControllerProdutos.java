@@ -13,8 +13,9 @@ import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
 
-@RequestMapping("/baependi/produtos")
 @RestController
+@RequestMapping("/baependi/produtos")
+@CrossOrigin(origins = "", allowedHeaders = "")
 public class ControllerProdutos {
 
 	private @Autowired RepositorioProdutos repositorio;

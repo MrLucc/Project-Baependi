@@ -27,9 +27,11 @@ public class Usuario {
 	private @NotBlank @CPF String cpf;
 	private @NotBlank @Email String email;
 	private @NotBlank @Size(min = 6) String senha;
+	private String foto;
+	private String tipoUsuario;
 
 	@OneToMany(mappedBy = "comprador", cascade = CascadeType.REMOVE)
-	@JsonIgnoreProperties({"comprador"})
+	@JsonIgnoreProperties({ "comprador" })
 	private List<Produtos> listaDeProdutos = new ArrayList<>();
 
 	public Long getIdUsuario() {
@@ -47,7 +49,6 @@ public class Usuario {
 	public void setNomeUsuario(String nomeUsuario) {
 		this.nomeUsuario = nomeUsuario;
 	}
-	
 
 	public String getCpf() {
 		return cpf;
@@ -71,6 +72,22 @@ public class Usuario {
 
 	public void setSenha(String senha) {
 		this.senha = senha;
+	}
+
+	public String getFoto() {
+		return foto;
+	}
+
+	public void setFoto(String foto) {
+		this.foto = foto;
+	}
+
+	public String getTipoUsuario() {
+		return tipoUsuario;
+	}
+
+	public void setTipoUsuario(String tipoUsuario) {
+		this.tipoUsuario = tipoUsuario;
 	}
 
 	public List<Produtos> getListaDeProdutos() {
