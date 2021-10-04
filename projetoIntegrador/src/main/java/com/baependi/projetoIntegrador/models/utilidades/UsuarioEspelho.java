@@ -10,6 +10,8 @@ public class UsuarioEspelho {
 	private Long idUsuario;
 	private String nomeUsuario;
 	private String cpf;
+	public String foto;
+	public String tipoUsuario;
 	private String token;
 
 	public String getEmail() {
@@ -50,6 +52,22 @@ public class UsuarioEspelho {
 
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
+	}
+
+	public String getFoto() {
+		return foto;
+	}
+
+	public void setFoto(String foto) {
+		this.foto = foto;
+	}
+
+	public String getTipoUsuario() {
+		return tipoUsuario;
+	}
+
+	public void setTipoUsuario(String tipoUsuario) {
+		this.tipoUsuario = tipoUsuario;
 	}
 
 	public String getToken() {
