@@ -25,6 +25,10 @@ public class Usuario {
 	private @Id @GeneratedValue(strategy = GenerationType.IDENTITY) Long idUsuario;
 	private @NotBlank String nomeUsuario;
 	private @NotBlank @CPF String cpf;
+	private @NotBlank String estado;
+	private @NotBlank String cidade;
+	private @NotBlank String endereco;
+	private @NotBlank @Size(min = 8, max = 9) String cep;
 	private @NotBlank @Email String email;
 	private @NotBlank @Size(min = 6) String senha;
 	private String foto;
@@ -56,6 +60,38 @@ public class Usuario {
 
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
+	}
+
+	public String getEstado() {
+		return estado;
+	}
+
+	public void setEstado(String estado) {
+		this.estado = estado;
+	}
+
+	public String getCidade() {
+		return cidade;
+	}
+
+	public void setCidade(String cidade) {
+		this.cidade = cidade;
+	}
+
+	public String getEndereco() {
+		return endereco;
+	}
+
+	public void setEndereco(String endereco) {
+		this.endereco = endereco;
+	}
+
+	public String getCep() {
+		return cep;
+	}
+
+	public void setCep(String cep) {
+		this.cep = cep;
 	}
 
 	public String getEmail() {
