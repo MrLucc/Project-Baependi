@@ -10,6 +10,10 @@ public class UsuarioEspelho {
 	private Long idUsuario;
 	private String nomeUsuario;
 	private String cpf;
+	private String estado;
+	private String cidade;
+	private String endereco;
+	private String cep;
 	public String foto;
 	public String tipoUsuario;
 	private String token;
@@ -52,6 +56,38 @@ public class UsuarioEspelho {
 
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
+	}
+
+	public String getEstado() {
+		return estado;
+	}
+
+	public void setEstado(String estado) {
+		this.estado = estado;
+	}
+
+	public String getCidade() {
+		return cidade;
+	}
+
+	public void setCidade(String cidade) {
+		this.cidade = cidade;
+	}
+
+	public String getEndereco() {
+		return endereco;
+	}
+
+	public void setEndereco(String endereco) {
+		this.endereco = endereco;
+	}
+
+	public String getCep() {
+		return cep;
+	}
+
+	public void setCep(String cep) {
+		this.cep = cep;
 	}
 
 	public String getFoto() {
