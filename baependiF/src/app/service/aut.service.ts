@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment.prod';
 import { Usuario } from '../models/Usuario';
 import { UsuarioEspelho } from '../models/UsuarioEspelho';
 
@@ -19,5 +20,14 @@ export class AutService {
 
   cadastrar(usuario: Usuario): Observable<Usuario> {
     return this.http.post<Usuario>('https://baependi.herokuapp.com/baependi/usuario/cadastrar', usuario)
+  }
+
+  logado() {
+    let ok: boolean = false
+
+    if(environment.token != "") {
+      ok = true
+    }
+    return ok
   }
 }

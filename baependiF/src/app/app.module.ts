@@ -1,14 +1,20 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import{ HttpClientModule } from '@angular/common/http'
-
+import{ HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
+import { FormsModule } from '@angular/forms';
+
+
 import { AppComponent } from './app.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
 import { RodapeComponent } from './rodape/rodape.component';
 import { MenuComponent } from './menu/menu.component';
 import { ContatoComponent } from './contato/contato.component';
+import { EntrarComponent } from './entrar/entrar.component';
+import { CadastrarComponent } from './cadastrar/cadastrar.component';
+
+
 
 @NgModule({
   declarations: [
@@ -17,12 +23,17 @@ import { ContatoComponent } from './contato/contato.component';
     SobreNosComponent,
     RodapeComponent,
     MenuComponent,
-    ContatoComponent
+    ContatoComponent,
+    EntrarComponent,
+    CadastrarComponent,
+    
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
