@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AutService } from './service/aut.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Baependi';
+
+  constructor(
+    public aut: AutService
+  ){}
 }
