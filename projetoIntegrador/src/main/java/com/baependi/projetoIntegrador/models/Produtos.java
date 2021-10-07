@@ -23,6 +23,7 @@ public class Produtos {
 	private @NotNull float precoProduto;
 	private @NotBlank String descricaoProduto;
 	private @NotBlank String autoreProduto;
+	private @NotBlank String fotoProduto;
 
 	@ManyToOne
 	@JoinColumn(name = "categoriaProdutos_id")
@@ -90,5 +91,12 @@ public class Produtos {
 		this.comprador = comprador;
 	}
 
-	
+	public String getFotoProduto() {
+		return fotoProduto;
+	}
+
+	public void setFotoProduto(String fotoProduto) {
+		this.fotoProduto = fotoProduto;
+	}
+
 }

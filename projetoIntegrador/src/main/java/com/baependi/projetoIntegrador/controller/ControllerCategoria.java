@@ -24,7 +24,7 @@ import com.baependi.projetoIntegrador.service.ServiceCategoria;
 
 @RestController
 @RequestMapping("/baependi/categoria")
-@CrossOrigin(origins = "", allowedHeaders = "")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class ControllerCategoria {
 
 	private @Autowired RepositorioCategoria repositorio;
