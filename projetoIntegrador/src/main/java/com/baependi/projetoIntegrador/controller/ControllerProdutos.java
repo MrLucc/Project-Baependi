@@ -15,7 +15,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/baependi/produtos")
-@CrossOrigin(origins = "", allowedHeaders = "")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class ControllerProdutos {
 
 	private @Autowired RepositorioProdutos repositorio;
@@ -45,6 +45,16 @@ public class ControllerProdutos {
 			return ResponseEntity.status(204).build();
 		} else {
 			return ResponseEntity.status(201).body(objetoProduto);
+		}
+	}
+
+	@GetMapping("/buscarPorTipoMaterial/{tipoMaterial}")
+	private ResponseEntity<List<Produtos>> acharPorTipoMaterial(@PathVariable(value="tipoMaterial") String tipoMaterial) {
+		List<Produtos> objetoProduto = repositorio.findAllByTipoMaterialContainingIgnoreCase(tipoMaterial);
+		if(objetoProduto.isEmpty()){
+			return ResponseEntity.status(204).build();
+		}else{
+			return ResponseEntity.status(200).body(objetoProduto);
 		}
 	}
 

@@ -15,8 +15,7 @@ public class Categoria {
 
 	private @Id @GeneratedValue(strategy = GenerationType.IDENTITY) Long idCategoria;
 	private @NotBlank String tipoProduto;
-	private boolean artesanal;
-	private @NotBlank String tipoMaterial;
+
 
 	@OneToMany(mappedBy = "codigoCategoria", cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties({ "codigoCategoria" })
@@ -30,13 +29,6 @@ public class Categoria {
 		this.idCategoria = idCategoria;
 	}
 
-	public boolean isArtesanal() {
-		return artesanal;
-	}
-
-	public void setArtesanal(boolean artesanal) {
-		this.artesanal = artesanal;
-	}
 
 	public String getTipoProduto() {
 		return tipoProduto;
@@ -46,13 +38,6 @@ public class Categoria {
 		this.tipoProduto = tipoProduto;
 	}
 
-	public String getTipoMaterial() {
-		return tipoMaterial;
-	}
-
-	public void setTipoMaterial(String tipoMaterial) {
-		this.tipoMaterial = tipoMaterial;
-	}
 
 	public List<Produtos> getCategoriaProdutos() {
 		return categoriaProdutos;

@@ -20,9 +20,14 @@ public class Produtos {
 
 	private @Id @GeneratedValue(strategy = GenerationType.IDENTITY) Long idProduto;
 	private @NotBlank @Size(min = 3, max = 255) String nomeProduto;
-	private @NotNull float precoProduto;
+	private @NotNull @Size(max = 5) String precoProduto;
 	private @NotBlank String descricaoProduto;
 	private @NotBlank String autoreProduto;
+	private String artesanal;
+	private @NotBlank String tipoMaterial;
+	private String fotoProduto;
+
+
 
 	@ManyToOne
 	@JoinColumn(name = "categoriaProdutos_id")
@@ -50,11 +55,11 @@ public class Produtos {
 		this.nomeProduto = nomeProduto;
 	}
 
-	public float getPrecoProduto() {
+	public String getPrecoProduto() {
 		return precoProduto;
 	}
 
-	public void setPrecoProduto(float precoProduto) {
+	public void setPrecoProduto(String precoProduto) {
 		this.precoProduto = precoProduto;
 	}
 
@@ -89,6 +94,27 @@ public class Produtos {
 	public void setComprador(Usuario comprador) {
 		this.comprador = comprador;
 	}
+	public String getArtesanal() {
+		return artesanal;
+	}
 
-	
+	public void setArtesanal(String artesanal) {
+		this.artesanal = artesanal;
+	}
+
+	public String getTipoMaterial() {
+		return tipoMaterial;
+	}
+
+	public void setTipoMaterial(String tipoMaterial) {
+		this.tipoMaterial = tipoMaterial;
+	}
+
+	public String getFotoProduto() {
+		return fotoProduto;
+	}
+
+	public void setFotoProduto(String fotoProduto) {
+		this.fotoProduto = fotoProduto;
+	}
 }

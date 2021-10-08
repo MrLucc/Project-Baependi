@@ -42,14 +42,13 @@ public class ServiceUsuario {
 				usuarioParaCadastrar.setIdUsuario(usuarioExistente.getIdUsuario());
 				usuarioParaCadastrar.setNomeUsuario(usuarioExistente.getNomeUsuario());
 				usuarioParaCadastrar.setSenha(usuarioExistente.getSenha());
-				usuarioParaCadastrar.setCpf(usuarioExistente.getCpf());
+				usuarioParaCadastrar.setNomePessoal(usuarioExistente.getNomePessoal());
 				usuarioParaCadastrar.setEstado(usuarioExistente.getEstado());
 				usuarioParaCadastrar.setCidade(usuarioExistente.getCidade());
 				usuarioParaCadastrar.setEndereco(usuarioExistente.getEndereco());
-				usuarioParaCadastrar.setCep(usuarioExistente.getCep());
-				usuarioParaCadastrar.setFoto(usuarioExistente.getFoto());
-				usuarioParaCadastrar.setTipoUsuario(usuarioExistente.getTipoUsuario());
+				usuarioParaCadastrar.setFoto(usuarioExistente.getSenha());
 				return Optional.ofNullable(usuarioParaCadastrar);
+
 			} else {
 
 				return Optional.empty();

@@ -9,13 +9,12 @@ public class UsuarioEspelho {
 
 	private Long idUsuario;
 	private String nomeUsuario;
-	private String cpf;
+	private String nomePessoal;
 	private String estado;
 	private String cidade;
 	private String endereco;
 	private String cep;
 	public String foto;
-	public String tipoUsuario;
 	private String token;
 
 	public String getEmail() {
@@ -48,14 +47,6 @@ public class UsuarioEspelho {
 
 	public void setNomeUsuario(String nomeUsuario) {
 		this.nomeUsuario = nomeUsuario;
-	}
-
-	public String getCpf() {
-		return cpf;
-	}
-
-	public void setCpf(String cpf) {
-		this.cpf = cpf;
 	}
 
 	public String getEstado() {
@@ -98,14 +89,6 @@ public class UsuarioEspelho {
 		this.foto = foto;
 	}
 
-	public String getTipoUsuario() {
-		return tipoUsuario;
-	}
-
-	public void setTipoUsuario(String tipoUsuario) {
-		this.tipoUsuario = tipoUsuario;
-	}
-
 	public String getToken() {
 		return token;
 	}
@@ -114,4 +97,11 @@ public class UsuarioEspelho {
 		this.token = token;
 	}
 
+	public String getNomePessoal() {
+		return nomePessoal;
+	}
+
+	public void setNomePessoal(String nomePessoal) {
+		this.nomePessoal = nomePessoal;
+	}
 }

@@ -20,8 +20,6 @@ public class ServiceCategoria {
 	public Optional<Categoria> alterarCategoria(Categoria alterarCategoria) {
 		return repositorioC.findById(alterarCategoria.getIdCategoria()).map(categoriaExistente -> {
 			categoriaExistente.setTipoProduto(alterarCategoria.getTipoProduto());
-			categoriaExistente.setArtesanal(alterarCategoria.isArtesanal());
-			categoriaExistente.setTipoMaterial(alterarCategoria.getTipoMaterial());
 			return Optional.ofNullable(repositorioC.save(alterarCategoria));
 		}).orElseGet(() -> {
 			return Optional.empty();

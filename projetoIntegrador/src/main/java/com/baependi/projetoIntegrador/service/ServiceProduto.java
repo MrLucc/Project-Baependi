@@ -40,6 +40,9 @@ public class ServiceProduto {
 			produtoExistente.setPrecoProduto(produtoParaAlterar.getPrecoProduto());
 			produtoExistente.setDescricaoProduto(produtoParaAlterar.getDescricaoProduto());
 			produtoExistente.setAutoreProduto(produtoParaAlterar.getAutoreProduto());
+			produtoExistente.setTipoMaterial(produtoParaAlterar.getTipoMaterial());
+			produtoExistente.setArtesanal(produtoParaAlterar.getArtesanal());
+			produtoExistente.setFotoProduto(produtoParaAlterar.getFotoProduto());
 			return Optional.ofNullable(repositoryP.save(produtoExistente));
 		}).orElseGet(() -> {
 			return Optional.empty();
