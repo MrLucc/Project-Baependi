@@ -41,7 +41,7 @@ export class CadastrarComponent implements OnInit {
   }
 
   cadastrar() {
-    this.usuario.tipoUsuario = this.tipoUser
+    
 
     if(this.usuario.senha != this.confirmarSenha || this.usuario.email != this.confrimarEmail){
       alert("Senha ou email estão incorretos.")

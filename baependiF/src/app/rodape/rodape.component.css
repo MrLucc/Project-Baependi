@@ -1,13 +1,23 @@
 .tm-social{
-    width: 60px;
-    height: 60px;
- }
+  width: 60px;
+  height: 60px;
+}
 
- .p-10 {
-    padding: 10px;
- }
+.p-10 {
+  padding: 10px;
+}
 
- .tm-social2{
-     width: 20px;
-     height: 20px;
- }
+.tm-social2{
+   width: 20px;
+   height: 20px;
+}
+
+.tm-logo{
+   width: 250px;
+   height: 60px;
+}
+
+.tm-pagamento{
+   width: 30px;
+   height: 30px;
+}

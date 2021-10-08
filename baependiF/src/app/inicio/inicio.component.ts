@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment.prod';
+import { Categoria } from '../models/Categoria';
+import { Produtos } from '../models/Produtos';
+import { ProdutoService } from '../service/produto.service';
 
 @Component({
   selector: 'app-inicio',
@@ -7,9 +12,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InicioComponent implements OnInit {
 
-  constructor() { }
+  produtos: Produtos = new Produtos
+  listaProdutos: Produtos[]
+  foto = environment.foto
+  categoria: Categoria = new Categoria()
+  listaCategoria: Categoria[]
 
-  ngOnInit(): void {
+
+  constructor(
+    private router: Router,
+    private produtoService: ProdutoService
+  ) { }
+
+  ngOnInit(){
+
+    this.getAllProdutos()
+  }
+
+  getAllProdutos(){
+    this.produtoService.getAllProdutos().subscribe((resp: Produtos[])=>{
+      this.listaProdutos = resp
+    })
   }
 
 }

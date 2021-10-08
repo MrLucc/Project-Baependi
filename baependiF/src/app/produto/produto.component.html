@@ -1,0 +1,92 @@
+<div class="container-fluid" style="background-color: #97c9e8;">
+
+  <div class="row justify-content-center">
+
+
+      <div class="col-md-6 mt-5 mb-5">
+
+          <div>
+              <div class="col-md-10">
+
+                  <h1 class="text-center">Cadastrar produto <img class="mb-3" src="https://veja.abril.com.br/wp-content/uploads/2018/11/christ-corte.jpg" width="70px" height="70px" /></h1>
+
+                  <form>
+                      <!--PRIMEIRA LINHA DO CADASTRO-->
+                      <div class="form-row">
+                          <div class="form-group col-md-6">
+                              <label for="nomeProduto">Nome do produto </label>
+                              <input [(ngModel)] = 'produto.nomeProduto' type="text" class="form-control" id="nomeProduto" name="nomeProduto" placeholder="Entre com nome do produto ">
+                          </div>
+                          <div class="form-group col-md-6">
+                              <label for="precoProduto">Preço do produto</label>
+                              <input [(ngModel)] = 'produto.precoProduto' type="number" class="form-control" id="precoProduto" name="precoProduto" placeholder="Insira preço do produto">
+                          </div>
+                      </div>
+                      <!--FINALIZAÇÃO DA PRIMEIRA LINHA-->
+
+                      <!--INICIO DA SEGUNDA LINHA-->
+                      <div class="form-row">
+                          <div class="form-group col-md-6">
+                              <label for="descricaoProduto">Descrição do produto</label>
+                              <input [(ngModel)] = 'produto.descricaoProduto' type="text" class="form-control" id="descricaoProduto" name="descricaoProduto" placeholder="Entre com a descrição do produto">
+                          </div>
+                          <div class="form-group col-md-6">
+                              <label for="autoreProduto">Autore do produto </label>
+                              <input [(ngModel)] = 'produto.autoreProduto' type="text" class="form-control" id="autoreProduto" name="autoreProduto" placeholder="Autore do produto">
+                          </div>
+                      </div>
+                      <!--FINALIZAÇÃO DA SEGUNDA LINHA-->
+
+                      <!--INICIO DA TERCEIRA LINHA-->
+                      <div class="form-row ">
+                          <div class="form-group col-md-6 ">
+                              <label for="artesanal">Produto é de autoria própria ?</label>
+                              <select [(ngModel)] = 'produto.artesanal' class="form-control" id="artesanal" name="artesanal">
+                                <option value="Sim">Sim</option>
+                                <option value="Não">Não</option>
+                              </select>
+                          </div>
+                          <div class="form-group col-md-6 ">
+                              <label for="tipoMaterial">Informe o tipo do material</label>
+                              <select [(ngModel)] = 'produto.tipoMaterial' class="form-control" id="tipoMaterial" name="tipoMaterial" (change) = 'findByNomeTipoMaterial()' >
+                                <option value="Plastico">Plastico</option>
+                                <option value="Vidro">Vidro</option>
+                                <option value="Metal">Metal</option>
+                                <option value="Papel">Papel</option>
+                                <option value="Organico">Organico</option>
+                              </select>
+                          </div>
+                      </div>
+                      <!--FINALIZAÇÃO DA TERCEIRA LINHA-->
+
+                      <!--INICIO DA QUARTA LINHA-->
+                      <div class="form-row ">
+                          <div class="form-group col-md-6 ">
+                              <label for="fotoProduto">Foto do produto</label>
+                              <input [(ngModel)] = 'produto.fotoProduto' type="text " class="form-control" id="fotoProduto" name="fotoProduto" placeholder="Link da sua foto ">
+                          </div>
+                          <div class="form-group col-md-6">
+                            <label for="tipoProduto">Categoria Associada </label>
+                            <select [(ngModel)] = 'id' name="tipoProduto" id="tipoProduto" class="form-control" (change) = 'findByIdCategoria()'  >
+                                <option *ngFor='let item of listaCategoria' value="{{item.idCategoria}}"  >
+                                  {{item.tipoProduto}}
+                                </option>
+                            </select>
+                        </div>
+
+                      </div>
+                      <!--FINALIZAÇÃO DA QUARTA LINHA-->
+
+
+                          <div class="d-flex justify-content-center ">
+                          <button type="submit " class="btn btn-success mr-4 "(click)='cadastrar()'>Cadastrar</button>
+                          <button type="submit " class="btn btn-danger " routerLink="/inicio" >Cancelar</button>
+                      </div>
+
+                  </form>
+              </div>
+
+          </div>
+      </div>
+  </div>
+</div>

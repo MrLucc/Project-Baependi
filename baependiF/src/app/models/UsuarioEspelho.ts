@@ -1,7 +1,7 @@
 export class UsuarioEspelho {
   public idUsuario: number
   public nomeUsuario: string
-  public cpf: string
+  public nomePessoal: string
   public estado: string
   public cidade: string
   public endereco: string

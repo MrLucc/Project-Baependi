@@ -11,17 +11,17 @@ import { AutService } from '../service/aut.service';
 })
 export class EntrarComponent implements OnInit {
 
-  usuarioEspelho: UsuarioEspelho = new UsuarioEspelho 
+  usuarioEspelho: UsuarioEspelho = new UsuarioEspelho
 
 
   constructor(
 
-    private auth: AutService, 
+    private auth: AutService,
     private router: Router
 
   ) { }
 
-  
+
 
   ngOnInit()  {
 
@@ -34,14 +34,14 @@ export class EntrarComponent implements OnInit {
       this.usuarioEspelho = resp
 
       environment.token = this.usuarioEspelho.token
-      environment.nomeUsuario = this.usuarioEspelho.nomeUsuario
+      environment.nome = this.usuarioEspelho.nomeUsuario
       environment.foto = this.usuarioEspelho.foto
-      environment.idUsuario = this.usuarioEspelho.idUsuario
+      environment.id = this.usuarioEspelho.idUsuario
 
       console.log(environment.token)
-      console.log(environment.nomeUsuario)
+      console.log(environment.nome)
       console.log(environment.foto)
-      console.log(environment.idUsuario)
+      console.log(environment.id)
 
       this.router.navigate(["/inicio"])
     }, erro =>{
