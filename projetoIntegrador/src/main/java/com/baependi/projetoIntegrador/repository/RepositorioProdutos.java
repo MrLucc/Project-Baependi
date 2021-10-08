@@ -13,4 +13,8 @@ public interface RepositorioProdutos extends JpaRepository<Produtos, Long> {
 
 	public List<Produtos> findAllByNomeProdutoContainingIgnoreCase(String nomeProduto);
 
+	public List<Produtos> findAllByTipoMaterialContainingIgnoreCase(String tipoMaterial);
+
+
+
 }

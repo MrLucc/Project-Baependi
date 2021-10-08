@@ -13,12 +13,12 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("/")
 public class ProjetoIntegradorApplication {
 	
-	
-
 	@GetMapping
-	public ModelAndView swaggerUi() {
+	public ModelAndView swagguerUi(){
 		return new ModelAndView("redirect:/swagger-ui/");
 	}
+
+
 
 	public static void main(String[] args) {
 		SpringApplication.run(ProjetoIntegradorApplication.class, args);

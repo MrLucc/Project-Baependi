@@ -14,7 +14,6 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
-import org.hibernate.validator.constraints.br.CPF;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -22,116 +21,109 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @Table(name = "tb_usuario")
 public class Usuario {
 
-	private @Id @GeneratedValue(strategy = GenerationType.IDENTITY) Long idUsuario;
-	private @NotBlank String nomeUsuario;
-	private @NotBlank @CPF String cpf;
-	private @NotBlank String estado;
-	private @NotBlank String cidade;
-	private @NotBlank String endereco;
-	private @NotBlank @Size(min = 8, max = 9) String cep;
-	private @NotBlank @Email String email;
-	private @NotBlank @Size(min = 6) String senha;
-	private String foto;
-	private String tipoUsuario;
+    private @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    Long idUsuario;
+    private @NotBlank String nomeUsuario;
+    private @NotBlank String nomePessoal;
+    private @NotBlank String estado;
+    private @NotBlank String cidade;
+    private @NotBlank String endereco;
+    private @NotBlank @Size(min = 8, max = 9) String cep;
+    private @NotBlank @Email String email;
+    private @NotBlank @Size(min = 6) String senha;
+    private String foto;
 
-	@OneToMany(mappedBy = "comprador", cascade = CascadeType.REMOVE)
-	@JsonIgnoreProperties({ "comprador" })
-	private List<Produtos> listaDeProdutos = new ArrayList<>();
 
-	public Long getIdUsuario() {
-		return idUsuario;
-	}
+    @OneToMany(mappedBy = "comprador", cascade = CascadeType.REMOVE)
+    @JsonIgnoreProperties({"comprador"})
+    private List<Produtos> listaDeProdutos = new ArrayList<>();
 
-	public void setIdUsuario(Long idUsuario) {
-		this.idUsuario = idUsuario;
-	}
+    public Long getIdUsuario() {
+        return idUsuario;
+    }
 
-	public String getNomeUsuario() {
-		return nomeUsuario;
-	}
+    public void setIdUsuario(Long idUsuario) {
+        this.idUsuario = idUsuario;
+    }
 
-	public void setNomeUsuario(String nomeUsuario) {
-		this.nomeUsuario = nomeUsuario;
-	}
+    public String getNomeUsuario() {
+        return nomeUsuario;
+    }
 
-	public String getCpf() {
-		return cpf;
-	}
+    public void setNomeUsuario(String nomeUsuario) {
+        this.nomeUsuario = nomeUsuario;
+    }
 
-	public void setCpf(String cpf) {
-		this.cpf = cpf;
-	}
+    public String getEstado() {
+        return estado;
+    }
 
-	public String getEstado() {
-		return estado;
-	}
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
 
-	public void setEstado(String estado) {
-		this.estado = estado;
-	}
+    public String getCidade() {
+        return cidade;
+    }
 
-	public String getCidade() {
-		return cidade;
-	}
+    public void setCidade(String cidade) {
+        this.cidade = cidade;
+    }
 
-	public void setCidade(String cidade) {
-		this.cidade = cidade;
-	}
+    public String getEndereco() {
+        return endereco;
+    }
 
-	public String getEndereco() {
-		return endereco;
-	}
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
+    }
 
-	public void setEndereco(String endereco) {
-		this.endereco = endereco;
-	}
+    public String getCep() {
+        return cep;
+    }
 
-	public String getCep() {
-		return cep;
-	}
+    public void setCep(String cep) {
+        this.cep = cep;
+    }
 
-	public void setCep(String cep) {
-		this.cep = cep;
-	}
+    public String getEmail() {
+        return email;
+    }
 
-	public String getEmail() {
-		return email;
-	}
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
+    public String getSenha() {
+        return senha;
+    }
 
-	public String getSenha() {
-		return senha;
-	}
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
 
-	public void setSenha(String senha) {
-		this.senha = senha;
-	}
+    public String getFoto() {
+        return foto;
+    }
 
-	public String getFoto() {
-		return foto;
-	}
+    public void setFoto(String foto) {
+        this.foto = foto;
+    }
 
-	public void setFoto(String foto) {
-		this.foto = foto;
-	}
+    public List<Produtos> getListaDeProdutos() {
+        return listaDeProdutos;
+    }
 
-	public String getTipoUsuario() {
-		return tipoUsuario;
-	}
+    public void setListaDeProdutos(List<Produtos> listaDeProdutos) {
+        this.listaDeProdutos = listaDeProdutos;
+    }
 
-	public void setTipoUsuario(String tipoUsuario) {
-		this.tipoUsuario = tipoUsuario;
-	}
+    public String getNomePessoal() {
+        return nomePessoal;
+    }
 
-	public List<Produtos> getListaDeProdutos() {
-		return listaDeProdutos;
-	}
-
-	public void setListaDeProdutos(List<Produtos> listaDeProdutos) {
-		this.listaDeProdutos = listaDeProdutos;
-	}
-
+    public void setNomePessoal(String nomePessoal) {
+        this.nomePessoal = nomePessoal;
+    }
 }

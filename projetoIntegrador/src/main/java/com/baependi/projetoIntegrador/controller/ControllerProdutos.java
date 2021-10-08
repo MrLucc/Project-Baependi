@@ -48,6 +48,16 @@ public class ControllerProdutos {
 		}
 	}
 
+	@GetMapping("/buscarPorTipoMaterial/{tipoMaterial}")
+	private ResponseEntity<List<Produtos>> acharPorTipoMaterial(@PathVariable(value="tipoMaterial") String tipoMaterial) {
+		List<Produtos> objetoProduto = repositorio.findAllByTipoMaterialContainingIgnoreCase(tipoMaterial);
+		if(objetoProduto.isEmpty()){
+			return ResponseEntity.status(204).build();
+		}else{
+			return ResponseEntity.status(200).body(objetoProduto);
+		}
+	}
+
 	@PostMapping("/salvar")
 	private ResponseEntity<Object> salvarProduto(@Valid @RequestBody Produtos produtoSalvo) {
 		Optional<?> objetoSalvar = servico.cadastrarProduto(produtoSalvo);
