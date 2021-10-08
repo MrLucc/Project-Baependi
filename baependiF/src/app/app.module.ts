@@ -13,6 +13,11 @@ import { MenuComponent } from './menu/menu.component';
 import { ContatoComponent } from './contato/contato.component';
 import { EntrarComponent } from './entrar/entrar.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
+import { CategoriaComponent } from './categoria/categoria.component';
+import { CategoriaEditComponent } from './edit/categoria-edit/categoria-edit.component';
+import { CategoriaDeleteComponent } from './delete/categoria-delete/categoria-delete.component';
+import { ProdutoComponent } from './produto/produto.component';
+import { AmostraComponent } from './amostra/amostra.component';
 
 
 
@@ -26,6 +31,11 @@ import { CadastrarComponent } from './cadastrar/cadastrar.component';
     ContatoComponent,
     EntrarComponent,
     CadastrarComponent,
+    CategoriaComponent,
+    CategoriaEditComponent,
+    CategoriaDeleteComponent,
+    ProdutoComponent,
+    AmostraComponent,
     
     
   ],

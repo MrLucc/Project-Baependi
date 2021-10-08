@@ -1,43 +1,85 @@
 <footer>
 
-    <div class="p-5 mb-5 bg-info text-white">
+  <div class="p-5 mb-5 bg-info text-white">
 
-        <div class="container">
+      <div class="container">
 
-            <div>
+          <!--Fale conosco, whats app e email-->
+          <div class="row">
+              <div class="col-md-6">
+                  <li class="mb-3 d-flex justify-content-lg-start">
+                      <a href="http://localhost:4200/contato" class="text-light">
+                          <h1>Fale conosco</h1>
+                      </a>
+                  </li>
+                  <div>
+                      <p> <img class="tm-social2"
+                              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABmJLR0QA/wD/AP+gvaeTAAADiUlEQVRoge2ZTUgVURTHz5gZYokKVpaCCJGQLSIQjL5TIopArU1BS6EQXNYqdRmupE1B0AdB4UYisghtUbYoWtQmSEqliDD7JsvS56/FnHGu0/X5fD7fPGr+8Hjz7j3n3P//zrnn3pknEiFChAgRQoDjXQC5InJKRI6KSLmILAmL1ByIiciwiFwVkTOO4/wUUSEqok9EakKjlxweikit4zjjIiICtONiCNgLXMTHbaAkLKZAiXLwcEk5DuvvVtP4lTbuMNoagFFt/wAcCkFEo46Ncmk0+nZp+4DpMKmNhYFAq4EeYzYuA/lpEJCvM++hJ5gVQKH2TZqNHi4AWQEHBzgOjKnNsHnnFkHEdk1xdMwTgBOwyVKuANiEAPQCay0DVAD9ajMFdALLUihgKdBmZMdjYL3FbhVwyyRsE/Jev0eBekuQbNzCMKF2T4GqFIio0lho7HYg22JXj79uPa5WISuBm8bvK8ByS8Bq4IXajAMnCaRkggIcoAk/bQeBrRa7XM0AD3eBNbMKMYI3G04DQLUleB5wDjfNAO4BZfMQUQb0qe+Uxsqz2FUrBw/N6JqJKyTYppjAzd+/dnvcmv5W7b4CTQmIOAx8VJ8R4KDFJgtoAX6ZRGwcExXSAcT0+gFQbhm0GOg2fK4DRRa7Iu3z0A0UW+zKdSx07I4FC9Hr3cCbuWZdZ/qz2r0D9ht9tUaMMaAlToxPRox9iXBMSIgxm13GbF4DCixEbGW6E38t9QMVFr8CjemhC+OupkxIYMa8WX8N7LTY2PI73jqrwT8mfcNyx1MuRPvKgfuBWc+x2G0EngHPgc2W/mxmboKPgHWzjJl6IQaJVvzN8QlQabHLxX1MCLZXqo93t1qxbIKLLsSwM+v8D9yUcubwOQZ8V58hLJtg2oWo7QrgPD7uYHmGwS3TNwy7LiwFIzQhhk8D/vPDCHDA6KvD3zi/AEfmGTt9QtSvFPcEDW4hOKsfr/z2AqVJxE2vEPV1cNfKuJFGv3Er1LwPl6EJMWJswC+/mxYYKzwhGsdafpOIE5fjrHU7VfDeOy02ksrXTEQkJNMQCck0/HNCYiIiWJ4pMhUG15iIL2RYv7elnVHy8F7bDk636BkI3Pe6tUBOqnb2VME4s+XgnqS9vxVOi8z8o6dXRLaESTYJ9ItIneM441ki08eIPSLSJiIvRfMuQxETl2OrqIiQ+USIECHC/4w/9Yo0lEIKLVMAAAAASUVORK5CYII="
+                              alt="logo gmail"> baependiprojeto@gmail.com</p>
+                      <p> <img class="tm-social2"
+                              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABmJLR0QA/wD/AP+gvaeTAAAB8UlEQVRIie2WsWsUQRSHv0mwUxGs9M4Q1ICF2Kh/QEAsVDw7G63UJqCCaHrTC1ZCRBALEaxULmVKixRWgmgjgQRtRLkTFcydn8Wtstnszu5tDrHIr5rdee99783OzhvY0j9SqGqoTgAt4DQwCTSTqVVgGWgDz0MIKyPJTG2o82rPcvXVp+rkZqHn1K8VgFl11bN1odeTCuqqr16rU+lmoGl4tcrVpvWWt0hddW+WM5bDvg1sz+YD3AFmgZ9DLR/sSGJGq50wf/feTdk8qlF1T22mWdmKW8B4Tk73U+N7wxUMScxWDHyqwLGTGr8CujXg62JnwfsLnI6lxnPAzhrgAzHwngKnG+qf47VRAwqwYWf/lfo9skGuJDa71Nc1Nljx51FXIo7f1KOJXUN9mZp7o95SlyP+b2PgdknWH9TDie24g2N1ST2YvNumXlJ/5PguxMA3S8Cqn9XpSIygfsnxm4mBm1Zvfw/UqZwYF3Ps18wcIHnwhxXAaS2pc+qs+sz85jIfhSbgy0OCy9RRN/ymeU3iRGl21fULuBBC+Bi1UsfUTyOqtK9erZSeenxE0I56JsbKLvXJzPM7Bt3oMdCrkHuPQSc7FEJoxwzXXW/VJ8AasAgshhBWU3P7gPPANHAE2A30GVxv3wMLwIu0z5b+C/0GOXzCkZvY3y8AAAAASUVORK5CYII="
+                              alt="logo whatsapp"> +55 11 97319-87703</p>
+                  </div>
+<!--Fale conosco, whats app e email-->
 
-                <li class="col-md-6 mb-3 d-flex justify-content-lg-start">
-                    <a href="https://docs.google.com/document/d/1rEDIqvRzwBZg1KVd0sLSVqthyBw9nOKTL5OgKXFKY6A/edit?usp=sharing"
-                        class="text-light">
-                        <h1>Fale conosco</h1>
-                    </a>
-                </li>
+<!--Redes sociais-->
+                  <a href="https://www.facebook.com/">
+                      <img class="tm-social p-10"
+                          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABmJLR0QA/wD/AP+gvaeTAAABbklEQVRoge2Zv0oDQRDGvxEbUSxt7HyE6BtYarBQ8Dn0FULAyhfRwsJK8M8DaGsptrbmEAvhswjCuVnD3VxudoT5lcPu7PdjcnshAYIgUEHygOQDyYrlqUjekxy2lTgrHHwe41xmyU0CwJVujmYMReS6XljKLDoxCtOF07SQm8gEwJpJHD0TEVmvF3IitMujR0R+Zc99tP4lIeKNEOlIBWAEYIDpDbkKYAvAMYAbTcMSt9YrgF0ReflrQZMMpW+tLwBH8yS0WItcishTH42tRS76amwt8pgWSB6SfCb58fP1VtPY+mFfEZHP5Lw3ABttG6UPu6lIeniX80rfWr0RIk2QhIZrNjVneZzItmZTiPTIjmaTR5GBZtPyolPUSd8Ri3yPpHiciIoQ8UaIeCNEvBEi3ggRb+REKvMU7XlPCzmRmZ9sHDKTMSdybhCkK80ykhyb/NGsY9RKmeQ+yTuSk8LByWmGW5J7mvEFQQB8A7wTurz8IRyDAAAAAElFTkSuQmCC"
+                          alt="logo facebook">
+                  </a>
 
-                <div class="col-md-6">
-                    <p> <img class="tm-social2" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABmJLR0QA/wD/AP+gvaeTAAADiUlEQVRoge2ZTUgVURTHz5gZYokKVpaCCJGQLSIQjL5TIopArU1BS6EQXNYqdRmupE1B0AdB4UYisghtUbYoWtQmSEqliDD7JsvS56/FnHGu0/X5fD7fPGr+8Hjz7j3n3P//zrnn3pknEiFChAgRQoDjXQC5InJKRI6KSLmILAmL1ByIiciwiFwVkTOO4/wUUSEqok9EakKjlxweikit4zjjIiICtONiCNgLXMTHbaAkLKZAiXLwcEk5DuvvVtP4lTbuMNoagFFt/wAcCkFEo46Ncmk0+nZp+4DpMKmNhYFAq4EeYzYuA/lpEJCvM++hJ5gVQKH2TZqNHi4AWQEHBzgOjKnNsHnnFkHEdk1xdMwTgBOwyVKuANiEAPQCay0DVAD9ajMFdALLUihgKdBmZMdjYL3FbhVwyyRsE/Jev0eBekuQbNzCMKF2T4GqFIio0lho7HYg22JXj79uPa5WISuBm8bvK8ByS8Bq4IXajAMnCaRkggIcoAk/bQeBrRa7XM0AD3eBNbMKMYI3G04DQLUleB5wDjfNAO4BZfMQUQb0qe+Uxsqz2FUrBw/N6JqJKyTYppjAzd+/dnvcmv5W7b4CTQmIOAx8VJ8R4KDFJgtoAX6ZRGwcExXSAcT0+gFQbhm0GOg2fK4DRRa7Iu3z0A0UW+zKdSx07I4FC9Hr3cCbuWZdZ/qz2r0D9ht9tUaMMaAlToxPRox9iXBMSIgxm13GbF4DCixEbGW6E38t9QMVFr8CjemhC+OupkxIYMa8WX8N7LTY2PI73jqrwT8mfcNyx1MuRPvKgfuBWc+x2G0EngHPgc2W/mxmboKPgHWzjJl6IQaJVvzN8QlQabHLxX1MCLZXqo93t1qxbIKLLsSwM+v8D9yUcubwOQZ8V58hLJtg2oWo7QrgPD7uYHmGwS3TNwy7LiwFIzQhhk8D/vPDCHDA6KvD3zi/AEfmGTt9QtSvFPcEDW4hOKsfr/z2AqVJxE2vEPV1cNfKuJFGv3Er1LwPl6EJMWJswC+/mxYYKzwhGsdafpOIE5fjrHU7VfDeOy02ksrXTEQkJNMQCck0/HNCYiIiWJ4pMhUG15iIL2RYv7elnVHy8F7bDk636BkI3Pe6tUBOqnb2VME4s+XgnqS9vxVOi8z8o6dXRLaESTYJ9ItIneM441ki08eIPSLSJiIvRfMuQxETl2OrqIiQ+USIECHC/4w/9Yo0lEIKLVMAAAAASUVORK5CYII=" alt="logo gmail"> baependiprojeto@gmail.com</p>
-                    <p> <img class="tm-social2" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABmJLR0QA/wD/AP+gvaeTAAAB8UlEQVRIie2WsWsUQRSHv0mwUxGs9M4Q1ICF2Kh/QEAsVDw7G63UJqCCaHrTC1ZCRBALEaxULmVKixRWgmgjgQRtRLkTFcydn8Wtstnszu5tDrHIr5rdee99783OzhvY0j9SqGqoTgAt4DQwCTSTqVVgGWgDz0MIKyPJTG2o82rPcvXVp+rkZqHn1K8VgFl11bN1odeTCuqqr16rU+lmoGl4tcrVpvWWt0hddW+WM5bDvg1sz+YD3AFmgZ9DLR/sSGJGq50wf/feTdk8qlF1T22mWdmKW8B4Tk73U+N7wxUMScxWDHyqwLGTGr8CujXg62JnwfsLnI6lxnPAzhrgAzHwngKnG+qf47VRAwqwYWf/lfo9skGuJDa71Nc1Nljx51FXIo7f1KOJXUN9mZp7o95SlyP+b2PgdknWH9TDie24g2N1ST2YvNumXlJ/5PguxMA3S8Cqn9XpSIygfsnxm4mBm1Zvfw/UqZwYF3Ps18wcIHnwhxXAaS2pc+qs+sz85jIfhSbgy0OCy9RRN/ymeU3iRGl21fULuBBC+Bi1UsfUTyOqtK9erZSeenxE0I56JsbKLvXJzPM7Bt3oMdCrkHuPQSc7FEJoxwzXXW/VJ8AasAgshhBWU3P7gPPANHAE2A30GVxv3wMLwIu0z5b+C/0GOXzCkZvY3y8AAAAASUVORK5CYII=" alt="logo whatsapp"> +55 11 97319-87703</p>
-                </div>
+                  <a href="https://www.instagram.com/">
+                      <img class="tm-social p-10"
+                          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAAEQElEQVR4nO2bz2seRRzGn0lLFcEfJ0WS1xw0zUHBkwfBRE3yFlKtevIg/ge19k8QI148eDeFKkKU3jRVQq1Uq55sKwi2NRYvphEqNNYfNG2ifjzMJpXJvrszs/PuRt0PvIfdnX3mme/u7M53Z16ppaWlpaXlf4upKgDcIWla0j5J90oalHSXpJ1VtR3+kHRJ0rKk7yXNS1owxvySuB4/gGHgbWCN5rgOvAXcU2fDdwKvAqsNNtxlFXgF2NHvxt8KHG22rYUcw3ZJb7yfAZnwF5LuDw1czZyV9Igx5opP4QGfQthba07bv/GS9XgE8HoIewVA0oykvdGW6mePpJd8CpZ2AWBY0qKkmyqaqptrkkaNMT8UFfK5A2a0/Rr/oaQhSR1JCz3K3CzrvZDCOyB78F2StCvQYL/pGGMuShLQkdTrKq9JurNosFR2B0xr+zU+hF2ybehJWQCeTOclKbPAUHb1Z0vK7is6WPaqGAmyVc6ipPckHZcd0y9l+zuyfbor6WlJoyU60/84t4wHw21mAEuJRmingImAeieB04nqjk+WgPWKla8B+4HgrBMwwAsJPPxZJQBVWAEej678hoeJTCuaJgKw1qvxwB7gEPAt8Hv2Ow/MAt2CIESn3U0EYH+O1ijwmce5J4HdOecfiDVTdwBO4fR54FHg5wCNFWDc0RgAzsQYqjsAE47GKGGN32AFGHG0pmIM1RmA8zkan8SYzjiZo7cYKlLURt902Jf3HbNdSY9V0BsHJovqqErqAHzsbD+bQNPVOJ5Ac5PUAXCzsrEEmuPOdmF+H0rqAPzobA8m0BxytpcTaG6SOgCVJ1py+MvZTuo5dQDudrZTXC1Xw62jEqkD4M7QfJ5A09UYTqC5SeoAuGP5Iwk0XY3cfKEvRAxcLuRonIjQ2eDTHL2kA6HUAQBn4ALsJi6dvQzc52h1YwzVHYDTbE2GxgkLwmVgzNEYAL6KMVR3AAAO5GiN4JcXnMC58tn5B2PNNBGAdbaO4Tc0J4E3gHPAb9nvXLYv97shNguM/jTWRADApsC5QQj0MEVcOp0kAFU/SK4DLwLBr1tsnz+YwEOlj6KpPoufAaYC6u0S+cDLoXCdQNnc4JeSHvI17sEF3ZgYWZJ0MdvfyX5dSc9I2vIQrMBZY8wDvQ6WBWBO0nMJzTTBnDHm+V4Hy/rmB4nNNMF80cGyO+B2ST/p3ztDfF12evzXXgUK74BsXv3d1K5q5J2ixkt+S2QGJX0n6ZZUrmpiVXaJTOEscun72RizLOn1VK5q5LWyxkuen7CwA5l5SU9UdVUTH0naa4wpHQT9FxdKfiO7UNJrXYD3EDVbefmwpKORxurgmKSxvq4gB3YAM8DVREPVFFwFXqbfi6WdQHSAN7FL1pviGnAYcOcOvEnxh4nbZBctPSW7IGlQUtCK7QCuyOYPX8t2xYWy93xLS0tLS0tLT/4G5QBuJsJzAZkAAAAASUVORK5CYII="
+                          alt="logo instagram">
+                  </a>
 
-            </div>
+                  <a href="https://twitter.com/twitterbrasil">
+                      <img class="tm-social p-10"
+                          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABmJLR0QA/wD/AP+gvaeTAAAD3ElEQVRoge2ZTWhcVRiGny8pbSOmai3VFq3VgtIE0VJcWV2opbhw4Q/qQiHSlVgqCFYXFUHURXUj1oWgoKsaVMSFWiTtwp/6V4tQLCn4g2hrtBhC0pq2afK4uJM4zNy5mTtzbyKYBwbunHPmfO875+fe811YYIEF/hfEfAtQ1wHrgBXAKPAbcDgiJudVWDOo3epT6lHT+VN9tWIyq59L1RvTKq4tTf2/Me5U/2hgoJbT6rNqZ00fa9Xd6ri6oTbAKvWUen+JJnaoU02aqOY9dZP6pPqZOlkpfzstyGOVyjPq5hJMPNiCgSyOqyvTAn1Y1ei0ek+BJtaofxdo4oTaW+n7fHVLR1W8nqrrJUC/ur0gL88AXQX19R3wCHCTugcYonr3VUcauH9LvaDVqOqyyggXxWTN98drAw5l/Pgn9ZYWjdxboIladk3HqZ5aP2fouRLYp76jrs3ppTdn+2YQ2BkRO6YLqo183kQHdwOD6mtWFlsTrMohsBnOAXdFxHOpteoNOYd1Sv1YfUhd3iiq+nKRc0kdTYuzaPoiIr5R9wPNroUANlc+E+qnwAHga+AQcDwiBH5tsr9mmWokZga1BzhIMVvlWeB3kvmcd11lcSwiLqst7ABQAyAijgBbaeA6J4uBKyjWBCRPyHVML/ZO9bC6DRgAHgDGCxZQFL+kFc5MLfUEyZkAknm9GLikfF25eSUittUWVm+/31ZdX85/0wTAkbTCaiMfzZGQdjmQVlg9tS4kmX/L5kpRC4wCy9OOwTMjEhEjwPNzqaoF9jY6y3fUfH8R2F++npZ5t1FFXRZF7SZZL/WH+vllDFgdESfTKmtHhIgYA24FXqKYG2NRvNnIxKyoveob6nDBD355mVKvydK6KK1Q3Qj0AcPAX8BXJA+HnWnt54D+iDia1SA106h2kdzdLy5DVU4mgJ6I+CGrUd0aAYiIceDpMlS1wO7ZTEBG7tcku/cBsKVIVTn5EbguIk7N1jB1RAAqN577gC8KFJaHSWBrMyaaQu1SX7e1VGc7PFGIgRRDm9T31Yk5MNFv5bBXGiYJt9vVXdYny4pgr7qkVBMVIx3qo+rJEkwMmGz9pRu4Q/2yBAOaPEGUNxLqavVhdbAkAxMWsLBDvZ4kZTMGdAMXkaRIN5LkuNa3GySD74G+iDjYdk/qSpPXWGdL+sfTGFF3qkvb/y/qDV2t7jF5Y1WmgRfU8p/h1BXqdvVQQeLPqZ+ofep5ZenOvOmo64HbgJuBDcBVs/2GJEEwSPJmaQDYFxHD7UvNJtfd02SPX0PyqqAbWAqcIdkoRoGhiDhWtMgFFphH/gFy4Cd5KgAXwAAAAABJRU5ErkJggg=="
+                          alt="logo twitter">
+                  </a>
+              </div>
+<!--Redes sociais-->
 
-            <div class="d-flex justify-content-center">
-                <img class="tm-social p-10" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABmJLR0QA/wD/AP+gvaeTAAABbklEQVRoge2Zv0oDQRDGvxEbUSxt7HyE6BtYarBQ8Dn0FULAyhfRwsJK8M8DaGsptrbmEAvhswjCuVnD3VxudoT5lcPu7PdjcnshAYIgUEHygOQDyYrlqUjekxy2lTgrHHwe41xmyU0CwJVujmYMReS6XljKLDoxCtOF07SQm8gEwJpJHD0TEVmvF3IitMujR0R+Zc99tP4lIeKNEOlIBWAEYIDpDbkKYAvAMYAbTcMSt9YrgF0ReflrQZMMpW+tLwBH8yS0WItcishTH42tRS76amwt8pgWSB6SfCb58fP1VtPY+mFfEZHP5Lw3ABttG6UPu6lIeniX80rfWr0RIk2QhIZrNjVneZzItmZTiPTIjmaTR5GBZtPyolPUSd8Ri3yPpHiciIoQ8UaIeCNEvBEi3ggRb+REKvMU7XlPCzmRmZ9sHDKTMSdybhCkK80ykhyb/NGsY9RKmeQ+yTuSk8LByWmGW5J7mvEFQQB8A7wTurz8IRyDAAAAAElFTkSuQmCC" alt="logo facebook">
+<!--Logo e pequeno resumo-->
+              <div class="col-md-6">
+                  <img class="tm-logo" src="https://i.imgur.com/4nLQ44I.png" alt="logo baependi">
+                  <p>
+                      Considerando os níveis de poluíção e a escassez de recursos naturais, é urgente repensar e mudar
+                      nosso modo de consumo.
+                      Acreditamos que a reutilização de materiais é essencial no combate à esses problemas ambientais,
+                      nosso objetivo é viabilizar a comercialização de produtos reutilizados e a conscientização das
+                      pessoas para essa questão urgente.
+                  </p>
+              </div>
+          </div>
+<!--Logo e pequeno resumo-->
 
-                <img class="tm-social p-10" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAAEQElEQVR4nO2bz2seRRzGn0lLFcEfJ0WS1xw0zUHBkwfBRE3yFlKtevIg/ge19k8QI148eDeFKkKU3jRVQq1Uq55sKwi2NRYvphEqNNYfNG2ifjzMJpXJvrszs/PuRt0PvIfdnX3mme/u7M53Z16ppaWlpaXlf4upKgDcIWla0j5J90oalHSXpJ1VtR3+kHRJ0rKk7yXNS1owxvySuB4/gGHgbWCN5rgOvAXcU2fDdwKvAqsNNtxlFXgF2NHvxt8KHG22rYUcw3ZJb7yfAZnwF5LuDw1czZyV9Igx5opP4QGfQthba07bv/GS9XgE8HoIewVA0oykvdGW6mePpJd8CpZ2AWBY0qKkmyqaqptrkkaNMT8UFfK5A2a0/Rr/oaQhSR1JCz3K3CzrvZDCOyB78F2StCvQYL/pGGMuShLQkdTrKq9JurNosFR2B0xr+zU+hF2ybehJWQCeTOclKbPAUHb1Z0vK7is6WPaqGAmyVc6ipPckHZcd0y9l+zuyfbor6WlJoyU60/84t4wHw21mAEuJRmingImAeieB04nqjk+WgPWKla8B+4HgrBMwwAsJPPxZJQBVWAEej678hoeJTCuaJgKw1qvxwB7gEPAt8Hv2Ow/MAt2CIESn3U0EYH+O1ijwmce5J4HdOecfiDVTdwBO4fR54FHg5wCNFWDc0RgAzsQYqjsAE47GKGGN32AFGHG0pmIM1RmA8zkan8SYzjiZo7cYKlLURt902Jf3HbNdSY9V0BsHJovqqErqAHzsbD+bQNPVOJ5Ac5PUAXCzsrEEmuPOdmF+H0rqAPzobA8m0BxytpcTaG6SOgCVJ1py+MvZTuo5dQDudrZTXC1Xw62jEqkD4M7QfJ5A09UYTqC5SeoAuGP5Iwk0XY3cfKEvRAxcLuRonIjQ2eDTHL2kA6HUAQBn4ALsJi6dvQzc52h1YwzVHYDTbE2GxgkLwmVgzNEYAL6KMVR3AAAO5GiN4JcXnMC58tn5B2PNNBGAdbaO4Tc0J4E3gHPAb9nvXLYv97shNguM/jTWRADApsC5QQj0MEVcOp0kAFU/SK4DLwLBr1tsnz+YwEOlj6KpPoufAaYC6u0S+cDLoXCdQNnc4JeSHvI17sEF3ZgYWZJ0MdvfyX5dSc9I2vIQrMBZY8wDvQ6WBWBO0nMJzTTBnDHm+V4Hy/rmB4nNNMF80cGyO+B2ST/p3ztDfF12evzXXgUK74BsXv3d1K5q5J2ixkt+S2QGJX0n6ZZUrmpiVXaJTOEscun72RizLOn1VK5q5LWyxkuen7CwA5l5SU9UdVUTH0naa4wpHQT9FxdKfiO7UNJrXYD3EDVbefmwpKORxurgmKSxvq4gB3YAM8DVREPVFFwFXqbfi6WdQHSAN7FL1pviGnAYcOcOvEnxh4nbZBctPSW7IGlQUtCK7QCuyOYPX8t2xYWy93xLS0tLS0tLT/4G5QBuJsJzAZkAAAAASUVORK5CYII=" alt="logo instagram">
+          <div class="row mt-5">
+              <div class="col-md-6">
+                  <p class="d-flex justify-content-start">
+                      <img class="tm-pagamento"
+                          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABmJLR0QA/wD/AP+gvaeTAAACVUlEQVRoge2XPW/TQBiAH9ux86GGlDaQpkmJYAAxUDEjujCwMIAQA/yBSEwgMTLDb2gnRhgYyoAYGWBAQkgUMcBYJf0SjdokNG3jOMdG1SpHcnZOToSfKbq79973ke90byAi4v/GUA24uyFuCcGSgMKQa6liUF7OG+9UgmKqWbqCRSTFu602AHbKob62g3fgHpu3EjaZwmnZ1kUES8A5lXqUBYCibOLn2xUALty4zOfF9z3XXHt8k9T0hGyLOdVilI/QnXUhZHMBvwAAy7OGUk1+voAUO+X8/d2v0GGhLPDp4XMddfjGDLuAoEQCYRMJhI1WAXflJZ1vr3SmGO47cBLRWEf66g0J5Zd45vazgWtK3lsFYOq8et83X7p4fMDg44vig4WT68bnDgiu9xoeHwEJWu+AbceYmcoxmy+RsB2EgMNOm+b+HtvNHTqeFziHVoGrl65gmRYJJw6AYUDSiZN04mTTk1RqW9RbzUA5tB4hy7TkiU2T0pk8mVQ6UI7Q78BcNkfMkov2I3QB0zCZTk/6jx9iLb45lZT+xezLSAjEY7bv2JEQUO8HjhgJgUPX7b9IwkgINPZ/+44NXcATXWrNXd/xoQtUt7cCtRRaBbyuvDBPdFn9tRG4ldDaC3398Z1c9iyFCYe4bSMEtN02jYM9as3d0W/m3I5LdXONVlJfjtDvQFDGSeBDr0GtR6j+6DUA+wtPBo7ZfPPUAPgy4HqtAmamQKA+YQC0CsTm7+vcHhivO9CTSCBs/AhUh17FERXVAHUBgzJ6JCqGMMsa9o2I+Bd/ALeVk73TpYzeAAAAAElFTkSuQmCC" />
+                      Escolha como pagar: cartão, boleto e até PIX
+                  </p>
+              </div>
+          </div>
+          <hr>
 
-                <img class="tm-social p-10" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABmJLR0QA/wD/AP+gvaeTAAAEg0lEQVRoge2ZS2wVVRzGv1PbtLUtFrBFTBUMD61Ba4IkaouGEF/UJoaYmPjaGIzPYIy61bgxJkYluHXDyo1GFyIKmhjRqBhDCS+BUsQqJSF4C7ZYc+vPxTm3nQ4zd87Mnduy6JdMcu7M//F9533OleZwacHkFQiYL+kuSd2SbpS0TFK7pCZnMirptKTjkg5K2i3pG2NMIS8OmQHUA48CXwBF0qMIfA48AtTPhoBG4CXgjwzk4zAEvAg0zJSI+4FjOQoI4yhwbzUF1ANbqiggjG1AY94iFgE/z6CIEn4C2vMSsRTb3LOFI8DSJJ5lp1+gTdK3kq7PpVayY0BSjzFmOM4gVgh29tgtaXUViGXBHklrjTHjUR9ryji+q0tHhCStkfR2Kg/sFFsOrwJtwK3Aa8CJCsbAIeAVoAuYD7yTYH+Pr4hGkteJjpBPgxN0AdgFbAZ6gBVAk3tWunfPAp8C54EXgMtCsboSch/BZxeAXbGTELn6AnVetVXGFljskX9zUvB6/LYd+S5U0zlc5ZH/d0KtEh7sD0m62iPfktyYX4xlHjYdkjYGX4SFPOGZ7GZPuyy4xdPu8eCPSSHY88R6zyCrPO2yoMvT7m5g3kVvgQc9+ibACLA4X+7TeHQC/3py6Sv5BbtWj2euD4wxp/KlPwVjzCFJH3uary0VgkI6PZ0/9CVVAT7ytLuhVAgKWeHhWJT0SxpGGbHP025lqRAUssDDccQYU0xFKRvGPO0Wlgq1gZctHo4tgDHGkIpWelwRKBclnXflVk3fsU9yDgopGayT9JdzLkhqcM+MwRizv8QHqNUU4RKfBZKGFHUMAQpuSvsB2AsMAGeAU65ceh6uthBga5kpd9TxAjg7KT7g/Kvs4PlaUr+kE5IGZVvnnHtGJBWq3bWAGtnu1SKp2T1tsluja2UXzfskHTbGdErTu9agE/Kj7I3gdbLdrD0QrFVSM7DJGLOtSiK2StokO+ALki648rCk3ySdlHTACRmMCvCG52oK8Dfgu4CmEfEU8F8KHq9HBVmfIgDAGPAkUPH9Mfb48FZKEQDrooJdDoynDATwPdBH6KTnKaDJVcZAhrz/EDgXmVDgHZKirisfk9Qo6U1JV8bwOi1pl6TvJB2W7ctnjDEjLvZCTQ3YmyTdKTsGm9NWgMN2Y0xv5BdXs1EYBbqxZ/Bhj9oaA14GFgVit7t3YxlqPwobYiUCNcDxGMd+930NcC5BRHeZHN05iDmKnaLjgb0BiUOvs1kF7MDehIwDZ4GTwE7ggYQuIeDpCoU8l5RDQB2wLybAZ4kBPIBt2bgcSdiL3bZ4JboDmIgIMkFO6wfwTAYRE8BtaRO9HxOsgL1Y6yCpn5aPvzyDkC1ZEtUBX6VM5L2WuPhp8CUpLgDDyeaRoi9niO+LA0BrJhGBZEuAg7MoZD9wTUUiAglbgO2zIGQnlbZERNI67IEnajbLW8gE8B6+02wWAKuBPVUU0g/cXg3uUQRqsVNw8H+UoQxx/gz4HwOer2orlCFSA/QCn+C2Lyn9+5zvBipYk+Ywhyrif28XtYe4UsXPAAAAAElFTkSuQmCC" alt="logo github">
+          <div class="row">
+              <div class="col-md-12">
+                  <p class="d-flex justify-content-end">CNPJ nº 68.131.373/0001-35 / Rua Frutas de Santo Amaro, nº 100, Heliópolis/SP - CEP 04506-904</p>
 
-            </div>
+                  <p class="d-flex justify-content-end">
+                      Baependi &copy;
+                  </p>
+              </div>
+          </div>
 
-            <hr>
-            <div>
-                <p class="d-flex justify-content-center">
-                    Baependi &copy;
-                </p>
-            </div>
+      </div>
 
-        </div>
-
-    </div>
+  </div>
 
 </footer>
