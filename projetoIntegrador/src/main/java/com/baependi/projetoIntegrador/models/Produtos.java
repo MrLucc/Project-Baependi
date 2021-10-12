@@ -22,11 +22,12 @@ public class Produtos {
 	private @NotBlank @Size(min = 3, max = 255) String nomeProduto;
 	private @NotNull @Size(max = 5) String precoProduto;
 	private @NotBlank String descricaoProduto;
-	private @NotBlank String autoreProduto;
-	private @NotBlank String fotoProduto;
+	private String autoreProduto;
 	private String artesanal;
-	private @NotBlank String tipoMaterial;
+	private String tipoMaterial;
 	private String fotoProduto;
+
+
 
 	@ManyToOne
 	@JoinColumn(name = "categoriaProdutos_id")
@@ -116,5 +117,4 @@ public class Produtos {
 	public void setFotoProduto(String fotoProduto) {
 		this.fotoProduto = fotoProduto;
 	}
-
 }

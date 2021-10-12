@@ -49,21 +49,6 @@ public class ServiceProduto {
 		});
 	}
 
-	public Optional<?> cadastrarProduto(Produtos novoProduto) {
-		Optional<Categoria> objetoProduto = repositoryC.findById(novoProduto.getCodigoCategoria().getIdCategoria());
-		return repositoryU.findById(novoProduto.getComprador().getIdUsuario()).map(produtoExistente -> {
-			if (objetoProduto.isPresent()) {
-				novoProduto.setComprador(produtoExistente);
-				novoProduto.setCodigoCategoria(objetoProduto.get());
-				return Optional.ofNullable(repositoryP.save(novoProduto));
-			} else {
-				return Optional.empty();
-			}
 
-		}).orElseGet(() -> {
-			return Optional.empty();
-		});
-
-	}
 
 }

@@ -22,22 +22,6 @@ public class BasicSecurityConfig extends WebSecurityConfigurerAdapter {
         return new BCryptPasswordEncoder();
     }
 
-
-	@Override
-	protected void configure(HttpSecurity http) throws Exception {
-				http.authorizeRequests()
-				.antMatchers(HttpMethod.POST, "/baependi/usuario/cadastrar").permitAll()
-				.antMatchers(HttpMethod.PUT, "/baependi/usuario/login").permitAll()
-				.antMatchers(HttpMethod.OPTIONS).permitAll()
-				.anyRequest()
-				.authenticated()
-				.and().httpBasic()
-				.and().sessionManagement()
-				.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-				.and().cors()
-				.and().csrf().disable();
-	}
-
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
@@ -48,7 +32,6 @@ public class BasicSecurityConfig extends WebSecurityConfigurerAdapter {
                 .permitAll().anyRequest().authenticated().and().httpBasic().and().sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS).and().cors().and().csrf().disable();
     }
-
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {

@@ -59,13 +59,9 @@ public class ControllerProdutos {
 	}
 
 	@PostMapping("/salvar")
-	private ResponseEntity<Object> salvarProduto(@Valid @RequestBody Produtos produtoSalvo) {
-		Optional<?> objetoSalvar = servico.cadastrarProduto(produtoSalvo);
-		if (objetoSalvar.isPresent()) {
-			return ResponseEntity.status(201).body(objetoSalvar);
-		} else {
-			return ResponseEntity.status(204).build();
-		}
+	private ResponseEntity<Produtos> salvarProduto(@Valid @RequestBody Produtos produtoSalvo) {
+		return ResponseEntity.status(201).body(repositorio.save(produtoSalvo));
+
 	}
 
 	@PutMapping("/atualizar")
