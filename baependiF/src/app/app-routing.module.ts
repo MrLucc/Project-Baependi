@@ -11,6 +11,9 @@ import { CategoriaComponent } from './categoria/categoria.component';
 import { CategoriaEditComponent } from './edit/categoria-edit/categoria-edit.component';
 import { CategoriaDeleteComponent } from './delete/categoria-delete/categoria-delete.component';
 import { ProdutoComponent } from './produto/produto.component';
+import { TodosprodutosComponent } from './todosprodutos/todosprodutos.component';
+import { CarrinhoComponent } from './carrinho/carrinho.component';
+import { ODSComponent } from './ods/ods.component';
 
 
 
@@ -23,6 +26,9 @@ const routes: Routes = [
   {path:'cadastrar', component: CadastrarComponent},
   {path:'entrar', component: EntrarComponent},
   {path: 'produto', component: ProdutoComponent},
+  {path: 'todosprodutos', component: TodosprodutosComponent },
+  {path: 'carrinho', component: CarrinhoComponent},
+  {path: 'ods', component: ODSComponent},
 
 
 
@@ -31,7 +37,7 @@ const routes: Routes = [
   {path: 'categoria', component: CategoriaComponent},
   {path: 'categoria-edit/:id', component: CategoriaEditComponent},
   {path: 'categoria-delete/:id', component: CategoriaDeleteComponent},
-  {path:'produto', component: ProdutoComponent}
+  
 
 ];
 

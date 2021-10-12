@@ -2,6 +2,7 @@ import { AutService } from "./../service/aut.service"
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from '../models/Usuario';
 import { Router } from "@angular/router";
+import Swal from "sweetalert2";
 
 @Component({
   selector: 'app-cadastrar',
@@ -44,8 +45,21 @@ export class CadastrarComponent implements OnInit {
     
 
     if(this.usuario.senha != this.confirmarSenha || this.usuario.email != this.confrimarEmail){
-      alert("Senha ou email estão incorretos.")
-
+      const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 2000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.addEventListener('mouseenter', Swal.stopTimer)
+          toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+      })
+      Toast.fire({
+        icon: 'error',
+        title: 'Incorrect password or email'
+      })
     }else{
       this.AutService.cadastrar(this.usuario).subscribe((resp: Usuario) => {
         this.usuario = resp

@@ -36,7 +36,9 @@ export class ProdutoComponent implements OnInit {
   ngOnInit(){
     window.scroll(0,0)
 
-
+    if(environment.token == ""){
+      this.router.navigate(["/entrar"])
+    }
 
     this.getAllCategorias()
 
@@ -65,6 +67,14 @@ export class ProdutoComponent implements OnInit {
       this.produtoService.getTipoMaterial(this.nomeMaterial).subscribe((resp: Produtos)=> {
         this.produto= resp
       })
+    }
+
+    teste(){
+      console.log("produto" + JSON.stringify(this.produto))
+    }
+
+    test(){
+      console.log("categoria" + JSON.stringify(this.categoria))
     }
 
 

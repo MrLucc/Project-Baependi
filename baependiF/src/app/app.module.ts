@@ -18,6 +18,9 @@ import { CategoriaEditComponent } from './edit/categoria-edit/categoria-edit.com
 import { CategoriaDeleteComponent } from './delete/categoria-delete/categoria-delete.component';
 import { ProdutoComponent } from './produto/produto.component';
 import { AmostraComponent } from './amostra/amostra.component';
+import { TodosprodutosComponent } from './todosprodutos/todosprodutos.component';
+import { CarrinhoComponent } from './carrinho/carrinho.component';
+import { ODSComponent } from './ods/ods.component';
 
 
 
@@ -36,6 +39,9 @@ import { AmostraComponent } from './amostra/amostra.component';
     CategoriaDeleteComponent,
     ProdutoComponent,
     AmostraComponent,
+    TodosprodutosComponent,
+    CarrinhoComponent,
+    ODSComponent,
     
     
   ],
