@@ -16,7 +16,7 @@ export class MenuComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private auth: AutService       
+    public auth: AutService
     ) { }
 
   ngOnInit() {
@@ -53,7 +53,7 @@ export class MenuComponent implements OnInit {
       Toast.fire({
         icon: 'error',
         title: 'Email ou senha incorretos! Tente um novo login'
-        
+
       })
       }
     })

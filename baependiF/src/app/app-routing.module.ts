@@ -14,6 +14,10 @@ import { ProdutoComponent } from './produto/produto.component';
 import { TodosprodutosComponent } from './todosprodutos/todosprodutos.component';
 import { CarrinhoComponent } from './carrinho/carrinho.component';
 import { ODSComponent } from './ods/ods.component';
+import { DadosComponent } from './dados/dados.component';
+import { InformacoesComponent } from './informacoes/informacoes.component';
+import { ProdutoEditComponent } from './edit/produto-edit/produto-edit.component';
+import { ProdutoDeleteComponent } from './delete/produto-delete/produto-delete.component';
 
 
 
@@ -29,6 +33,9 @@ const routes: Routes = [
   {path: 'todosprodutos', component: TodosprodutosComponent },
   {path: 'carrinho', component: CarrinhoComponent},
   {path: 'ods', component: ODSComponent},
+  {path: 'dados', component: DadosComponent},
+  {path: 'informacoes', component: InformacoesComponent},
+
 
 
 
@@ -37,7 +44,9 @@ const routes: Routes = [
   {path: 'categoria', component: CategoriaComponent},
   {path: 'categoria-edit/:id', component: CategoriaEditComponent},
   {path: 'categoria-delete/:id', component: CategoriaDeleteComponent},
-  
+  {path:'produto-edit/:id', component: ProdutoEditComponent},
+  {path: 'produto-delete/:id', component: ProdutoDeleteComponent}
+
 
 ];
 

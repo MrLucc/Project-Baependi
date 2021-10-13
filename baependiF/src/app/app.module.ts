@@ -21,6 +21,10 @@ import { AmostraComponent } from './amostra/amostra.component';
 import { TodosprodutosComponent } from './todosprodutos/todosprodutos.component';
 import { CarrinhoComponent } from './carrinho/carrinho.component';
 import { ODSComponent } from './ods/ods.component';
+import { DadosComponent } from './dados/dados.component';
+import { InformacoesComponent } from './informacoes/informacoes.component';
+import { ProdutoEditComponent } from './edit/produto-edit/produto-edit.component';
+import { ProdutoDeleteComponent } from './delete/produto-delete/produto-delete.component';
 
 
 
@@ -42,6 +46,10 @@ import { ODSComponent } from './ods/ods.component';
     TodosprodutosComponent,
     CarrinhoComponent,
     ODSComponent,
+    DadosComponent,
+    InformacoesComponent,
+    ProdutoEditComponent,
+    ProdutoDeleteComponent,
     
     
   ],

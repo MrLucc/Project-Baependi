@@ -17,6 +17,8 @@ export class InicioComponent implements OnInit {
   foto = environment.foto
   categoria: Categoria = new Categoria()
   listaCategoria: Categoria[]
+  
+
 
 
   constructor(
