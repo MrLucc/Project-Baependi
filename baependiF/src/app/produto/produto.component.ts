@@ -22,6 +22,7 @@ export class ProdutoComponent implements OnInit {
     listaCategoria: Categoria[]
     idUser = environment.id
     nomeMaterial: string
+    idCategoria: number
 
 
 
@@ -52,7 +53,7 @@ export class ProdutoComponent implements OnInit {
     }
 
     findByIdCategoria(){
-      this.categoriaService.getByIdCategoria(this.id).subscribe((resp: Categoria)=>{
+      this.categoriaService.getByIdCategoria(this.idCategoria).subscribe((resp: Categoria)=>{
         this.categoria = resp
       })
     }
@@ -79,11 +80,13 @@ export class ProdutoComponent implements OnInit {
 
 
     cadastrar(){
-      this.categoria.idCategoria = this.id
+      this.categoria = new Categoria;
+      this.categoria.idCategoria = this.idCategoria
       this.produto.codigoCategoria = this.categoria
-      this.produto.tipoMaterial = this.nomeMaterial
+      
 
       this.usuario.idUsuario = this.idUser
+      this.produto.comprador = this.usuario
 
       this.produtoService.postProdutos(this.produto).subscribe((resp: Produtos)=>{
         this.produto = resp

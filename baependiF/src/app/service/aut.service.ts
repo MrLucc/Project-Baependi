@@ -30,4 +30,12 @@ export class AutService {
     }
     return ok
   }
+
+
+  nome() {
+    let ok: string = environment.nome
+
+
+    return ok
+  }
 }
