@@ -4,7 +4,7 @@ import { Usuario } from "./Usuario"
 export class Produtos {
   public idProduto: number
   public nomeProduto: string
-  public precoProduto: number
+  public precoProduto: string
   public descricaoProduto: string
   public autoreProduto: string
   public tipoMaterial: string

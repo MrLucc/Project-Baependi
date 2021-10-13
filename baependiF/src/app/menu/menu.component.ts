@@ -13,6 +13,8 @@ import { AutService } from '../service/aut.service';
 export class MenuComponent implements OnInit {
 
   usuarioEspelho: UsuarioEspelho = new UsuarioEspelho
+  foto = environment.foto
+  nome = environment.nome
 
   constructor(
     private router: Router,

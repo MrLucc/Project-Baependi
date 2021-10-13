@@ -14,6 +14,9 @@ import { ProdutoComponent } from './produto/produto.component';
 import { TodosprodutosComponent } from './todosprodutos/todosprodutos.component';
 import { CarrinhoComponent } from './carrinho/carrinho.component';
 import { ODSComponent } from './ods/ods.component';
+import { ProdutoDeleteComponent } from './delete/produto-delete/produto-delete.component';
+import { ProdutoEditComponent } from './edit/produto-edit/produto-edit.component';
+import { ProfileComponent } from './profile/profile.component';
 
 
 
@@ -29,6 +32,9 @@ const routes: Routes = [
   {path: 'todosprodutos', component: TodosprodutosComponent },
   {path: 'carrinho', component: CarrinhoComponent},
   {path: 'ods', component: ODSComponent},
+  {path: 'produto-delete/:id',component: ProdutoDeleteComponent},
+  {path: 'produto-edit/:id', component: ProdutoEditComponent},
+  {path: 'profile', component: ProfileComponent},
 
 
 

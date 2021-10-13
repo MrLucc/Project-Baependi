@@ -12,6 +12,8 @@ import { ProdutoService } from '../service/produto.service';
 })
 export class InicioComponent implements OnInit {
 
+  nome = environment.nome
+
   produtos: Produtos = new Produtos
   listaProdutos: Produtos[]
   foto = environment.foto

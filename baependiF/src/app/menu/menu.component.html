@@ -10,7 +10,7 @@
                     <a class="dropdown-item" href="#">Artes</a>
                     <a class="dropdown-item" href="">Moda</a>
                     <a class="dropdown-item" href="">Casa</a>
-                    <a class="dropdown-item" href="">Escolar</a>
+                    <a class="dropdown-item" routerLink="/produto">Escolar</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" routerLink="/categoria">Cadastre uma nova categoria</a>
 
@@ -34,12 +34,26 @@
         </ul>
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a class="nav-link" data-toggle="modal" data-target="#entrar">Entrar</a>
+                <a class="nav-link" routerLink="/entrar">Entrar</a>
             </li>
 
             <li class="nav-item">
                 <a class="nav-link" href="#" routerLink="/carrinho"><img src="https://img.icons8.com/office/25/000000/shopping-cart.png" /></a>
             </li>
+
+            <li class="nav-item pl-3">
+                <img src="{{foto}}" alt="foto usuario">
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link">Olá,{{nome}}</a>
+            </li>
+
+
+
+
+
+
         </ul>
         <div class="p-3">
 

@@ -19,9 +19,19 @@ export class ProdutoComponent implements OnInit {
     categoria: Categoria = new Categoria()
     usuario: Usuario = new Usuario
     id: number
+    
     listaCategoria: Categoria[]
     idUser = environment.id
     nomeMaterial: string
+    preco: string
+    autore: string
+    artesanal: string
+    descricao: string
+    foto: string
+    nomeProduto: string
+    comprador: string
+
+
 
 
 
@@ -37,11 +47,10 @@ export class ProdutoComponent implements OnInit {
     window.scroll(0,0)
 
     if(environment.token == ""){
-      this.router.navigate(["/entrar"])
+      alert("Faça login para cadastrar Produtos!")
     }
 
     this.getAllCategorias()
-
 
   }
 
@@ -80,10 +89,10 @@ export class ProdutoComponent implements OnInit {
 
     cadastrar(){
       this.categoria.idCategoria = this.id
-      this.produto.codigoCategoria = this.categoria
-      this.produto.tipoMaterial = this.nomeMaterial
+      this.produto.comprador = this.usuario
 
       this.usuario.idUsuario = this.idUser
+      
 
       this.produtoService.postProdutos(this.produto).subscribe((resp: Produtos)=>{
         this.produto = resp

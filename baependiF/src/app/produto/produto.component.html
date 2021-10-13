@@ -19,7 +19,7 @@
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="precoProduto">Preço do produto</label>
-                                <input [(ngModel)]='produto.precoProduto' type="number" class="form-control" id="precoProduto" name="precoProduto" placeholder="Insira preço do produto" (click)='teste()'>
+                                <input [(ngModel)]='produto.precoProduto' type="text" class="form-control" id="precoProduto" name="precoProduto" placeholder="Insira preço do produto" (click)='teste()'>
                             </div>
                         </div>
                         <!--FINALIZAÇÃO DA PRIMEIRA LINHA-->
@@ -41,20 +41,15 @@
                         <div class="form-row ">
                             <div class="form-group col-md-6 ">
                                 <label for="artesanal">Produto é de autoria própria ?</label>
-                                <select [(ngModel)]='produto.artesanal' class="form-control" id="artesanal" name="artesanal" (click)='teste()'>
-                                <option value="Sim">Sim</option >
-                                <option value="Não">Não</option>
-                              </select>
+                                <input [(ngModel)]='produto.artesanal' class="form-control" id="artesanal" name="artesanal" placeholder="Sim/Não" (click)='teste()'>
+
+
                             </div>
                             <div class="form-group col-md-6 ">
                                 <label for="tipoMaterial">Informe o tipo do material</label>
-                                <select [(ngModel)]='produto.tipoMaterial' class="form-control" id="tipoMaterial" name="tipoMaterial" (click)='teste()'>
-                                <option value="Plastico">Plastico</option>
-                                <option value="Vidro">Vidro</option>
-                                <option value="Metal">Metal</option>
-                                <option value="Papel">Papel</option>
-                                <option value="Organico">Organico</option>
-                              </select>
+                                <input [(ngModel)]='produto.tipoMaterial' class="form-control" id="tipoMaterial" name="tipoMaterial" (click)='teste()' placeholder="Papel, Orgânico, Plástico, etc">
+
+
                             </div>
                         </div>
                         <!--FINALIZAÇÃO DA TERCEIRA LINHA-->
@@ -67,7 +62,7 @@
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="tipoProduto">Categoria Associada </label>
-                                <input [(ngModel)]="categoria.tipoProduto" type="text" class="form-control" id="tipoProduto" name="tipoProduto" placeholder="Categoria do produto" (click)="test()">
+                                <input [(ngModel)]="listaCategoria" type="text" class="form-control" id="tipoProduto" name="tipoProduto" placeholder="Categoria do produto" (click)="test()">
                             </div>
 
                         </div>
