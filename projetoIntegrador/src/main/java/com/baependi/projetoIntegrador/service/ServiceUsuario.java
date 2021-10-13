@@ -46,7 +46,7 @@ public class ServiceUsuario {
 				usuarioParaCadastrar.setEstado(usuarioExistente.getEstado());
 				usuarioParaCadastrar.setCidade(usuarioExistente.getCidade());
 				usuarioParaCadastrar.setEndereco(usuarioExistente.getEndereco());
-				usuarioParaCadastrar.setFoto(usuarioExistente.getSenha());
+				usuarioParaCadastrar.setFoto(usuarioExistente.getFoto());
 				return Optional.ofNullable(usuarioParaCadastrar);
 
 			} else {

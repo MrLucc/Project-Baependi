@@ -5,23 +5,14 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.baependi.projetoIntegrador.models.Categoria;
 import com.baependi.projetoIntegrador.models.Produtos;
-import com.baependi.projetoIntegrador.repository.RepositorioCategoria;
 import com.baependi.projetoIntegrador.repository.RepositorioProdutos;
-import com.baependi.projetoIntegrador.repository.RepositorioUsuario;
 
 @Service
 public class ServiceProduto {
 
 	@Autowired
 	private RepositorioProdutos repositoryP;
-
-	@Autowired
-	private RepositorioCategoria repositoryC;
-
-	@Autowired
-	private RepositorioUsuario repositoryU;
 
 	/**
 	 * Metódo usado para alterar um produto. O mesmo retorna um Optional com os
