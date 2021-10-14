@@ -1,9 +1,16 @@
 export const environment = {
   production: true,
   token: '',
-  nome:'',
+  nomeUsuario:'',
+  nomePessoal:"",
   id:0,
-  foto:""
+  foto:"",
+  email: '',
+  estado: "",
+  cidade: "",
+  endereco: "",
+  cep: "",
+
 
 
 };

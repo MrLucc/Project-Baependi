@@ -1,0 +1,11 @@
+<div class="row">
+  <div class="card m-2" style="width: 18rem;" *ngFor="let item of usuario.listaDeProdutos">
+    <img src="{{item.fotoProduto}}" class="card-img-top" alt="cards" >
+    <div class="card-body " >
+        <p class="card-title">{{item.nomeProduto}}</p>
+        <p class="card-text">{{item.descricaoProduto}}</p>
+        <p class="card-text"><small class="text-muted">R$:{{item.precoProduto}}</small></p>
+
+    </div>
+</div>
+</div>

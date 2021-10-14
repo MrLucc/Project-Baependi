@@ -27,14 +27,22 @@ export class MenuComponent implements OnInit {
       this.usuarioEspelho = resp
 
       environment.token = this.usuarioEspelho.token
-      environment.nome = this.usuarioEspelho.nomeUsuario
+      environment.nomeUsuario = this.usuarioEspelho.nomeUsuario
+      environment.nomePessoal = this.usuarioEspelho.nomePessoal
       environment.foto = this.usuarioEspelho.foto
       environment.id = this.usuarioEspelho.idUsuario
+      environment.email = this.usuarioEspelho.email
+      environment.estado = this.usuarioEspelho.estado
+      environment.cidade = this.usuarioEspelho.cidade
+      environment.endereco = this.usuarioEspelho.endereco
+      environment.cep = this.usuarioEspelho.cep
 
       console.log(environment.token)
-      console.log(environment.nome)
+      console.log(environment.nomeUsuario)
+      console.log(environment.nomePessoal)
       console.log(environment.foto)
       console.log(environment.id)
+      console.log(environment.email)
 
       this.router.navigate(["/inicio"])
     },erroLocal =>{
