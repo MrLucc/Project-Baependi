@@ -18,6 +18,8 @@ import { DadosComponent } from './dados/dados.component';
 import { InformacoesComponent } from './informacoes/informacoes.component';
 import { ProdutoEditComponent } from './edit/produto-edit/produto-edit.component';
 import { ProdutoDeleteComponent } from './delete/produto-delete/produto-delete.component';
+import { PerfilComponent } from './perfil/perfil.component';
+import { MeusprodutosComponent } from './meusprodutos/meusprodutos.component';
 
 
 
@@ -35,6 +37,8 @@ const routes: Routes = [
   {path: 'ods', component: ODSComponent},
   {path: 'dados', component: DadosComponent},
   {path: 'informacoes', component: InformacoesComponent},
+  {path: 'perfil', component: PerfilComponent},
+  {path: 'meusprodutos', component: MeusprodutosComponent},
 
 
 

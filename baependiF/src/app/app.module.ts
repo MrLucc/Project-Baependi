@@ -25,6 +25,8 @@ import { DadosComponent } from './dados/dados.component';
 import { InformacoesComponent } from './informacoes/informacoes.component';
 import { ProdutoEditComponent } from './edit/produto-edit/produto-edit.component';
 import { ProdutoDeleteComponent } from './delete/produto-delete/produto-delete.component';
+import { PerfilComponent } from './perfil/perfil.component';
+import { MeusprodutosComponent } from './meusprodutos/meusprodutos.component';
 
 
 
@@ -50,6 +52,8 @@ import { ProdutoDeleteComponent } from './delete/produto-delete/produto-delete.c
     InformacoesComponent,
     ProdutoEditComponent,
     ProdutoDeleteComponent,
+    PerfilComponent,
+    MeusprodutosComponent,
     
     
   ],
