@@ -7,7 +7,7 @@ import Swal from 'sweetalert2';
   selector: 'app-carrinho',
   templateUrl: './carrinho.component.html',
   styleUrls: ['./carrinho.component.css']
-  
+
 })
 export class CarrinhoComponent implements OnInit {
 
@@ -24,7 +24,7 @@ export class CarrinhoComponent implements OnInit {
         showConfirmButton: false,
         timer: 3000
       })
-      this.router.navigate(["/entrar"])
+      this.router.navigate(["/inicio"])
     }
   }
 

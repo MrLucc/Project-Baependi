@@ -25,8 +25,13 @@ import { DadosComponent } from './dados/dados.component';
 import { InformacoesComponent } from './informacoes/informacoes.component';
 import { ProdutoEditComponent } from './edit/produto-edit/produto-edit.component';
 import { ProdutoDeleteComponent } from './delete/produto-delete/produto-delete.component';
-import { PerfilComponent } from './perfil/perfil.component';
+
 import { MeusprodutosComponent } from './meusprodutos/meusprodutos.component';
+import { UserEditComponent } from './edit/user-edit/user-edit.component';
+import { ArtesComponent } from './categoria/artes/artes.component';
+import { ModaComponent } from './categoria/moda/moda.component';
+import { EscolarComponent } from './categoria/escolar/escolar.component';
+import { CasaComponent } from './categoria/casa/casa.component';
 
 
 
@@ -52,10 +57,15 @@ import { MeusprodutosComponent } from './meusprodutos/meusprodutos.component';
     InformacoesComponent,
     ProdutoEditComponent,
     ProdutoDeleteComponent,
-    PerfilComponent,
+    
     MeusprodutosComponent,
-    
-    
+    UserEditComponent,
+    ArtesComponent,
+    ModaComponent,
+    EscolarComponent,
+    CasaComponent,
+
+
   ],
   imports: [
     BrowserModule,

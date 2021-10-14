@@ -38,7 +38,7 @@ export class ProdutoComponent implements OnInit {
     window.scroll(0,0)
 
     if(environment.token == ""){
-      this.router.navigate(["/entrar"])
+      this.router.navigate(["/inicio"])
     }
 
     this.getAllCategorias()
@@ -83,7 +83,7 @@ export class ProdutoComponent implements OnInit {
       this.categoria = new Categoria;
       this.categoria.idCategoria = this.idCategoria
       this.produto.codigoCategoria = this.categoria
-      
+
 
       this.usuario.idUsuario = this.idUser
       this.produto.comprador = this.usuario

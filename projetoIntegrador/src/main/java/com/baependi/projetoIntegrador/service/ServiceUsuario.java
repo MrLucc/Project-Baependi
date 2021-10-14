@@ -64,8 +64,18 @@ public class ServiceUsuario {
 			BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 
 			String senhaEncriptada = encoder.encode(usuarioParaAlterar.getSenha());
+			
 			usuarioExistente.setNomeUsuario(usuarioParaAlterar.getNomeUsuario());
+			usuarioExistente.setNomePessoal(usuarioParaAlterar.getNomePessoal());
 			usuarioExistente.setSenha(senhaEncriptada);
+			usuarioExistente.setEmail(usuarioParaAlterar.getEmail());
+			usuarioExistente.setFoto(usuarioParaAlterar.getFoto());
+			usuarioExistente.setCep(usuarioParaAlterar.getCep());
+			usuarioExistente.setEstado(usuarioParaAlterar.getEstado());
+			usuarioExistente.setCidade(usuarioParaAlterar.getCidade());
+			usuarioExistente.setEndereco(usuarioParaAlterar.getEndereco());
+			
+			
 
 			return Optional.ofNullable(repository.save(usuarioExistente));
 		}).orElseGet(() -> {

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import Swal from 'sweetalert2';
+import { Usuario } from '../models/Usuario';
 import { UsuarioEspelho } from '../models/UsuarioEspelho';
 import { AutService } from '../service/aut.service';
 
@@ -13,6 +14,8 @@ import { AutService } from '../service/aut.service';
 export class MenuComponent implements OnInit {
 
   usuarioEspelho: UsuarioEspelho = new UsuarioEspelho
+  id = environment.id
+
 
   constructor(
     private router: Router,
