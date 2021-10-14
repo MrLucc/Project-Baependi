@@ -18,8 +18,12 @@ import { DadosComponent } from './dados/dados.component';
 import { InformacoesComponent } from './informacoes/informacoes.component';
 import { ProdutoEditComponent } from './edit/produto-edit/produto-edit.component';
 import { ProdutoDeleteComponent } from './delete/produto-delete/produto-delete.component';
-import { PerfilComponent } from './perfil/perfil.component';
 import { MeusprodutosComponent } from './meusprodutos/meusprodutos.component';
+import { UserEditComponent } from './edit/user-edit/user-edit.component';
+import { CasaComponent } from './categoria/casa/casa.component';
+import { ModaComponent } from './categoria/moda/moda.component';
+import { ArtesComponent } from './categoria/artes/artes.component';
+import { EscolarComponent } from './categoria/escolar/escolar.component';
 
 
 
@@ -37,20 +41,21 @@ const routes: Routes = [
   {path: 'ods', component: ODSComponent},
   {path: 'dados', component: DadosComponent},
   {path: 'informacoes', component: InformacoesComponent},
-  {path: 'perfil', component: PerfilComponent},
   {path: 'meusprodutos', component: MeusprodutosComponent},
 
-
-
-
+  
   {path: 'menu', component: MenuComponent},
   {path: 'rodape', component: RodapeComponent},
   {path: 'categoria', component: CategoriaComponent},
+  {path: 'artes', component: ArtesComponent},
+  {path: 'moda', component: ModaComponent},
+  {path: 'casa', component: CasaComponent},
+  {path: 'escolar', component: EscolarComponent},
   {path: 'categoria-edit/:id', component: CategoriaEditComponent},
   {path: 'categoria-delete/:id', component: CategoriaDeleteComponent},
   {path:'produto-edit/:id', component: ProdutoEditComponent},
-  {path: 'produto-delete/:id', component: ProdutoDeleteComponent}
-
+  {path: 'produto-delete/:id', component: ProdutoDeleteComponent},
+  {path: 'user-edit/:id', component: UserEditComponent}
 
 ];
 

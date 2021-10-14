@@ -37,4 +37,9 @@ export class CategoriaService {
     return this.http.delete(`https://baependi.herokuapp.com/baependi/categoria/deletar/${id}`)
   }
 
+  getByTipoCategoriaCasa(categoria: Categoria): Observable<Categoria>{
+    return this.http.get<Categoria>('https://baependi.herokuapp.com/baependi/categoria/acharPorTipoProduto/Casa', this.token)
+
+  }
+
 }

@@ -1,23 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Categoria } from '../models/Categoria';
-import { Produtos } from '../models/Produtos';
-import { CategoriaService } from '../service/categoria.service';
-import { ProdutoService } from '../service/produto.service';
+import { Categoria } from 'src/app/models/Categoria';
+import { Produtos } from 'src/app/models/Produtos';
+import { CategoriaService } from 'src/app/service/categoria.service';
+import { ProdutoService } from 'src/app/service/produto.service';
 
 @Component({
-  selector: 'app-todosprodutos',
-  templateUrl: './todosprodutos.component.html',
-  styleUrls: ['./todosprodutos.component.css']
+  selector: 'app-escolar',
+  templateUrl: './escolar.component.html',
+  styleUrls: ['./escolar.component.css']
 })
-export class TodosprodutosComponent implements OnInit {
+export class EscolarComponent implements OnInit {
 
-  produto: Produtos = new Produtos()
   categoria: Categoria = new Categoria()
   listaCategoria : Categoria[]
-  listaProdutos: Produtos[]
-
-
+  produto: Produtos = new Produtos()
+  listaProduto: Produtos[]
 
   constructor(
     private categoriaService: CategoriaService,
@@ -42,10 +40,8 @@ export class TodosprodutosComponent implements OnInit {
 
   getAllProdutos(){
     this.produtoService.getAllProdutos().subscribe((resp: Produtos[])=>{
-      this.listaProdutos = resp
+      this.listaProduto = resp
     })
   }
+
 }
-
-
-

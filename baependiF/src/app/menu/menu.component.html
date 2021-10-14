@@ -1,5 +1,5 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-success">
-    <a class="navbar-brand" routerLink='/inicio'><img class='menu-brand' src="https://i.imgur.com/WQ5g5pI.png?1" alt="Baependi-Logo"></a>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" routerLink='/inicio'><img class='menu-brand' src="https://i.imgur.com/nXoQ6iv.png" alt="Baependi-Logo"></a>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item dropdown">
@@ -7,10 +7,10 @@
               Categorias
             </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Artes</a>
-                    <a class="dropdown-item" routerLink="/produto-edit">Moda</a>
-                    <a class="dropdown-item" routerLink = "/produto-delete">Casa</a>
-                    <a class="dropdown-item" href="">Escolar</a>
+                    <a class="dropdown-item" routerLink="/artes">Artes</a>
+                    <a class="dropdown-item" routerLink="/moda">Moda</a>
+                    <a class="dropdown-item" routerLink ="/casa">Casa</a>
+                    <a class="dropdown-item" routerLink="/escolar">Escolar</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" *ngIf="auth.logado()" routerLink="/produto">Cadastre um novo produto</a>
 
@@ -43,9 +43,10 @@
               {{auth.nome()}}
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" routerLink="/perfil">Perfil</a>
+                  <a class="dropdown-item" [routerLink]="['/user-edit', id]">Perfil</a>
                   <div class="dropdown-divider"></div>
-                    <span routerLink="/produto">Sair</span> <a><img src="https://img.icons8.com/external-vitaliy-gorbachev-lineal-color-vitaly-gorbachev/40/000000/external-exit-emergency-vitaliy-gorbachev-lineal-color-vitaly-gorbachev.png"/></a>
+                    <span routerLink="/produto">Sair</span>
+                    <span></span>
               </div>
           </li>
 

@@ -1,0 +1,84 @@
+<div class="container mt-5 mb-5 ">
+
+
+  <div class="row">
+    <div class="col-md-12">
+      <h1 class="text-center text-secondary">Atualizar meu usuário</h1>
+    </div>
+  </div>
+
+  <div class="row d-flex justify-content-center">
+    <div class="col-md-10">
+
+      <div class="form-group">
+        <label class=' shadowall' for="nomeUsuario">Usuario</label>
+        <input [(ngModel)]="usuario.nomeUsuario"  class="form-control shadowbox" type="text" name="nome" id="nome" placeholder="Seu usuário">
+      </div>
+
+      <div class="form-group">
+        <label class=' shadowall' for="nomePessoal">Nome pessoal</label>
+        <input [(ngModel)]="usuario.nomePessoal" class="form-control shadowbox" type="text" name="nome" id="nome" placeholder="Seu nome">
+      </div>
+
+      <div class="form-group">
+        <label class=" shadowall" for="e-mail">E-mail</label>
+        <input [(ngModel)]="usuario.email"  class="form-control shadowbox" type="email" name="e-mail" id="e-mail" placeholder="Seu e-mail">
+      </div>
+
+      <div class="form-group">
+        <label class=" shadowall" for="e-mail">Confirme seu E-mail</label>
+        <input (input)="confirmEmail($event)" class="form-control shadowbox" type="email" name="e-mail" id="e-mail" placeholder="Seu e-mail">
+      </div>
+
+      <div class="form-group">
+        <label class=' shadowall' for="foto">Link da Foto</label>
+        <input [(ngModel)]="usuario.foto" class="form-control shadowbox" type="text" name="foto" id="foto" placeholder="Link da sua foto">
+      </div>
+
+      <div class="form-group col-md-6 ">
+        <label for="endereco ">Endereço</label>
+        <input [(ngModel)]="usuario.endereco" type="text " class="form-control " id="endereco " name="endereco" placeholder="Seu endereço ">
+    </div>
+
+    <div class="form-row ">
+      <div class="form-group col-md-6 ">
+          <label for="cidade ">Cidade</label>
+          <input [(ngModel)]="usuario.cidade" type="text " class="form-control " id="cidade " name="cidade" placeholder="Cidade onde você mora " >
+      </div>
+
+      <div class="form-group col-md-4 ">
+        <label for="estado ">Estado</label>
+        <input [(ngModel)]="usuario.estado" type="text" class="form-control" id="estado" name="estado" placeholder="Seu estado" >
+    </div>
+
+    <div class="form-group col-md-2 ">
+      <label for="cep ">CEP</label>
+      <input [(ngModel)]="usuario.cep" type="text " class="form-control " id="cep " name="cep">
+  </div>
+
+      <div class="form-group">
+        <label class=" shadowall" for="senha">Senha</label>
+        <input [(ngModel)]="usuario.senha" class="form-control shadowbox" type="password" name="senha" id="senha" placeholder="Sua senha">
+      </div>
+
+      <div class="form-group">
+        <label class=" shadowall" for="confirmSenha">Confirmar Senha</label>
+        <input (input)='confirmSenha($event)' class="form-control shadowbox" type="password" name="confirmSenha" id="confirmSenha"
+          placeholder="Confirme sua senha">
+      </div>
+
+
+
+
+
+      <div class="d-flex justify-content-center">
+        <button type="submit" class="btn btn-danger mr-4" routerLink='/inicio'>Cancelar</button>
+        <button type="submit" class="btn btn-success" (click)='atualizar()'>Atualizar</button>
+      </div>
+
+    </div>
+  </div>
+
+
+</div>
+
