@@ -2,16 +2,22 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment.prod';
+import { Categoria } from '../models/Categoria';
 import { Usuario } from '../models/Usuario';
 import { UsuarioEspelho } from '../models/UsuarioEspelho';
+import { CategoriaService } from './categoria.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AutService {
 
+
+  listaCategoria: Categoria
+
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
+    private categoriaService: CategoriaService
   ) { }
 
   token = {
@@ -34,6 +40,11 @@ export class AutService {
     return this.http.put<Usuario>("https://baependi.herokuapp.com/baependi/usuario/atualizar", usuario, this.token)
   }
 
+  findByCategoria(nome: string){
+    this.categoriaService.getByTipoCategoriaCasa(nome).subscribe((resp: Categoria)=>{
+      this.listaCategoria = resp
+    })
+  }
 
 
   logado() {

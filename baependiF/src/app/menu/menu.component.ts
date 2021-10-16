@@ -1,10 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment.prod';
 import Swal from 'sweetalert2';
+import { Categoria } from '../models/Categoria';
 import { Usuario } from '../models/Usuario';
 import { UsuarioEspelho } from '../models/UsuarioEspelho';
 import { AutService } from '../service/aut.service';
+import { CategoriaService } from '../service/categoria.service';
 
 @Component({
   selector: 'app-menu',
@@ -15,11 +18,13 @@ export class MenuComponent implements OnInit {
 
   usuarioEspelho: UsuarioEspelho = new UsuarioEspelho
   id = environment.id
+  
 
 
   constructor(
     private router: Router,
-    public auth: AutService
+    public auth: AutService,
+    private categoriaService: CategoriaService
     ) { }
 
   ngOnInit() {
@@ -69,5 +74,7 @@ export class MenuComponent implements OnInit {
       }
     })
   }
+
+
 
 }

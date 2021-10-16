@@ -33,13 +33,6 @@ export class TodosprodutosComponent implements OnInit {
 
   }
 
-
-  findByCategoriaCasa(categoria: Categoria){
-    return this.categoriaService.getByTipoCategoriaCasa(categoria).subscribe((resp: Categoria)=>{
-      this.categoria = resp
-    })
-  }
-
   getAllProdutos(){
     this.produtoService.getAllProdutos().subscribe((resp: Produtos[])=>{
       this.listaProdutos = resp
