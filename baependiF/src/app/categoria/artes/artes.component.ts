@@ -17,6 +17,7 @@ export class ArtesComponent implements OnInit {
   produto: Produtos = new Produtos()
   listaProduto: Produtos[]
 
+
   constructor(
     private categoriaService: CategoriaService,
     private produtoService: ProdutoService,
@@ -27,14 +28,16 @@ export class ArtesComponent implements OnInit {
 
 
     window.scroll(0,0)
-    this.getAllProdutos()
+    // this.getAllProdutos(),
+    this.findByCategoriaCasa()
 
   }
 
 
-  findByCategoriaCasa(categoria: Categoria){
-    return this.categoriaService.getByTipoCategoriaCasa(categoria).subscribe((resp: Categoria)=>{
+  findByCategoriaCasa(){
+    return this.categoriaService.getByTipoCategoriaCasa('Artes').subscribe((resp: Categoria)=>{
       this.categoria = resp
+      console.log(resp);
     })
   }
 
@@ -43,6 +46,8 @@ export class ArtesComponent implements OnInit {
       this.listaProduto = resp
     })
   }
+
+
 }
 
 

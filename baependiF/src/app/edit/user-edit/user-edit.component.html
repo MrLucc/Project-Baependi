@@ -35,7 +35,7 @@
         <input [(ngModel)]="usuario.foto" class="form-control shadowbox" type="text" name="foto" id="foto" placeholder="Link da sua foto">
       </div>
 
-      <div class="form-group col-md-6 ">
+      <div class="form-group ">
         <label for="endereco ">Endereço</label>
         <input [(ngModel)]="usuario.endereco" type="text " class="form-control " id="endereco " name="endereco" placeholder="Seu endereço ">
     </div>
@@ -56,7 +56,7 @@
       <input [(ngModel)]="usuario.cep" type="text " class="form-control " id="cep " name="cep">
   </div>
 
-      <div class="form-group">
+      <div class="form-group mr-4">
         <label class=" shadowall" for="senha">Senha</label>
         <input [(ngModel)]="usuario.senha" class="form-control shadowbox" type="password" name="senha" id="senha" placeholder="Sua senha">
       </div>
@@ -71,14 +71,16 @@
 
 
 
-      <div class="d-flex justify-content-center">
-        <button type="submit" class="btn btn-danger mr-4" routerLink='/inicio'>Cancelar</button>
-        <button type="submit" class="btn btn-success" (click)='atualizar()'>Atualizar</button>
-      </div>
+
 
     </div>
   </div>
 
 
+</div>
+
+<div class="d-flex justify-content-center">
+  <button type="submit" class="btn btn-danger mr-4" routerLink='/inicio'>Cancelar</button>
+  <button type="submit" class="btn btn-success" (click)='atualizar()'>Atualizar</button>
 </div>
 

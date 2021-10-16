@@ -27,13 +27,13 @@ export class ModaComponent implements OnInit {
 
 
     window.scroll(0,0)
-    this.getAllProdutos()
-
+    // this.getAllProdutos()
+    this.findByCategoriaCasa()
   }
 
 
-  findByCategoriaCasa(categoria: Categoria){
-    return this.categoriaService.getByTipoCategoriaCasa(categoria).subscribe((resp: Categoria)=>{
+  findByCategoriaCasa(){
+    return this.categoriaService.getByTipoCategoriaCasa('Moda').subscribe((resp: Categoria)=>{
       this.categoria = resp
     })
   }
