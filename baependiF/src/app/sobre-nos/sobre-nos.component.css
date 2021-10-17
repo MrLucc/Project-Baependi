@@ -152,3 +152,37 @@ body {
   background-color: #f7f5ec;
 }
 
+.divPrincipal {
+  height: 1000px;
+  background-color: #F0F0F0;
+}
+
+.centroConteudo {
+  padding: 50px 0;
+  text-align: center;
+  height: 0px;
+  background-color: #F0F0F0;
+
+}
+
+.divTecnologia {
+height: 1000px;
+
+}
+
+
+.rowE {
+  height: 400px;
+
+}
+
+.divParceiro {
+  height: 500px;
+
+
+}
+
+.br-50 {
+  border-radius: 50%;
+}
+

@@ -50,7 +50,7 @@
         <a class="nav-link" routerLink="/sobre-nos">Sobre nós</a>
       </li>
 
-      <form class="form-inline my-2 my-lg-0">
+      <form class="form-inline my-2 my-lg-0 ml-5">
         <div id="divBusca">
           <input
             name="busca"
@@ -59,22 +59,19 @@
             placeholder="O que você procura?"
           />
           <button class="btn" type="submit" id="cor">
-            <i id="cor" class="fa fa-search" aria-hidden="true"
-              ><img
-                src="https://img.icons8.com/material-outlined/24/000000/search--v1.png"
-            /></i>
+          <img  src="https://img.icons8.com/material-outlined/24/000000/search--v1.png"/>
           </button>
         </div>
       </form>
     </ul>
     <ul class="navbar-nav ml-auto">
       <li class="nav-item" *ngIf="!auth.logado()">
-        <a class="nav-link mt-2" data-toggle="modal" data-target="#entrar">Entrar</a>
+        <a class="nav-link mt-2" href="#" data-toggle="modal" data-target="#entrar">Entrar</a>
       </li>
 
       <li class="nav-item dropdown" *ngIf="auth.logado()">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <img src="https://img.icons8.com/bubbles/50/000000/lifecycle.png" />
+          <img class="mr-0" src="https://img.icons8.com/bubbles/50/000000/lifecycle.png"/>Olá,{{auth.nome()}}
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" style="color: green;" [routerLink]="['/user-edit', id]">Perfil</a>
@@ -109,6 +106,7 @@
               <div class="modal-content modal-backdrop">
                   <div class="modal-header">
                       <div class="login-container-wrapper clearfix">
+                        <a href="#" data-dismiss="modal"><img class="img1" src="https://img.icons8.com/metro/26/fa314a/x-coordinate.png"/></a>
 
                           <div class="welcome"><strong>Bem-vindo</strong> </div>
 
