@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {  Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
+import Swal from 'sweetalert2';
 import { Categoria } from '../models/Categoria';
 import { Produtos } from '../models/Produtos';
 import { Usuario } from '../models/Usuario';
@@ -90,9 +91,15 @@ export class ProdutoComponent implements OnInit {
 
       this.produtoService.postProdutos(this.produto).subscribe((resp: Produtos)=>{
         this.produto = resp
-        alert("Produto cadastrado com sucesso!")
+        Swal.fire({
+          icon: 'success',
+          text: 'Produto cadastrado com sucesso',
+
+        })
         this.produto = new Produtos()
+
       })
+      this.router.navigate(['/inicio'])
     }
 
 }

@@ -4,6 +4,7 @@ import { Categoria } from 'src/app/models/Categoria';
 import { Produtos } from 'src/app/models/Produtos';
 import { CategoriaService } from 'src/app/service/categoria.service';
 import { ProdutoService } from 'src/app/service/produto.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-produto-edit',
@@ -69,7 +70,12 @@ export class ProdutoEditComponent implements OnInit {
 
     this.produtoService.putProdutos(this.produto).subscribe((resp: Produtos)=>{
       this.produto = resp
-      alert("Produto atualizado com sucesso!")
+      Swal.fire({
+        icon: 'success',
+        text: 'Produto atualizado com sucesso',
+
+      })
+      this.router.navigate(['/meusprodutos'])
     })
 
   }

@@ -17,7 +17,6 @@ import { CategoriaComponent } from './categoria/categoria.component';
 import { CategoriaEditComponent } from './edit/categoria-edit/categoria-edit.component';
 import { CategoriaDeleteComponent } from './delete/categoria-delete/categoria-delete.component';
 import { ProdutoComponent } from './produto/produto.component';
-import { AmostraComponent } from './amostra/amostra.component';
 import { TodosprodutosComponent } from './todosprodutos/todosprodutos.component';
 import { CarrinhoComponent } from './carrinho/carrinho.component';
 import { ODSComponent } from './ods/ods.component';
@@ -49,7 +48,7 @@ import { CasaComponent } from './categoria/casa/casa.component';
     CategoriaEditComponent,
     CategoriaDeleteComponent,
     ProdutoComponent,
-    AmostraComponent,
+
     TodosprodutosComponent,
     CarrinhoComponent,
     ODSComponent,
@@ -57,7 +56,7 @@ import { CasaComponent } from './categoria/casa/casa.component';
     InformacoesComponent,
     ProdutoEditComponent,
     ProdutoDeleteComponent,
-    
+
     MeusprodutosComponent,
     UserEditComponent,
     ArtesComponent,

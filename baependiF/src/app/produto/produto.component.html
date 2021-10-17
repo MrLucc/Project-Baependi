@@ -1,91 +1,111 @@
-<div class="container-fluid" style="background-color: #97c9e8;">
+<div class="container register ml-auto">
+  <div class="row">
+      <div class="col-md-3 register-left">
+          <img src="https://i.imgur.com/psYGUWe.png" alt="caixa produto" />
+          <h3>Novo Produto</h3>
+          <p></p>
+          <h4>Divulgue seu produto na Baependi</h4>
 
-    <div class="row justify-content-center">
+      </div>
+      <div class="col-md-9 register-right">
+          <div class="tab-content" id="myTabContent">
+              <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                  <h3 class="register-heading">Dados do Produto</h3>
+                  <div class="row register-form">
+                      <div class="col-md-6">
 
+                          <div class="form-group">
+                              <div class="control-group">
+                                  <input [(ngModel)]='produto.nomeProduto' type="text" class="form-control" id="nomeProduto" name="nomeProduto" (click)='teste()'>
+                                  <label for="input">Nome do Produto</label>
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <div class="control-group">
+                                  <input [(ngModel)]='produto.precoProduto' type="text" class="form-control" id="precoProduto" name="precoProduto" (click)='teste()'>
+                                  <label for="input">Preço do Produto</label>
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <div class="control-group">
+                                  <input [(ngModel)]='produto.descricaoProduto' type="text" class="form-control" id="descricaoProduto" name="descricaoProduto" (click)='teste()'>
+                                  <label for="input">Descrição do Produto</label>
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <div class="control-group">
+                                  <input [(ngModel)]='produto.autoreProduto' type="text" class="form-control" id="autoreProduto" name="autoreProduto" (click)='teste()'>
+                                  <label for="input">Autore do Produto</label>
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <div class="control-group">
+                                  <input [(ngModel)]='produto.autoreProduto' type="text" class="form-control" id="autoreProduto" name="autoreProduto" (click)='teste()'>
+                                  <label for="input">Foto do Produto </label>
+                              </div>
+                          </div>
 
-        <div class="col-md-6 mt-5 mb-5">
+                          <form id="form-select">
+                              <fieldset class="select-box-svg t-neutral">
+                                  <label for="select-box-svg" class="select-box-svg__label">Você fez o produto?</label>
+                                  <div class="select-box-svg__inner">
+                                      <select id="select-box-svg" class="select-box-svg__select" [(ngModel)]='produto.artesanal' name="artesanal" (click)='teste()'>
+                                          <option value="Sim">Sim</option >
+                                          <option value="Não">Não</option>
+                                      </select>
+                                      <svg role="presentation" class="icon icon--arrow" width="62px" height="60px" viewBox="-458 261.7 41.8 38.3">
+                                          <rect x="-458" y="261.4" class="icon__box" width="62" height="60"/>
+                                          <polygon class="icon__caret" points="-432.9,281.4 -437.1,286.4 -441.3,281.4 "/>
+                                      </svg>
+                                  </div>
+                              </fieldset>
+                          </form>
+                          <form id="form-select">
+                              <fieldset class="select-box-svg t-neutral">
+                                  <label for="select-box-svg" class="select-box-svg__label">Tipo de Material</label>
+                                  <div class="select-box-svg__inner">
+                                      <select id="select-box-svg" class="select-box-svg__select" [(ngModel)]='produto.tipoMaterial' name="tipoMaterial" (click)='teste()'>
+                                          <option value="Plástico">Plástico</option>
+                                          <option value="Vidro">Vidro</option>
+                                          <option value="Metal">Metal</option>
+                                          <option value="Papel">Papel</option>
+                                          <option value="Orgânico">Orgânico</option>
+                                      </select>
+                                      <svg role="presentation" class="icon icon--arrow" width="62px" height="60px" viewBox="-458 261.7 41.8 38.3">
+                                          <rect x="-458" y="261.4" class="icon__box" width="62" height="60"/>
+                                          <polygon class="icon__caret" points="-432.9,281.4 -437.1,286.4 -441.3,281.4 "/>
+                                      </svg>
+                                  </div>
+                              </fieldset>
+                          </form>
 
-            <div>
-                <div class="col-md-10">
+                          <form id="form-select">
+                              <fieldset class="select-box-svg t-neutral">
+                                  <label for="select-box-svg" class="select-box-svg__label">Categoria</label>
+                                  <div class="select-box-svg__inner">
+                                      <select id="select-box-svg" class="select-box-svg__select" [(ngModel)]="idCategoria" name="tipoProduto" (change)='findByIdCategoria()'>
+                                          <option *ngFor='let item of listaCategoria' value="{{item.idCategoria}}">{{item.tipoProduto}}
+                                          </option>
 
-                    <h1 class="text-center">Cadastrar produto <img class="mb-3" src="https://veja.abril.com.br/wp-content/uploads/2018/11/christ-corte.jpg" width="70px" height="70px" /></h1>
+                                      </select>
+                                      <svg role="presentation" class="icon icon--arrow" width="62px" height="60px" viewBox="-458 261.7 41.8 38.3">
+                                          <rect x="-458" y="261.4" class="icon__box" width="62" height="60"/>
+                                          <polygon class="icon__caret" points="-432.9,281.4 -437.1,286.4 -441.3,281.4 "/>
+                                      </svg>
+                                  </div>
+                              </fieldset>
+                          </form>
 
-                    <form>
-                        <!--PRIMEIRA LINHA DO CADASTRO-->
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <label for="nomeProduto">Nome do produto </label>
-                                <input [(ngModel)]='produto.nomeProduto' type="text" class="form-control" id="nomeProduto" name="nomeProduto" placeholder="Entre com nome do produto " (click)='teste()'>
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label for="precoProduto">Preço do produto</label>
-                                <input [(ngModel)]='produto.precoProduto' type="text" class="form-control" id="precoProduto" name="precoProduto" placeholder="Insira preço do produto" (click)='teste()'>
-                            </div>
-                        </div>
-                        <!--FINALIZAÇÃO DA PRIMEIRA LINHA-->
+                          <br>
 
-                        <!--INICIO DA SEGUNDA LINHA-->
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <label for="descricaoProduto">Descrição do produto</label>
-                                <input [(ngModel)]='produto.descricaoProduto' type="text" class="form-control" id="descricaoProduto" name="descricaoProduto" placeholder="Entre com a descrição do produto" (click)='teste()'>
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label for="autoreProduto">Autore do produto </label>
-                                <input [(ngModel)]='produto.autoreProduto' type="text" class="form-control" id="autoreProduto" name="autoreProduto" placeholder="Autore do produto" (click)='teste()'>
-                            </div>
-                        </div>
-                        <!--FINALIZAÇÃO DA SEGUNDA LINHA-->
+                          <div class="d-flex justify-content-center ">
 
-                        <!--INICIO DA TERCEIRA LINHA-->
-                        <div class="form-row ">
-                            <div class="form-group col-md-6 ">
-                                <label for="artesanal">Produto é de autoria própria ?</label>
-                                <select [(ngModel)]='produto.artesanal' class="form-control" id="artesanal" name="artesanal" (click)='teste()'>
-                                <option value="Sim">Sim</option >
-                                <option value="Não">Não</option>
-                              </select>
-                            </div>
-                            <div class="form-group col-md-6 ">
-                                <label for="tipoMaterial">Informe o tipo do material</label>
-                                <select [(ngModel)]='produto.tipoMaterial' class="form-control" id="tipoMaterial" name="tipoMaterial" (click)='teste()'>
-                                <option value="Plastico">Plastico</option>
-                                <option value="Vidro">Vidro</option>
-                                <option value="Metal">Metal</option>
-                                <option value="Papel">Papel</option>
-                                <option value="Organico">Organico</option>
-                              </select>
-                            </div>
-                        </div>
-                        <!--FINALIZAÇÃO DA TERCEIRA LINHA-->
+                              <button type="submit " class="btnCancel " routerLink="/inicio">Cancelar</button>
+                              <button type="submit " class=" btnRegister " (click)='cadastrar()'>Cadastrar</button>
 
-                        <!--INICIO DA QUARTA LINHA-->
-                        <div class="form-row ">
-                            <div class="form-group col-md-6 ">
-                                <label for="fotoProduto">Foto do produto</label>
-                                <input [(ngModel)]='produto.fotoProduto' type="text " class="form-control" id="fotoProduto" name="fotoProduto" placeholder="Link da sua foto " (click)='teste()'>
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label for="tipoProduto">Categoria Associada </label>
-                                <select class="form-control" [(ngModel)]="idCategoria" name="tipoProduto" id="tipoProduto" (change)='findByIdCategoria()'><option *ngFor='let item of listaCategoria' value="{{item.idCategoria}}">{{item.tipoProduto}}</option></select>
+                          </div>
 
-                            </div>
-
-                        </div>
-                        <!--FINALIZAÇÃO DA QUARTA LINHA-->
-
-
-                        <div class="d-flex justify-content-center ">
-
-                          <button type="submit " class="btn btn-danger mr-4 " routerLink="/inicio">Cancelar</button>
-                          <button type="submit " class="btn btn-success " (click)='cadastrar()'>Cadastrar</button>
-
-                        </div>
-
-                    </form>
-                </div>
-
-            </div>
-        </div>
-    </div>
-</div>
+                      </div>
+                  </div>
+              </div>
+          </div>

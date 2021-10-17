@@ -35,15 +35,15 @@ const routes: Routes = [
   {path:'sobre-nos', component: SobreNosComponent},
   {path:'cadastrar', component: CadastrarComponent},
   {path:'entrar', component: EntrarComponent},
-  {path: 'produto', component: ProdutoComponent},
-  {path: 'todosprodutos', component: TodosprodutosComponent },
-  {path: 'carrinho', component: CarrinhoComponent},
-  {path: 'ods', component: ODSComponent},
-  {path: 'dados', component: DadosComponent},
-  {path: 'informacoes', component: InformacoesComponent},
-  {path: 'meusprodutos', component: MeusprodutosComponent},
+  {path:'produto', component: ProdutoComponent},
+  {path:'todosprodutos', component: TodosprodutosComponent },
+  {path:'carrinho', component: CarrinhoComponent},
+  {path:'ods', component: ODSComponent},
+  {path:'dados', component: DadosComponent},
+  {path:'informacoes', component: InformacoesComponent},
+  {path:'meusprodutos', component: MeusprodutosComponent},
 
-  
+
   {path: 'menu', component: MenuComponent},
   {path: 'rodape', component: RodapeComponent},
   {path: 'categoria', component: CategoriaComponent},
@@ -53,7 +53,7 @@ const routes: Routes = [
   {path: 'escolar', component: EscolarComponent},
   {path: 'categoria-edit/:id', component: CategoriaEditComponent},
   {path: 'categoria-delete/:id', component: CategoriaDeleteComponent},
-  {path:'produto-edit/:id', component: ProdutoEditComponent},
+  {path: 'produto-edit/:id', component: ProdutoEditComponent},
   {path: 'produto-delete/:id', component: ProdutoDeleteComponent},
   {path: 'user-edit/:id', component: UserEditComponent}
 

@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Produtos } from '../models/Produtos';
+import { environment } from 'src/environments/environment.prod';
+import Swal from 'sweetalert2';
 import { Usuario } from '../models/Usuario';
 import { AutService } from '../service/aut.service';
-import { ProdutoService } from '../service/produto.service';
 
 @Component({
   selector: 'app-meusprodutos',
@@ -12,46 +12,34 @@ import { ProdutoService } from '../service/produto.service';
 })
 export class MeusprodutosComponent implements OnInit {
 
-  usuario: Usuario = new Usuario
-  produtos: Produtos = new Produtos
-  listaDeProdutos: Produtos[]
-  idUser: number
-
-
+  user: Usuario = new Usuario();
+  idUsuario = environment.id;
 
   constructor(
-    private auth: AutService,
-    private produtosService: ProdutoService,
     private router: Router,
-    private routerAtiva: ActivatedRoute
+    private authService: AutService
   ) { }
 
-  ngOnInit(){
+  ngOnInit() {
+    window.scroll(0,0);
+    if (environment.token == "") {
+
+      Swal.fire({
+        icon: 'info',
+        title: 'Oops...',
+        text: 'Sua sessão expirou!'
+      })
 
 
-    this.routerAtiva.snapshot.params['id']
-    this.findAllProdutos()
+      this.router.navigate(["/inicio"]);
+    }
 
-  }
-
-
-
-  findAllProdutos() {
-    this.produtosService.getAllProdutos().subscribe((resp: Produtos[])=> {
-      this.listaDeProdutos = resp
-    })
-  }
-
-
-  findByIdProdutos(id: number) {
-    this.produtosService.getByIdProdutos(id).subscribe((resp: Produtos)=> {
-      this.produtos = resp
-    })
+    this.findByIdUser();
   }
 
   findByIdUser() {
-    this.auth.getByIdUser(this.idUser).subscribe((resp: Usuario)=> {
-      this.usuario = resp;
-    })
+    this.authService.getByIdUser(this.idUsuario).subscribe((resp: Usuario)=>{
+      this.user = resp;
+    });
   }
 }

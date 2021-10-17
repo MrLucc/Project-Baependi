@@ -20,14 +20,12 @@
           Categorias
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" routerLink="/artes">Artes</a>
-          <a class="dropdown-item" routerLink="/moda">Moda</a>
-          <a class="dropdown-item" routerLink="/casa">Casa</a>
-          <a class="dropdown-item" routerLink="/escolar">Escolar</a>
+          <a class="dropdown-item" style="color: green;" routerLink="/artes">Artes</a>
+          <a class="dropdown-item" style="color: green;" routerLink="/moda">Moda</a>
+          <a class="dropdown-item" style="color: green;" routerLink="/casa">Casa</a>
+          <a class="dropdown-item" style="color: green;" routerLink="/escolar">Escolar</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" *ngIf="auth.logado()" routerLink="/produto"
-            >Cadastre um novo produto</a
-          >
+
         </div>
       </li>
       <li class="nav-item dropdown">
@@ -43,9 +41,9 @@
           Reutilização
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" routerLink="/informacoes">O que é</a>
-          <a class="dropdown-item" routerLink="/ods">ODS-13</a>
-          <a class="dropdown-item" routerLink="/dados">Dados</a>
+          <a class="dropdown-item" style="color: green;" routerLink="/informacoes">O que é</a>
+          <a class="dropdown-item" style="color: green;" routerLink="/ods">ODS-13</a>
+          <a class="dropdown-item" style="color: green;" routerLink="/dados">Dados</a>
         </div>
       </li>
       <li class="nav-item">
@@ -79,7 +77,12 @@
           <img src="https://img.icons8.com/bubbles/50/000000/lifecycle.png" />
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" [routerLink]="['/user-edit', id]">Perfil</a>
+          <a class="dropdown-item" style="color: green;" [routerLink]="['/user-edit', id]">Perfil</a>
+          <a class="dropdown-item" style="color: green;" *ngIf="auth.logado()" routerLink="/produto"
+          >Cadastre um novo produto</a>
+          <a class="dropdown-item" style="color: green;" *ngIf="auth.logado()" routerLink="/meusprodutos"
+          >Meus produtos</a>
+
           <div class="dropdown-divider"></div>
           <span routerLink="/produto">Sair</span>
           <span></span>
