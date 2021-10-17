@@ -1,13 +1,13 @@
 .register {
-  background: -webkit-linear-gradient(left, #44520a, #536122);
+  background: -webkit-linear-gradient(left, #28cea4, #46882f);
   margin-top: 3%;
   padding: 3%;
 }
 
 .register-left {
   text-align: center;
-  color: white;
-  margin-top: 25%;
+  color: dark;
+  margin-top: 20%;
 }
 
 .register-left input {
@@ -15,15 +15,16 @@
   border-radius: 1.5rem;
   padding: 2%;
   width: 60%;
-  background: #Fbf8f9fa;
+  background: #f8f9fa;
   font-weight: bold;
-  color: #704a1f;
+  color: #383d41;
   margin-top: 30%;
   margin-bottom: 3%;
   cursor: pointer;
 }
 
 .register-right {
+  background: #121b2493;
   border-top-left-radius: 10% 50%;
   border-bottom-left-radius: 10% 50%;
 }
@@ -74,8 +75,8 @@ button {
   border: none;
   border-radius: 1.5rem;
   padding: 2%;
-  background: #09ff00e0;
-  color: dark;
+  background: #0044ffe0;
+  color: white;
   font-weight: 600;
   width: 50%;
   cursor: pointer;
@@ -88,8 +89,8 @@ button {
   border: none;
   border-radius: 1.5rem;
   padding: 2%;
-  background: #ff0800e0;
-  color: dark;
+  background: #ff0800ee;
+  color: white;
   font-weight: 600;
   width: 50%;
   cursor: pointer;
@@ -130,93 +131,6 @@ button {
   margin-top: 8%;
   margin-bottom: -15%;
   color: #e3e9ee;
-}
-
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: "Poppins", sans-serif;
-  height: 100vh;
-  position: relative;
-  margin: 0;
-}
-
-.control-group {
-  padding-top: 33px;
-  position: relative;
-}
-
-.control-group input[type="text"] {
-  -webkit-appearance: none;
-  appearance: none;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  border: 6px solid #414f68;
-  background: #fff;
-  border-radius: 0;
-  color: #222;
-  font-family: "Poppins", sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  outline: none;
-  padding: 15px 15px 2px 15px;
-  transition-property: border, padding;
-  transition-duration: 500ms;
-  transition-timing-function: ease;
-  width: 100%;
-}
-
-.control-group input[type="text"]:focus {
-  border-color: #2d9ae3;
-  padding-bottom: 16px;
-  padding-top: 16px;
-}
-
-.control-group input[type="text"]+label {
-  background: #1e2e58;
-  color: #fff;
-  font-weight: 400;
-  left: 0;
-  padding: 5px 20px 5px 20px;
-  position: absolute;
-  top: 33px;
-  transition-property: top;
-  transition-duration: 500ms;
-  transition-timing-function: ease;
-}
-
-.control-group input[type="text"]:focus+label {
-  background: #25c910;
-  top: 0;
-}
-
-.t-neutral .select-box-svg__inner {
-  background-color: #eee;
-}
-
-.t-neutral .select-boxrgb select option {
-  color: #111;
-}
-
-.t-neutral .select-box-svg__inner select {
-  color: #697070;
-}
-
-.t-neutral .select-box-svg__inner select:active,
-.t-neutral .select-box-svg__inner select:focus {
-  background-color: rgba(249, 241, 155, 0.5);
-}
-
-.t-neutral .icon--arrow .icon__box {
-  fill: #222;
-}
-
-.t-neutral .icon--arrow .icon__caret {
-  fill: #fff;
 }
 
 .select-box-svg__label {
@@ -284,4 +198,29 @@ body {
 
 .select-box-svg__label~.select-box-svg__inner select {
   width: 100%;
+}
+
+.t-neutral .select-box-svg__inner {
+  background-color: #eee;
+}
+
+.t-neutral .select-boxrgb select option {
+  color: #111;
+}
+
+.t-neutral .select-box-svg__inner select {
+  color: #697070;
+}
+
+.t-neutral .select-box-svg__inner select:active,
+.t-neutral .select-box-svg__inner select:focus {
+  background-color: rgba(249, 241, 155, 0.5);
+}
+
+.t-neutral .icon--arrow .icon__box {
+  fill: #222;
+}
+
+.t-neutral .icon--arrow .icon__caret {
+  fill: #fff;
 }

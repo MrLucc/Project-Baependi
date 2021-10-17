@@ -382,15 +382,75 @@ body {
 }
 
 .button1:hover {
-  opacity: 1;
-  z-index: 1;
-  width: 100%;
-  height: 100%;
   opacity: 0.5;
+  z-index: 1;
+
+  height: 100%;
+  opacity: 1;
 }
 
 img.blur {
   -webkit-filter: blur(4px);
   filter: blur(4px);
   filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius='4');
+}
+
+
+h1 {
+  font-family: 'Source Sans Pro', serif;
+}
+
+.headeru {
+  position: relative;
+  height: 50vh;
+
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+header h1 {
+  position: absolute;
+  width: 90%;
+  text-align: center;
+  top: 40%;
+  left: 50%;
+  color: #fff;
+  transform: translate(-50%, -50%);
+  webkit-transform: translate(-50%, -50%);
+  moz-transform: translate(-50%, -50%);
+font-size: 58px;
+font-weight: bold;
+}
+
+
+header p {
+  position: absolute;
+  width: 90%;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  color: #fff;
+  transform: translate(-50%, -50%);
+  webkit-transform: translate(-50%, -50%);
+  moz-transform: translate(-50%, -50%);
+font-size: 18px;
+font-weight: normal;
+}
+
+.p1 {
+  margin: 15px auto;
+  width: 100%;
+  max-width: 800px;
+  line-height: 1.7;
+
+}
+
+#header {
+  background: url(https://images.unsplash.com/photo-1415795854641-f4a487a0fdc8?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80) center center / cover no-repeat ;
+}
+
+.imgveja{
+height: 300px;
+width: 300px;
+
 }

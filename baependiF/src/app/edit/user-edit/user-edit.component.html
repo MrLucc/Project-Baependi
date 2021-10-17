@@ -1,91 +1,163 @@
-User-edit HTML:
-
-<div class="container">
-  <h1>Editar Usuário</h1>
-  <hr>
-<div class="row">
-    <!-- left column -->
-    <div class="col-md-3">
-      <div class="text-center">
-        <img src="{{foto}}" class="avatar imgAvatar " alt="avatar">
-
-
-
-      </div>
+<div class="container register">
+  <div class="row">
+    <div class="col-md-3 register-left">
+      <img src="{{foto}}" class="img-fluid rounded-bottom rounded-top" alt="avatar">
+      <h3>{{usuario.nomePessoal}}</h3>
+      <p></p>
+      <h4>Deixe seu perfil de cara nova!</h4>
     </div>
+    <div class="col-md-9 register-right">
+      <div class="tab-content" id="myTabContent">
+        <div
+          class="tab-pane fade show active"
+          id="home"
+          role="tabpanel"
+          aria-labelledby="home-tab"
+        >
+          <h3 class="register-heading">Edite seu Perfil</h3>
+          <div class="row register-form">
+            <div class="col-md-6">
+              <!-----------------------------------------------------INÍCIO 1ª COLUNA----------------------------------------------->
 
-    <!-- edit form column -->
-    <div class="col-md-9 personal-info">
-      <div class="alert alert-info alert-dismissable">
+              <div class="form-group">
+                <input
+                  [(ngModel)]="usuario.nomeUsuario"
+                  type="text"
+                  class="form-control"
+                  id="usuario"
+                  name="usuario"
+                  placeholder="Usuário*"
+                />
+              </div>
 
-        <i class="fa fa-coffee"></i>
+              <div class="form-group">
+                <input
+                  (input)="confirmEmail($event)"
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  name="email"
+                  placeholder="E-mail*"
 
-      </div>
-      <h3>Informações pessoais</h3>
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  (input)="confirmSenha($event)"
+                  type="password"
+                  class="form-control"
+                  id="senha"
+                  name="senha"
+                  placeholder="Senha* (min. 6 caracteres)"
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  [(ngModel)]="usuario.foto"
+                  type="text "
+                  class="form-control"
+                  id="linkFoto"
+                  name="linkFoto"
+                  placeholder="Link da Foto*"
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  [(ngModel)]="usuario.cidade"
+                  type="text "
+                  class="form-control"
+                  id="cidade "
+                  name="cidade"
+                  placeholder="Cidade*"
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  [(ngModel)]="usuario.cep"
+                  type="text "
+                  class="form-control"
+                  id="cep "
+                  name="cep"
+                  placeholder="CEP*"
+                />
+              </div>
+            </div>
 
-      <div class="form-group">
-        <label class=' shadowall' for="nomeUsuario">Usuario</label>
-        <input [(ngModel)]="usuario.nomeUsuario"  class="form-control shadowbox" type="text" name="nome" id="nome" placeholder="Seu usuário">
-      </div>
+            <!-----------------------------------------------------FIM 1ª COLUNA----------------------------------------------->
 
-      <div class="form-group">
-        <label class=' shadowall' for="nomePessoal">Nome pessoal</label>
-        <input [(ngModel)]="usuario.nomePessoal" class="form-control shadowbox" type="text" name="nome" id="nome" placeholder="Seu nome">
-      </div>
+            <!-----------------------------------------------------INÍCIO 2ª COLUNA----------------------------------------------->
 
-      <div class="form-group">
-        <label class=" shadowall" for="e-mail">E-mail</label>
-        <input [(ngModel)]="usuario.email"  class="form-control shadowbox" type="email" name="e-mail" id="e-mail" placeholder="Seu e-mail">
-      </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <input
+                  [(ngModel)]="usuario.nomePessoal"
+                  type="text"
+                  class="form-control"
+                  id="nome"
+                  name="nome"
+                  placeholder="Nome Completo*"
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  [(ngModel)]="usuario.email"
+                  type="email"
+                  class="form-control"
+                  id="confirmeEmail"
+                  name="confirmeEmail"
+                  placeholder=" Confirmar E-mail*"
+                />
+              </div>
 
-      <div class="form-group">
-        <label class=" shadowall" for="e-mail">Confirme seu E-mail</label>
-        <input (input)="confirmEmail($event)" class="form-control shadowbox" type="email" name="e-mail" id="e-mail" placeholder="Seu e-mail">
-      </div>
+              <div class="form-group">
+                <input
+                  [(ngModel)]="usuario.senha"
+                  type="password"
+                  class="form-control"
+                  id="confirmeSenha"
+                  name="confirmeSenha"
+                  placeholder="Confirmar Senha*"
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  [(ngModel)]="usuario.endereco"
+                  type="text "
+                  class="form-control"
+                  id="endereco "
+                  name="endereco"
+                  placeholder="Endereço*"
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  [(ngModel)]="usuario.estado"
+                  type="text"
+                  class="form-control"
+                  id="estado"
+                  name="estado"
+                  placeholder="Estado*"
+                />
+              </div>
 
-      <div class="form-group">
-        <label class=' shadowall' for="foto">Link da Foto</label>
-        <input [(ngModel)]="usuario.foto" class="form-control shadowbox" type="text" name="foto" id="foto" placeholder="Link da sua foto">
-      </div>
+              <!-----------------------------------------------------FIM 2ª COLUNA----------------------------------------------->
 
-      <div class="form-group ">
-        <label for="endereco ">Endereço</label>
-        <input [(ngModel)]="usuario.endereco" type="text " class="form-control " id="endereco " name="endereco" placeholder="Seu endereço ">
-    </div>
-
-    <div class="form-row ">
-      <div class="form-group col-md-6 ">
-          <label for="cidade ">Cidade</label>
-          <input [(ngModel)]="usuario.cidade" type="text " class="form-control " id="cidade " name="cidade" placeholder="Cidade onde você mora " >
-      </div>
-
-      <div class="form-group col-md-4 ">
-        <label for="estado ">Estado</label>
-        <input [(ngModel)]="usuario.estado" type="text" class="form-control" id="estado" name="estado" placeholder="Seu estado" >
-    </div>
-
-    <div class="form-group col-md-2 ">
-      <label for="cep ">CEP</label>
-      <input [(ngModel)]="usuario.cep" type="text " class="form-control " id="cep " name="cep">
-  </div>
-
-      <div class="form-group mr-4">
-        <label class=" shadowall" for="senha">Senha</label>
-        <input [(ngModel)]="usuario.senha" class="form-control shadowbox" type="password" name="senha" id="senha" placeholder="Sua senha">
-      </div>
-
-      <div class="form-group">
-        <label class=" shadowall" for="confirmSenha">Confirmar Senha</label>
-        <input (input)='confirmSenha($event)' class="form-control shadowbox" type="password" name="confirmSenha" id="confirmSenha"
-          placeholder="Confirme sua senha">
+              <div class="d-flex justify-content-around">
+                <button type="submit " class="btnCancel" routerLink="/inicio">
+                  Cancelar
+                </button>
+                <button
+                  type="submit "
+                  class="btnRegister"
+                  (click)="atualizar()"
+                >
+                  Atualizar
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
-
       </div>
     </div>
   </div>
-</div>
-
-<div class="d-flex justify-content-center">
-  <button type="submit" class="btn btn-danger mr-4 mb-3" routerLink='/inicio'>Cancelar</button>
-  <button type="submit" class="btn btn-success mb-3" (click)='atualizar()'>Atualizar</button>
 </div>

@@ -123,8 +123,8 @@ a:hover {
   margin: 10% auto 8%;
   padding: 40px;
   box-sizing: border-box;
-  background: rgb(54, 168, 130);
-  box-shadow: 1px 1px 10px 1px #000000, 8px 8px 0px 0px #805e33, 12px 12px 10px 0px #000000;
+  background: rgb(50, 122, 54);
+  box-shadow: 1px 1px 10px 1px #000000, 8px 8px 0px 0px #9ac8e2, 12px 12px 10px 0px #000000;
   position: relative;
   padding-top: 80px;
 }
@@ -155,7 +155,7 @@ a:hover {
 .login input[type="email"],
 .login input[type="password"],
 .login input:focus {
-  background-color: rgb(35, 92, 89);
+  background-color: rgb(154, 200, 226);
   border: 1px solid #4a525f;
   color: rgb(238, 238, 238);
   border-left: 4px solid #12a5d1;
@@ -223,4 +223,10 @@ select:-webkit-autofill {
 .img {
 width: 450px;
 height: 600px;
+}
+
+.img1{
+  position: absolute;
+  right: -20px;
+  top: -25px;
 }
