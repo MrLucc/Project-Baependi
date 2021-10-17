@@ -18,11 +18,9 @@ export class CarrinhoComponent implements OnInit {
   ngOnInit(): void {
     if(environment.token == ""){
       Swal.fire({
-        position: 'center',
-        icon: 'error',
-        title: 'Precisa estar logado para usar o carinho',
-        showConfirmButton: false,
-        timer: 3000
+        icon: 'warning',
+        text: 'Em criação...'
+
       })
       this.router.navigate(["/inicio"])
     }

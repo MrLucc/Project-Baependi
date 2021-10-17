@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Usuario } from 'src/app/models/Usuario';
 import { AutService } from 'src/app/service/aut.service';
 import { environment } from 'src/environments/environment.prod';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-user-edit',
@@ -15,6 +16,7 @@ export class UserEditComponent implements OnInit {
   confirmarSenha: string
   confirmarEmail: string
   idUsuario: number
+  foto = environment.foto
 
   constructor(
     private authService: AutService,
@@ -29,8 +31,9 @@ export class UserEditComponent implements OnInit {
       this.router.navigate(["/inicio"])
     }
 
-    this.idUsuario = environment.id;
+    this.idUsuario = environment.id
     this.findByIdUsuario(this.idUsuario)
+
   }
 
   findByIdUsuario(id: number){
@@ -49,11 +52,20 @@ export class UserEditComponent implements OnInit {
 
   atualizar(){
     if(this.usuario.senha != this.confirmarSenha || this.usuario.email != this.confirmarEmail){
-      alert("A senhas estão incorretas")
+      Swal.fire({
+        icon: 'warning',
+        text: 'Senha ou email incorretos!'
+
+      })
     } else{
       this.authService.atualizar(this.usuario).subscribe((resp: Usuario)=>{
         this.usuario = resp
         this.router.navigate(["/inicio"])
+      })
+      Swal.fire({
+        icon: 'success',
+        text: 'Perfil atualizado com sucesso!',
+
       })
     }
   }
@@ -61,4 +73,3 @@ export class UserEditComponent implements OnInit {
 
 
 }
-

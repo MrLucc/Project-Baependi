@@ -18,7 +18,7 @@ export class MenuComponent implements OnInit {
 
   usuarioEspelho: UsuarioEspelho = new UsuarioEspelho
   id = environment.id
-  
+
 
 
   constructor(
@@ -55,22 +55,11 @@ export class MenuComponent implements OnInit {
       this.router.navigate(["/inicio"])
     },erroLocal =>{
       if(erroLocal.status == 400){
-        const Toast = Swal.mixin({
-        toast: true,
-        position: 'center',
-        showConfirmButton: false,
-        timer: 2700,
-        timerProgressBar: true,
-        didOpen: (toast) => {
-          toast.addEventListener('mouseenter', Swal.stopTimer)
-          toast.addEventListener('mouseleave', Swal.resumeTimer)
-        }
-      })
-      Toast.fire({
-        icon: 'error',
-        title: 'Email ou senha incorretos! Tente um novo login'
+        Swal.fire({
+          icon: 'warning',
+          text: 'Senha ou email incorretos!'
 
-      })
+        })
       }
     })
   }
