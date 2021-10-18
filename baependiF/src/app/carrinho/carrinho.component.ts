@@ -16,7 +16,7 @@ export class CarrinhoComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    if(environment.token == ""){
+    if(environment.token == "" || environment.token != ""){
       Swal.fire({
         icon: 'warning',
         text: 'Em criação...'

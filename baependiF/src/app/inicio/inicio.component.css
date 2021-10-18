@@ -403,8 +403,10 @@ h1 {
 .headeru {
   position: relative;
   height: 50vh;
-
   background-repeat: no-repeat;
+
+
+
   background-position: center center;
 }
 

@@ -4,7 +4,7 @@
 }
 
 .register {
-  background: -webkit-linear-gradient(left, #28cea4, #46882f);
+  background: -webkit-linear-gradient(left, #baeb6c, #46882f);
   margin-top: 3%;
   padding: 3%;
 }
@@ -80,7 +80,7 @@ button {
   border: none;
   border-radius: 1.5rem;
   padding: 2%;
-  background: #3ce29de0;
+  background: #0044ffe0;
   color: #fff;
   font-weight: 600;
   width: 50%;

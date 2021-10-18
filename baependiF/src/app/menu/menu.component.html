@@ -24,8 +24,6 @@
           <a class="dropdown-item" style="color: green;" routerLink="/moda">Moda</a>
           <a class="dropdown-item" style="color: green;" routerLink="/casa">Casa</a>
           <a class="dropdown-item" style="color: green;" routerLink="/escolar">Escolar</a>
-          <div class="dropdown-divider"></div>
-
         </div>
       </li>
       <li class="nav-item dropdown">
@@ -79,9 +77,8 @@
           >Cadastre um novo produto</a>
           <a class="dropdown-item" style="color: green;" *ngIf="auth.logado()" routerLink="/meusprodutos"
           >Meus produtos</a>
-
           <div class="dropdown-divider"></div>
-          <span routerLink="/produto">Sair</span>
+          <a class="dropdown-item" style="color:green;" (click)="sair()" href="#">Sair</a>
           <span></span>
         </div>
       </li>
