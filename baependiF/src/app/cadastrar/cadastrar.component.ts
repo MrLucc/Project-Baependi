@@ -42,7 +42,7 @@ export class CadastrarComponent implements OnInit {
   }
 
   cadastrar() {
-    
+
 
     if(this.usuario.senha != this.confirmarSenha || this.usuario.email != this.confrimarEmail){
       const Toast = Swal.mixin({
@@ -64,7 +64,10 @@ export class CadastrarComponent implements OnInit {
       this.AutService.cadastrar(this.usuario).subscribe((resp: Usuario) => {
         this.usuario = resp
         this.router.navigate(["/inicio"])
-        alert("Usuário cadastrado com sucesso!")
+        Swal.fire({
+          icon: "success",
+          text: "Usuário cadastrado com sucesso!"
+        })
       })
     }
 

@@ -64,6 +64,15 @@ export class MenuComponent implements OnInit {
     })
   }
 
+  sair(){
+    this.router.navigate(["/inicio"])
+    environment.token = ""
+    environment.id = 0
+    environment.nomeUsuario = ""
+    environment.foto = ""
+    environment.email = ""
+    environment.nomePessoal = ""
+  }
 
 
 }
