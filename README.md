@@ -48,6 +48,11 @@ O intuito é contribuir para a diminuição dos impactos ambientais causados pel
   
   <img Jhonathan src="https://i.imgur.com/VlHKWi8.jpeg" width="20%">
   <a href="https://www.linkedin.com/in/jonathan-bonfim-4a9466178/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a> <a href="https://github.com/jonathantlb" target="_blank"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" target="_blank"></a>
+
+
+  ## Cruella Mascote 
+  <img Cruela src="https://i.imgur.com/OklyUwf.jpg" width="20%">
+  
   
   # Tecnologias Usadas no Projeto 💻
   
@@ -72,3 +77,4 @@ O intuito é contribuir para a diminuição dos impactos ambientais causados pel
   
   ##
   
+ 
