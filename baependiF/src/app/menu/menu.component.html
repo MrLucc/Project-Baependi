@@ -1,50 +1,117 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-white">
-    <a class="navbar-brand"><img routerLink='/inicio' class='menu-brand' src="https://i.imgur.com/WQ5g5pI.png?1" alt="Baependi-Logo"></a>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Produtos
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Something else here</a>
-            </div>
-          </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Reutilização
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" routerLink="/sobre-nos">Sobre nós</a>
-          </li>
-      </ul>
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-            <a class="nav-link" href="#">Entrar</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link">Cadastrar</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#"><img src="https://img.icons8.com/office/25/000000/shopping-cart.png"/></a>
-          </li>
-      </ul>
-      <div class="p-3">
+<body class="hero-anime">
 
+  <div class="navigation-wrap bg-light start-header start-style" style="height: 65px;">
+      <div class="container" style="margin-right: 1000px;">
+          <div class="row" >
+              <div class="col-12">
+                  
+                <nav class="navbar navbar-expand-md navbar-light" >
+                  <ul> 
+                  <a class="navbar-brand"  routerLink="/inicio"><img class="menu-brand" src="https://i.imgur.com/XGwweaU.png" alt="Baependi-Logo" ></a>
+                  
+                </ul>   
+                      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+                      <div class="collapse navbar-collapse" style="margin-left: 1100px;" id="navbarSupportedContent" >
+                          <ul class="navbar-nav ml-auto py-4 py-md-0 mb-4">
+
+                              <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4" >
+                                  <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" routerLink= '/todosprodutos'>Produtos</a>
+                                  
+                              </li>
+
+                              <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4"  >
+                                  <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Reutilização</a>
+                                  <div class="dropdown-menu">
+                                      <a class="dropdown-item" routerLink="/informacoes">O que é?</a>
+                                      <a class="dropdown-item" routerLink="/ods">ODS-13</a>
+                                      <a class="dropdown-item" routerLink="/dados">Informativo</a>
+                                      
+                                  </div>
+                              </li>
+                              <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                                  <a class="nav-link" routerLink="/sobre-nos">Sobre</a>
+                              </li>
+
+                              <li class=" pl-4 pl-md-0 ml-0 ml-md-4" *ngIf="!auth.logado()">
+                                  <button class="button" data-toggle="modal" data-target="#entrar"><span>Entrar </span>
+                                    
+                                  </button>
+                                  
+
+                              </li>
+                              
+
+                              <li class="nav-item dropdown" *ngIf="auth.logado()">
+                                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                      <img class="mr-1 pr-1 ml-3" src="https://i.imgur.com/wLV4UfL.jpeg " width="40px" height="35px" />
+                                      Olá, {{auth.nome()}}
+                                  </a>
+
+                               
+                                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                      <a class="dropdown-item" [routerLink]="['/user-edit', id]">Perfil</a>
+                                      <a class="dropdown-item" *ngIf="auth.logado()" routerLink="/produto">Cadastre um novo produto</a>
+                                      <a class="dropdown-item" *ngIf="auth.logado()" routerLink="/meusprodutos">Meus produtos</a>
+                                      <a class="nav-link"  routerLink="/carrinho">
+                                        <img style="padding: 3px;" src="https://img.icons8.com/bubbles/50/000000/man-green-shopping-basket.png" />
+                                    </a>
+
+                                      <div class="dropdown-divider"></div>
+                                      <button class="button" (click)='sair()' ><span>Sair </span>
+                                      </button>
+
+                                  </div>
+                                  
+                                  
+                          </ul>
+
+                      </div>
+
+                  </nav>
+              </div>
+          </div>
       </div>
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Pesquisa" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><img src="https://img.icons8.com/ios-glyphs/20/000000/detective--v2.png"/></button>
-      </form>
-    </div>
-  </nav>
+  </div>
+
+  <!-- ========================= INÍCIO MODAL ENTRADA de USUARIO ========================= -->
+
+  <body class="login">
+      <div class="container">
+          <div class="modal fade" id="entrar" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                  <div class="modal-content modal-backdrop">
+                      <div class="modal-header">
+                          <div class="login-container-wrapper clearfix">
+                            <a href="#" data-dismiss="modal"><img class="img1" src="https://img.icons8.com/color/26/000000/close-window.png"> </a>
+
+                              <div class="welcome"><strong>Bem-vindo</strong> </div>
+
+                              <div class="modal-body">
+
+                                  <div class="form-group ">
+                                      <input [(ngModel)]="usuarioEspelho.email" class="form-control" type="email" name="email" id="email" placeholder="E-mail">
+                                  </div>
+
+                                  <div class="form-group">
+                                      <input [(ngModel)]="usuarioEspelho.senha" class="form-control" type="password" name="senha" id="senha" placeholder="Senha">
+                                  </div>
+                                  <div class="form-group">
+                                      <button type="submit" (click)='entrar()' class="btn btn-success btn-lg btn-block" data-dismiss="modal"> Entrar  </button>
+                                  </div>
+
+                                  <div class="form-group">
+                                      <div class="checkbox pull-left">
+                                          <label><input type="checkbox"> Lembrar-me</label>
+                                      </div>
+                                      <div class="checkbox pull-right">
+                                          <label data-dismiss="modal" > <a class="cadastro" routerLink='/cadastrar' >Cadastre-se</a> </label>
+                                      </div>
+                                     
+
+                                  </div>
+                              </div>
+
+                              <!-- ========================= FIM MODAL ENTRADA de USUARIO ========================= -->

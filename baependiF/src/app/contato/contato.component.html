@@ -1,31 +1,49 @@
 
-<div class="row d-flex justify-content-center">
-  <div class="col-md-10">
 
-    <h2 class="text-center">Entre em contato conosco: </h2>
+<div class="fonte">
 
-    <div class="form-group">
-      <label for="nome">Nome:</label>
-      <input class="form-control" type="text" id="nome" placeholder="Digite seu nome">
-    </div>
-
-    <div class="form-group">
-      <label for="email">E-mail:</label>
-      <input class="form-control" type="email" name="email" id="email" placeholder="Insira seu E-mail" cols="10">
-    </div>
-
-    <div class="form-group">
-      <label for="texto">Texto:</label>
-      <textarea class="form-control" name="texto" id="texto" placeholder="Conte-nos seu feedback" rows="5" cols="25"></textarea>
-    </div>
-
-    <h1>Caso queira nós conhecer!</h1>
-    <div class="col-md-6" >
-      <div class=" col-md-6" ><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14623.224653119001!2d-46.598684685869834!3d-23.611283691896688!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5c80e1cf4d9b%3A0x82dc0eb8038f7d3c!2sCidade%20Nova%20Heli%C3%B3polis%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1633319150059!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-      </div>
-    </div>
-
-
-  </div>
+<div class="contate-nos">
+  <h3>Contate-nos</h3>
 </div>
 
+<h6 class="subtitle">
+  Nos envie suas dúvidas, sugestões ou reclamações, ficaremos felizes em
+  respondê-las
+</h6>
+
+<div class="container mt-5 mb-5">
+  <form action="/action_page.php">
+    <label for="nome"> Nome</label>
+    <input type="text" id="nome" name="nome" placeholder="Seu nome" />
+
+    <label for="email">E-mail</label>
+    <input type="email" id="email" name="email" placeholder="Seu e-mail" />
+
+    <label for="assunto">Assunto</label>
+    <textarea
+      id="assunto"
+      name="assunto"
+      placeholder="Sua mensagem"
+      style="height: 200px"
+    ></textarea>
+
+    <input type="submit" (click)="enviar()" routerLink="/inicio" value="Enviar"/>
+    <p></p>
+    <input type="reset" /> 
+  </form>
+</div>
+
+<head>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
+  <link
+    href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    rel="stylesheet"
+  />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+
+</div>

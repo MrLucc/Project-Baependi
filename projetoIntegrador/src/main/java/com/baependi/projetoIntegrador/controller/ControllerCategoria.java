@@ -24,7 +24,7 @@ import com.baependi.projetoIntegrador.service.ServiceCategoria;
 
 @RestController
 @RequestMapping("/baependi/categoria")
-@CrossOrigin(origins = "", allowedHeaders = "")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class ControllerCategoria {
 
 	private @Autowired RepositorioCategoria repositorio;
@@ -58,27 +58,6 @@ public class ControllerCategoria {
 		}
 	}
 
-	@GetMapping("/acharPorTipoMaterial/{tipoMaterial}")
-	private ResponseEntity<List<Categoria>> findAllByTipoMaterialContainingIgnoreCase(
-			@PathVariable(value = "tipoMaterial") String tipoMaterial) {
-		List<Categoria> objetoCategoria = repositorio.findAllByTipoMaterialContainingIgnoreCase(tipoMaterial);
-		if (objetoCategoria.isEmpty()) {
-			return ResponseEntity.status(204).build();
-		} else {
-			return ResponseEntity.status(201).body(objetoCategoria);
-		}
-	}
-
-	@GetMapping("/acharPorArtesanal/{artesanal}")
-	private ResponseEntity<List<Categoria>> findAllByTipoMaterialContainingIgnoreCase(
-			@PathVariable(value = "artesanal") boolean artesanal) {
-		List<Categoria> objetoCategoria = repositorio.findAllByArtesanal(artesanal);
-		if (objetoCategoria.isEmpty()) {
-			return ResponseEntity.status(204).build();
-		} else {
-			return ResponseEntity.status(201).body(objetoCategoria);
-		}
-	}
 
 	@PostMapping("/salvar")
 	private ResponseEntity<Categoria> salvarCategoria(@Valid @RequestBody Categoria categoriaSalva) {

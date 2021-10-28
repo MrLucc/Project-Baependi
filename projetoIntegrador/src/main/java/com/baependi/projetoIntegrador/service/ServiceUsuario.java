@@ -42,14 +42,12 @@ public class ServiceUsuario {
 				usuarioParaCadastrar.setIdUsuario(usuarioExistente.getIdUsuario());
 				usuarioParaCadastrar.setNomeUsuario(usuarioExistente.getNomeUsuario());
 				usuarioParaCadastrar.setSenha(usuarioExistente.getSenha());
-				usuarioParaCadastrar.setCpf(usuarioExistente.getSenha());
+				usuarioParaCadastrar.setNomePessoal(usuarioExistente.getNomePessoal());
 				usuarioParaCadastrar.setEstado(usuarioExistente.getEstado());
 				usuarioParaCadastrar.setCidade(usuarioExistente.getCidade());
 				usuarioParaCadastrar.setEndereco(usuarioExistente.getEndereco());
-				usuarioParaCadastrar.setCep(usuarioExistente.getCpf());
-				usuarioParaCadastrar.setFoto(usuarioExistente.getSenha());
-				usuarioParaCadastrar.setTipoUsuario(usuarioExistente.getTipoUsuario());
-				return Optional.ofNullable(token);
+				usuarioParaCadastrar.setFoto(usuarioExistente.getFoto());
+				return Optional.ofNullable(usuarioParaCadastrar);
 
 			} else {
 
@@ -67,7 +65,16 @@ public class ServiceUsuario {
 
 			String senhaEncriptada = encoder.encode(usuarioParaAlterar.getSenha());
 			usuarioExistente.setNomeUsuario(usuarioParaAlterar.getNomeUsuario());
+			usuarioExistente.setNomePessoal(usuarioParaAlterar.getNomePessoal());
 			usuarioExistente.setSenha(senhaEncriptada);
+			usuarioExistente.setEmail(usuarioParaAlterar.getEmail());
+			usuarioExistente.setFoto(usuarioParaAlterar.getFoto());
+			usuarioExistente.setCep(usuarioParaAlterar.getCep());
+			usuarioExistente.setEstado(usuarioParaAlterar.getEstado());
+			usuarioExistente.setCidade(usuarioParaAlterar.getCidade());
+			usuarioExistente.setEndereco(usuarioParaAlterar.getEndereco());
+			
+			
 
 			return Optional.ofNullable(repository.save(usuarioExistente));
 		}).orElseGet(() -> {

@@ -14,8 +14,6 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
-import org.hibernate.validator.constraints.br.CPF;
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
@@ -24,7 +22,7 @@ public class Usuario {
 
 	private @Id @GeneratedValue(strategy = GenerationType.IDENTITY) Long idUsuario;
 	private @NotBlank String nomeUsuario;
-	private @NotBlank @CPF String cpf;
+	private @NotBlank String nomePessoal;
 	private @NotBlank String estado;
 	private @NotBlank String cidade;
 	private @NotBlank String endereco;
@@ -32,7 +30,6 @@ public class Usuario {
 	private @NotBlank @Email String email;
 	private @NotBlank @Size(min = 6) String senha;
 	private String foto;
-	private String tipoUsuario;
 
 	@OneToMany(mappedBy = "comprador", cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties({ "comprador" })
@@ -52,14 +49,6 @@ public class Usuario {
 
 	public void setNomeUsuario(String nomeUsuario) {
 		this.nomeUsuario = nomeUsuario;
-	}
-
-	public String getCpf() {
-		return cpf;
-	}
-
-	public void setCpf(String cpf) {
-		this.cpf = cpf;
 	}
 
 	public String getEstado() {
@@ -118,14 +107,6 @@ public class Usuario {
 		this.foto = foto;
 	}
 
-	public String getTipoUsuario() {
-		return tipoUsuario;
-	}
-
-	public void setTipoUsuario(String tipoUsuario) {
-		this.tipoUsuario = tipoUsuario;
-	}
-
 	public List<Produtos> getListaDeProdutos() {
 		return listaDeProdutos;
 	}
@@ -134,4 +115,11 @@ public class Usuario {
 		this.listaDeProdutos = listaDeProdutos;
 	}
 
+	public String getNomePessoal() {
+		return nomePessoal;
+	}
+
+	public void setNomePessoal(String nomePessoal) {
+		this.nomePessoal = nomePessoal;
+	}
 }
