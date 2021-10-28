@@ -13,8 +13,5 @@ public interface RepositorioCategoria extends JpaRepository<Categoria, Long> {
 
 	public List<Categoria> findAllByTipoProdutoContainingIgnoreCase(String tipoProduto);
 
-	public List<Categoria> findAllByTipoMaterialContainingIgnoreCase(String tipoMaterial);
-
-	public List<Categoria> findAllByArtesanal(boolean artesanal);
 
 }

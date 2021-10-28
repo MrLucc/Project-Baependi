@@ -7,6 +7,9 @@ export class Produtos {
   public precoProduto: number
   public descricaoProduto: string
   public autoreProduto: string
+  public tipoMaterial: string
+  public artesanal: string
   public codigoCategoria: Categoria
   public comprador: Usuario
+  public fotoProduto: string
 }

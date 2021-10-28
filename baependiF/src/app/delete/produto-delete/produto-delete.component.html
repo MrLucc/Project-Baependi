@@ -1,0 +1,51 @@
+
+<div class="fonte">
+  <div class="row">
+    <div class="col-md-12">
+      <h1 class="text-center fonte " style="margin-top: 125px;">Apagar Produtos</h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <h4  class="text-center text-dark">Realmente deseja apagar este produto?</h4>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12  d-flex justify-content-center">
+     <div id="container" style="height: 280px; width: 500px">
+       <!-- Start    Product details -->
+       <div class="product-details">
+         <!--     Product Name -->
+           <h4>{{produto.nomeProduto}}</h4>
+         <p>Descrição: {{produto.descricaoProduto}}</p>
+         <p>Autore: {{produto.autoreProduto}}</p>
+
+
+         <!-- The most important information about the product -->
+         <h4>R${{produto.precoProduto}}</h4>
+
+         </div>
+
+       <div class="product-image">
+         <img src="{{produto.fotoProduto}}" alt="Foto Produto" />
+
+       </div>
+     </div>
+
+    </div>
+
+  </div>
+
+<!-- Botões -->
+  <div class="row mb-5 ">
+    <div class="col-md-12 d-flex justify-content-center">
+      <button class="btn btn-danger mr-4" routerLink='/meusprodutos' style="height: 70px; width: 70px;">Não</button>
+      <button class="btn btn-success" (click)='apagar()' style="height: 70px; width: 70px;">Sim</button>
+    </div>
+  </div>
+
+</div>
+
+

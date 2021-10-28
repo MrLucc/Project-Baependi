@@ -7,21 +7,18 @@ import org.springframework.stereotype.Service;
 
 import com.baependi.projetoIntegrador.models.Categoria;
 import com.baependi.projetoIntegrador.repository.RepositorioCategoria;
-import com.baependi.projetoIntegrador.repository.RepositorioProdutos;
+
 
 @Service
 public class ServiceCategoria {
 
 	@Autowired
 	RepositorioCategoria repositorioC;
-	@Autowired
-	RepositorioProdutos repositorioP;
+	
 
 	public Optional<Categoria> alterarCategoria(Categoria alterarCategoria) {
 		return repositorioC.findById(alterarCategoria.getIdCategoria()).map(categoriaExistente -> {
 			categoriaExistente.setTipoProduto(alterarCategoria.getTipoProduto());
-			categoriaExistente.setArtesanal(alterarCategoria.isArtesanal());
-			categoriaExistente.setTipoMaterial(alterarCategoria.getTipoMaterial());
 			return Optional.ofNullable(repositorioC.save(alterarCategoria));
 		}).orElseGet(() -> {
 			return Optional.empty();

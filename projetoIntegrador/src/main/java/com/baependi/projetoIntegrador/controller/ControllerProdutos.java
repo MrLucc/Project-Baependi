@@ -15,7 +15,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/baependi/produtos")
-@CrossOrigin(origins = "", allowedHeaders = "")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class ControllerProdutos {
 
 	private @Autowired RepositorioProdutos repositorio;
@@ -48,14 +48,20 @@ public class ControllerProdutos {
 		}
 	}
 
-	@PostMapping("/salvar")
-	private ResponseEntity<Object> salvarProduto(@Valid @RequestBody Produtos produtoSalvo) {
-		Optional<?> objetoSalvar = servico.cadastrarProduto(produtoSalvo);
-		if (objetoSalvar.isPresent()) {
-			return ResponseEntity.status(201).body(objetoSalvar);
-		} else {
+	@GetMapping("/buscarPorTipoMaterial/{tipoMaterial}")
+	private ResponseEntity<List<Produtos>> acharPorTipoMaterial(@PathVariable(value="tipoMaterial") String tipoMaterial) {
+		List<Produtos> objetoProduto = repositorio.findAllByTipoMaterialContainingIgnoreCase(tipoMaterial);
+		if(objetoProduto.isEmpty()){
 			return ResponseEntity.status(204).build();
+		}else{
+			return ResponseEntity.status(200).body(objetoProduto);
 		}
+	}
+
+	@PostMapping("/salvar")
+	private ResponseEntity<Produtos> salvarProduto(@Valid @RequestBody Produtos produtoSalvo) {
+		return ResponseEntity.status(201).body(repositorio.save(produtoSalvo));
+
 	}
 
 	@PutMapping("/atualizar")
